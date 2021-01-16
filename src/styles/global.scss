@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --theme-background: #fff;
+    --theme-color: #000;
+    --container-width: 1630px;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+    margin: 0;
+    line-height: 1.5;
+    background-color: var(--theme-background);
+    color: var(--theme-color);
+    height: 100%;
+}
+
+@import './layout';
