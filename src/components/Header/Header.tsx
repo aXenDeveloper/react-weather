@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import styles from './header.module.scss';
 import Form from '../Form/Form';
+import ChangeLang from '../ChangeLang';
 
 const Header: FC = () => (
 	<header className={styles.header}>
@@ -9,7 +10,9 @@ const Header: FC = () => (
 
 			<Form />
 
-			<div>menu</div>
+			<div>
+				<ChangeLang />
+			</div>
 		</div>
 	</header>
 );

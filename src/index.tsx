@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import Root from './Root';
 import './styles/global.scss';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import './i18n';
 
 const queryClient = new QueryClient({});
 
