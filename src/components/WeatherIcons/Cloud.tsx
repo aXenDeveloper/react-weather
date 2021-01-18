@@ -1,39 +1,17 @@
 import { FC } from 'react';
 import styled, { css } from 'styled-components';
-import CloudSVG from './CloudSVG';
+import CloudSVG from './SVG/CloudSVG';
 import Rain from './Rain';
 
 type CloudType = {
 	left?: boolean;
 	right?: boolean;
+	getRain?: boolean;
+	getCloudColor: 1 | 2 | 3;
 };
 
-const Cloud: FC<CloudType> = ({ left, right }) => {
+const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor }) => {
 	const CloudStyle = styled.div`
-		@keyframes cloud_left {
-			0% {
-				transform: translateX(-130px) scale(0.68);
-			}
-			50% {
-				transform: translateX(-250px) scale(0.68);
-			}
-			100% {
-				transform: translateX(-130px) scale(0.68);
-			}
-		}
-
-		@keyframes cloud_right {
-			0% {
-				transform: translateX(130px) scale(0.68) rotateY(180deg);
-			}
-			50% {
-				transform: translateX(250px) scale(0.68) rotateY(180deg);
-			}
-			100% {
-				transform: translateX(130px) scale(0.68) rotateY(180deg);
-			}
-		}
-
 		${left &&
 		css`
 			position: absolute;
@@ -59,7 +37,18 @@ const Cloud: FC<CloudType> = ({ left, right }) => {
 			z-index: 10;
 
 			path {
-				fill: #fff;
+				${getCloudColor === 1 &&
+				css`
+					fill: #fff;
+				`}
+				${getCloudColor === 2 &&
+				css`
+					fill: #9c9c9c;
+				`}
+				${getCloudColor === 3 &&
+				css`
+					fill: #333333;
+				`}
 			}
 		}
 	`;
@@ -67,7 +56,7 @@ const Cloud: FC<CloudType> = ({ left, right }) => {
 	return (
 		<CloudStyle>
 			<CloudSVG />
-			<Rain />
+			{getRain && <Rain />}
 		</CloudStyle>
 	);
 };

@@ -1,3 +1,27 @@
+@keyframes cloud_left {
+    0% {
+        transform: translateX(-130px) scale(0.68);
+    }
+    50% {
+        transform: translateX(-250px) scale(0.68);
+    }
+    100% {
+        transform: translateX(-130px) scale(0.68);
+    }
+}
+
+@keyframes cloud_right {
+    0% {
+        transform: translateX(130px) scale(0.68) rotateY(180deg);
+    }
+    50% {
+        transform: translateX(250px) scale(0.68) rotateY(180deg);
+    }
+    100% {
+        transform: translateX(130px) scale(0.68) rotateY(180deg);
+    }
+}
+
 @keyframes weather-up {
     from {
         opacity: 0;

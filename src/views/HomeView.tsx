@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import WeatherIcon from '../components/WeatherIcon/WeatherIcon';
+import WeatherIcon from '../components/WeatherIcon';
 
 const HomeView: FC = () => {
 	const { t } = useTranslation();

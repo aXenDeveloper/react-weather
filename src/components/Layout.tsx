@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import Header from './Header/Header';
+import Header from './Header';
 
 const Layout: FC = ({ children }) => (
 	<>

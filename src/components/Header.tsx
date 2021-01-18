@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import styles from './header.module.scss';
-import Form from '../Form/Form';
-import ChangeLang from '../ChangeLang';
+import styles from '../styles/modules/header.module.scss';
+import Form from './Form';
+import ChangeLang from './ChangeLang';
 
 const Header: FC = () => (
 	<header className={styles.header}>

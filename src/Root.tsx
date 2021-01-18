@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import HomeView from './views/HomeView';
 import Layout from './components/Layout';
 import WeatherView from './views/WeatherView';
-import { LangContext } from './context';
+import { LangContext } from './context/useLang';
 import { useState } from 'react';
 import i18n from './i18n';
 

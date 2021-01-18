@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
-import Loading from '../components/Loading/Loading';
-import { LangContextType, useLang } from '../context';
+import Loading from '../components/Loading';
+import { LangContextType, useLang } from '../context/useLang';
 
 const WeatherView: FC = () => {
 	const { pathname } = useLocation();
