@@ -7,6 +7,8 @@
 :root {
     --theme-background: #fff;
     --theme-color: #000;
+    --theme-section-weather: #326dde;
+    --theme-section-weather-text: #fff;
     --container-width: 1630px;
 }
 
@@ -15,7 +17,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
     font-size: 1.4rem;
     margin: 0;
     line-height: 1.5;
@@ -25,3 +27,5 @@ body {
 }
 
 @import './layout';
+@import './weather';
+@import './animation';

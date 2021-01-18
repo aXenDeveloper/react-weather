@@ -1,14 +1,20 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLang } from '../context';
+import WeatherIcon from '../components/WeatherIcon/WeatherIcon';
 
 const HomeView: FC = () => {
 	const { t } = useTranslation();
 
-	const lang = useLang();
-	console.log(lang);
-
-	return <div>Home {t('Welcome to React')}</div>;
+	return (
+		<>
+			<section className="weather">
+				<div className="container">
+					<WeatherIcon />
+				</div>
+			</section>
+			<div>Home {t('Welcome to React')}</div>
+		</>
+	);
 };
 
 export default HomeView;

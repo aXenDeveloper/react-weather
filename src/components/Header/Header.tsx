@@ -5,9 +5,7 @@ import ChangeLang from '../ChangeLang';
 
 const Header: FC = () => (
 	<header className={styles.header}>
-		<div className="container flex flex-ai:center flex-jc:space-between">
-			<div>logo</div>
-
+		<div className="container flex flex-ai:center flex-jc:center">
 			<Form />
 
 			<div>

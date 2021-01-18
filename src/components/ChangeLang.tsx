@@ -7,7 +7,6 @@ const ChangeLang = () => {
 	const changeLanguage = (lng: string) => {
 		i18n.changeLanguage(lng);
 		setLang(lng);
-		console.log(lng);
 	};
 
 	return (
