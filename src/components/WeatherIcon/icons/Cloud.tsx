@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import styled, { css } from 'styled-components';
+import CloudSVG from './CloudSVG';
+import Rain from './Rain';
 
 type CloudType = {
 	left?: boolean;
@@ -7,32 +9,66 @@ type CloudType = {
 };
 
 const Cloud: FC<CloudType> = ({ left, right }) => {
-	const CloudSVG = styled.svg`
+	const CloudStyle = styled.div`
+		@keyframes cloud_left {
+			0% {
+				transform: translateX(-130px) scale(0.68);
+			}
+			50% {
+				transform: translateX(-250px) scale(0.68);
+			}
+			100% {
+				transform: translateX(-130px) scale(0.68);
+			}
+		}
+
+		@keyframes cloud_right {
+			0% {
+				transform: translateX(130px) scale(0.68) rotateY(180deg);
+			}
+			50% {
+				transform: translateX(250px) scale(0.68) rotateY(180deg);
+			}
+			100% {
+				transform: translateX(130px) scale(0.68) rotateY(180deg);
+			}
+		}
+
 		${left &&
 		css`
 			position: absolute;
 			transform: translateX(-235px) scale(0.68);
 			opacity: 0.5;
 			animation: cloud_left 20s ease infinite;
+			top: 0;
+			left: 0;
 		`}
 
 		${right &&
 		css`
 			position: absolute;
-			transform: translateX(-235px) scale(0.68) rotateY(180deg);
+			transform: translateX(235px) scale(0.68) rotateY(180deg);
 			opacity: 0.5;
 			animation: cloud_right 20s ease infinite;
+			top: 0;
+			left: 0;
 		`}
 
-		path {
-			fill: #fff;
+		svg {
+			position: relative;
+			z-index: 10;
+
+			path {
+				fill: #fff;
+			}
 		}
 	`;
 
 	return (
-		<CloudSVG height="289px" width="465px" xmlns="http://www.w3.org/2000/svg">
-			<path d="m375.835938 112.957031c-5.851563 0-11.691407.582031-17.425782 1.742188-4.324218-21.582031-18.304687-39.992188-37.933594-49.957031-19.625-9.964844-42.738281-10.382813-62.714843-1.136719-18.078125-49.796875-73.101563-75.507813-122.898438-57.429688s-75.507812 73.105469-57.429687 122.898438c-43.621094 1.378906-78.078125 37.484375-77.4257815 81.121093.6562495 43.640626 36.1835935 78.691407 79.8281255 78.761719h296c48.597656 0 88-39.398437 88-88 0-48.601562-39.402344-88-88-88zm0 0" />
-		</CloudSVG>
+		<CloudStyle>
+			<CloudSVG />
+			<Rain />
+		</CloudStyle>
 	);
 };
 

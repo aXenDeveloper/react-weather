@@ -2,7 +2,7 @@
     background-color: var(--theme-section-weather);
     color: var(--theme-section-weather-text);
     padding: 3rem 0;
-    overflow-x: hidden;
+    overflow: hidden;
 
     .container {
         display: flex;
@@ -11,11 +11,12 @@
     }
 
     &_icon {
+        animation: weather-up 1s ease-out;
     }
 
     &_svg {
         &_cloud {
-            transform: scale(0.7);
+            transform: scale(0.6);
             position: relative;
 
             &\:left {
