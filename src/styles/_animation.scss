@@ -50,3 +50,9 @@
         opacity: 0;
     }
 }
+
+@keyframes sunRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}

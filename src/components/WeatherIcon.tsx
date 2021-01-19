@@ -1,5 +1,4 @@
 import Cloud from './WeatherIcons/Cloud';
-// import MoonSVG from './WeatherIcons/SVG/MoonSVG';
 
 const WeatherIcon = () => (
 	<div className="weather_icon">
@@ -12,9 +11,3 @@ const WeatherIcon = () => (
 );
 
 export default WeatherIcon;
-
-/*
-<Cloud left getCloudColor={1} getRain />
-			<Cloud getCloudColor={1} getRain />
-			<Cloud right getCloudColor={1} getRain />
-			*/
