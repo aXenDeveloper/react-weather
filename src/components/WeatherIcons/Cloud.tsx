@@ -2,15 +2,17 @@ import { FC } from 'react';
 import styled, { css } from 'styled-components';
 import CloudSVG from './SVG/CloudSVG';
 import Rain from './Rain';
+import Storm from './Storm';
 
 type CloudType = {
 	left?: boolean;
 	right?: boolean;
 	getRain?: boolean;
 	getCloudColor: 1 | 2 | 3;
+	getStorm?: boolean;
 };
 
-const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor }) => {
+const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor, getStorm }) => {
 	const CloudStyle = styled.div`
 		${left &&
 		css`
@@ -31,32 +33,13 @@ const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor }) => {
 			top: 0;
 			left: 0;
 		`}
-
-		svg {
-			position: relative;
-			z-index: 10;
-
-			path {
-				${getCloudColor === 1 &&
-				css`
-					fill: #fff;
-				`}
-				${getCloudColor === 2 &&
-				css`
-					fill: #9c9c9c;
-				`}
-				${getCloudColor === 3 &&
-				css`
-					fill: #333333;
-				`}
-			}
-		}
 	`;
 
 	return (
 		<CloudStyle>
-			<CloudSVG />
+			<CloudSVG getCloudColor={getCloudColor} />
 			{getRain && <Rain />}
+			{!left && !right && <Storm />}
 		</CloudStyle>
 	);
 };
