@@ -6,6 +6,7 @@ import Storm from './Storm';
 import Sun from './Sun';
 import Moon from './Moon';
 import Snow from './Snow';
+import Tornado from './Tornado';
 
 type CloudType = {
 	left?: boolean;
@@ -79,6 +80,7 @@ const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor, getStorm, t
 		{getRain && <Rain />}
 		{getStorm && <Storm />}
 		{getSnow && <Snow />}
+		{!left && !right && <Tornado />}
 	</CloudStyle>
 );
 

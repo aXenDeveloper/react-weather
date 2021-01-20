@@ -680,7 +680,7 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 
 	return (
 		<div className="weather_icon">
-			<div className="weather_svg">{selectWeather[232]['d']}</div>
+			<div className="weather_svg">{selectWeather[804]['d']}</div>
 		</div>
 	);
 };
