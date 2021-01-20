@@ -56,3 +56,14 @@
         transform: rotate(360deg);
     }
 }
+
+@keyframes drop {
+    from {
+        transform: translateY(-35px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+}

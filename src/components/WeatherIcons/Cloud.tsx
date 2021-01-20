@@ -5,6 +5,7 @@ import Rain from './Rain';
 import Storm from './Storm';
 import Sun from './Sun';
 import Moon from './Moon';
+import Snow from './Snow';
 
 type CloudType = {
 	left?: boolean;
@@ -13,6 +14,7 @@ type CloudType = {
 	getCloudColor?: 1 | 2 | 3;
 	getStorm?: boolean;
 	timeOfDay?: 'day' | 'night';
+	getSnow?: boolean;
 };
 
 const CloudStyle = styled.div`
@@ -58,7 +60,7 @@ const TimeOfDayStyle = styled.div`
 	z-index: 10;
 `;
 
-const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor, getStorm, timeOfDay }) => (
+const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor, getStorm, timeOfDay, getSnow }) => (
 	<CloudStyle left={left} right={right} getCloudColor={getCloudColor}>
 		{!left && !right && timeOfDay === 'night' && (
 			<TimeOfDayStyle timeOfDay={timeOfDay}>
@@ -76,6 +78,7 @@ const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor, getStorm, t
 
 		{getRain && <Rain />}
 		{!left && !right && getStorm && <Storm />}
+		{getSnow && <Snow />}
 	</CloudStyle>
 );
 

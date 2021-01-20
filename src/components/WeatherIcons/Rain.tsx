@@ -36,17 +36,6 @@ const RainStyle = styled.div`
 		&:nth-child(10) {
 			animation-duration: 0.85s;
 		}
-
-		@keyframes drop {
-			from {
-				transform: translateY(-35px);
-				opacity: 1;
-			}
-			to {
-				transform: translateY(120px);
-				opacity: 0;
-			}
-		}
 	}
 `;
 
