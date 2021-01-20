@@ -46,15 +46,15 @@ const TimeOfDayStyle = styled.div`
 	${({ timeOfDay }: CloudType) =>
 		timeOfDay === 'day' &&
 		css`
-			top: -140px;
-			right: -65px;
-			transform: scale(0.7);
+			top: -110px;
+			right: -30px;
+			transform: scale(0.8);
 		`}
 	${({ timeOfDay }: CloudType) =>
 		timeOfDay === 'night' &&
 		css`
-			top: -160px;
-			right: -85px;
+			top: -150px;
+			right: -40px;
 			transform: scale(0.6);
 		`}
 	z-index: 10;
@@ -77,7 +77,7 @@ const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor, getStorm, t
 		<CloudSVG getCloudColor={getCloudColor} />
 
 		{getRain && <Rain />}
-		{!left && !right && getStorm && <Storm />}
+		{getStorm && <Storm />}
 		{getSnow && <Snow />}
 	</CloudStyle>
 );

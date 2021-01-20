@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
 import Loading from '../components/Loading';
+import WeatherIcon from '../components/WeatherIcon';
 import { LangContextType, useLang } from '../context/useLang';
 
 const WeatherView: FC = () => {
@@ -30,6 +31,11 @@ const WeatherView: FC = () => {
 
 	return (
 		<div>
+			<section className="weather">
+				<div className="container">
+					<WeatherIcon weatherID={data.weather[0].id} weatherIcon={data.weather[0].icon} />
+				</div>
+			</section>
 			<h1>
 				WeatherView {data.name} {data.main.temp}
 			</h1>

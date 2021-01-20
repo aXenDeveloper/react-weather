@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const MoonStyle = styled.svg`
-	width: 400px;
+	width: 340px;
 
 	path {
 		fill: #fce666;

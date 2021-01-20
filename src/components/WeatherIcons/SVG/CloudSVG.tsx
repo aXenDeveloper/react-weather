@@ -20,7 +20,7 @@ const CloudSVGStyle = styled.svg`
 		${({ getCloudColor }: CloudSVGType) =>
 			getCloudColor === 2 &&
 			css`
-				fill: #9c9c9c;
+				fill: #d0dad9;
 			`}
 		${({ getCloudColor }: CloudSVGType) =>
 			getCloudColor === 3 &&

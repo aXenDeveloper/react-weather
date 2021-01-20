@@ -9,7 +9,7 @@ const HomeView: FC = () => {
 		<>
 			<section className="weather">
 				<div className="container">
-					<WeatherIcon />
+					<WeatherIcon weatherID={200} weatherIcon="13d" />
 				</div>
 			</section>
 			<div>Home {t('Welcome to React')}</div>

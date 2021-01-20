@@ -16,8 +16,9 @@
     }
 
     &_svg {
+        transform: scale(0.6);
+
         &_cloud {
-            transform: scale(0.6);
             position: relative;
 
             &\:left {
