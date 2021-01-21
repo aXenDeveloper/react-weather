@@ -8,11 +8,16 @@
     .container {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     &_icon {
         animation: weather-up 1s ease-out;
+    }
+
+    &_info {
+        margin-left: 6rem;
+        flex: 1;
     }
 
     &_svg {

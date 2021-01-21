@@ -4,7 +4,7 @@ import Header from './Header';
 const Layout: FC = ({ children }) => (
 	<>
 		<Header />
-		{children}
+		<main>{children}</main>
 	</>
 );
 

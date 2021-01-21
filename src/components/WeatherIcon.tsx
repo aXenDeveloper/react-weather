@@ -18,6 +18,8 @@ type selectCloudType = {
 };
 
 const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
+	const sliceTimeOfDay = weatherIcon.slice(-1);
+
 	const selectCloud = {
 		cloud1: {
 			rain: <Cloud getCloudColor={1} getRain />,
@@ -47,8 +49,7 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 
 	interface selectWeatherInterface {
 		[key: number]: {
-			d: JSX.Element;
-			n: JSX.Element;
+			[key: string]: JSX.Element;
 		};
 	}
 
@@ -293,7 +294,7 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 
 	return (
 		<div className="weather_icon">
-			<div className="weather_svg">{selectWeather[weatherID].d}</div>
+			<div className="weather_svg">{selectWeather[weatherID][sliceTimeOfDay]}</div>
 		</div>
 	);
 };

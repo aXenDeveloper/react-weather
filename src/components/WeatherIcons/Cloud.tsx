@@ -64,7 +64,7 @@ const TimeOfDayStyle = styled.div`
 			right: -40px;
 			transform: scale(0.6);
 		`}
-	z-index: 10;
+	z-index: 9;
 `;
 
 const Cloud: FC<CloudType> = ({ getRain, getCloudColor, getStorm, timeOfDay, getSnow, getTornado, getFog }) => (
