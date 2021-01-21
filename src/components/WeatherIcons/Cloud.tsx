@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled, { css } from 'styled-components';
-import CloudSVG from './SVG/CloudSVG';
+import CloudSVG from './CloudSVG';
 import Rain from './Rain';
 import Storm from './Storm';
 import Sun from './Sun';
@@ -10,8 +10,6 @@ import Tornado from './Tornado';
 import Fog from './Fog';
 
 type CloudType = {
-	left?: boolean;
-	right?: boolean;
 	getRain?: boolean;
 	getCloudColor?: 1 | 2 | 3;
 	getStorm?: boolean;
@@ -21,8 +19,13 @@ type CloudType = {
 	getFog?: boolean;
 };
 
+type cloudPosition = {
+	left?: boolean;
+	right?: boolean;
+};
+
 const CloudStyle = styled.div`
-	${({ left }: CloudType) =>
+	${({ left }: cloudPosition) =>
 		left &&
 		css`
 			position: absolute;
@@ -33,7 +36,7 @@ const CloudStyle = styled.div`
 			left: 0;
 		`}
 
-	${({ right }: CloudType) =>
+	${({ right }: cloudPosition) =>
 		right &&
 		css`
 			position: absolute;
@@ -64,28 +67,44 @@ const TimeOfDayStyle = styled.div`
 	z-index: 10;
 `;
 
-const Cloud: FC<CloudType> = ({ left, right, getRain, getCloudColor, getStorm, timeOfDay, getSnow, getTornado, getFog }) => (
-	<CloudStyle left={left} right={right} getCloudColor={getCloudColor}>
-		{!left && !right && timeOfDay === 'night' && (
-			<TimeOfDayStyle timeOfDay={timeOfDay}>
-				<Moon />
-			</TimeOfDayStyle>
-		)}
+const Cloud: FC<CloudType> = ({ getRain, getCloudColor, getStorm, timeOfDay, getSnow, getTornado, getFog }) => (
+	<>
+		<CloudStyle left>
+			<CloudSVG getCloudColor={getCloudColor} />
 
-		{!left && !right && timeOfDay === 'day' && (
-			<TimeOfDayStyle timeOfDay={timeOfDay}>
-				<Sun />
-			</TimeOfDayStyle>
-		)}
+			{getRain && <Rain />}
+			{getSnow && <Snow />}
+		</CloudStyle>
 
-		<CloudSVG getCloudColor={getCloudColor} />
+		<CloudStyle>
+			<CloudSVG getCloudColor={getCloudColor} />
 
-		{getRain && <Rain />}
-		{getStorm && <Storm />}
-		{getSnow && <Snow />}
-		{!left && !right && getTornado && <Tornado />}
-		{!left && !right && getFog && <Fog />}
-	</CloudStyle>
+			{timeOfDay === 'night' && (
+				<TimeOfDayStyle timeOfDay={timeOfDay}>
+					<Moon />
+				</TimeOfDayStyle>
+			)}
+			{timeOfDay === 'day' && (
+				<TimeOfDayStyle timeOfDay={timeOfDay}>
+					<Sun />
+				</TimeOfDayStyle>
+			)}
+
+			{getRain && <Rain />}
+			{getSnow && <Snow />}
+
+			{getStorm && <Storm />}
+			{getTornado && <Tornado />}
+			{getFog && <Fog />}
+		</CloudStyle>
+
+		<CloudStyle right>
+			<CloudSVG getCloudColor={getCloudColor} />
+
+			{getRain && <Rain />}
+			{getSnow && <Snow />}
+		</CloudStyle>
+	</>
 );
 
 export default Cloud;

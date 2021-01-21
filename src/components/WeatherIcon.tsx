@@ -8,816 +8,262 @@ type WeatherIconType = {
 	weatherIcon: string;
 };
 
+type selectCloudType = {
+	rain: JSX.Element;
+	storm: JSX.Element;
+	rainAndStorm: JSX.Element;
+	rainAndSnow: JSX.Element;
+	snow: JSX.Element;
+	fog: JSX.Element;
+};
+
 const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
-	const selectWeather = {
+	const selectCloud = {
+		cloud1: {
+			rain: <Cloud getCloudColor={1} getRain />,
+			rainAndStorm: <Cloud getCloudColor={1} getRain getStorm />,
+			rainAndSnow: <Cloud getCloudColor={1} getRain getSnow />,
+			storm: <Cloud getCloudColor={1} getStorm />,
+			snow: <Cloud getCloudColor={1} getSnow />,
+			fog: <Cloud getCloudColor={1} getFog />
+		} as selectCloudType,
+		cloud2: {
+			rain: <Cloud getCloudColor={2} getRain />,
+			rainAndStorm: <Cloud getCloudColor={2} getRain getStorm />,
+			rainAndSnow: <Cloud getCloudColor={2} getRain getSnow />,
+			storm: <Cloud getCloudColor={2} getStorm />,
+			snow: <Cloud getCloudColor={2} getSnow />,
+			fog: <Cloud getCloudColor={2} getFog />
+		} as selectCloudType,
+		cloud3: {
+			rain: <Cloud getCloudColor={3} getRain />,
+			rainAndStorm: <Cloud getCloudColor={3} getRain getStorm />,
+			rainAndSnow: <Cloud getCloudColor={3} getRain getSnow />,
+			storm: <Cloud getCloudColor={3} getStorm />,
+			snow: <Cloud getCloudColor={3} getSnow />,
+			fog: <Cloud getCloudColor={3} getFog />
+		} as selectCloudType
+	};
+
+	interface selectWeatherInterface {
+		[key: number]: {
+			d: JSX.Element;
+			n: JSX.Element;
+		};
+	}
+
+	const selectWeather: selectWeatherInterface = {
 		// Group 2xx: Thunderstorm
 		200: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getRain getStorm />
-					<Cloud getCloudColor={1} getRain getStorm />
-					<Cloud right getCloudColor={1} getRain getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getRain getStorm />
-					<Cloud getCloudColor={1} getRain getStorm />
-					<Cloud right getCloudColor={1} getRain getStorm />
-				</>
-			)
+			d: selectCloud.cloud1.rainAndStorm,
+			n: selectCloud.cloud1.rainAndStorm
 		},
 		201: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getRain getStorm />
-					<Cloud getCloudColor={2} getRain getStorm />
-					<Cloud right getCloudColor={2} getRain getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getRain getStorm />
-					<Cloud getCloudColor={2} getRain getStorm />
-					<Cloud right getCloudColor={2} getRain getStorm />
-				</>
-			)
+			d: selectCloud.cloud2.rainAndStorm,
+			n: selectCloud.cloud2.rainAndStorm
 		},
 		202: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain getStorm />
-					<Cloud getCloudColor={3} getRain getStorm />
-					<Cloud right getCloudColor={3} getRain getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain getStorm />
-					<Cloud getCloudColor={3} getRain getStorm />
-					<Cloud right getCloudColor={3} getRain getStorm />
-				</>
-			)
+			d: selectCloud.cloud3.rainAndStorm,
+			n: selectCloud.cloud3.rainAndStorm
 		},
+
 		210: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} timeOfDay="day" getStorm />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} timeOfDay="night" getStorm />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: <Cloud getCloudColor={1} timeOfDay="day" getStorm />,
+			n: <Cloud getCloudColor={1} timeOfDay="night" getStorm />
 		},
+
 		211: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getStorm />
-					<Cloud getCloudColor={1} getStorm />
-					<Cloud right getCloudColor={1} getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getStorm />
-					<Cloud getCloudColor={1} getStorm />
-					<Cloud right getCloudColor={1} getStorm />
-				</>
-			)
+			d: selectCloud.cloud1.storm,
+			n: selectCloud.cloud1.storm
 		},
 		212: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getStorm />
-					<Cloud getCloudColor={2} getStorm />
-					<Cloud right getCloudColor={2} getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getStorm />
-					<Cloud getCloudColor={2} getStorm />
-					<Cloud right getCloudColor={2} getStorm />
-				</>
-			)
+			d: selectCloud.cloud2.storm,
+			n: selectCloud.cloud2.storm
 		},
 		221: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getStorm />
-					<Cloud getCloudColor={3} getStorm />
-					<Cloud right getCloudColor={3} getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getStorm />
-					<Cloud getCloudColor={3} getStorm />
-					<Cloud right getCloudColor={3} getStorm />
-				</>
-			)
+			d: selectCloud.cloud3.storm,
+			n: selectCloud.cloud3.storm
 		},
 		230: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getRain getStorm />
-					<Cloud getCloudColor={1} getRain getStorm />
-					<Cloud right getCloudColor={1} getRain getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getRain getStorm />
-					<Cloud getCloudColor={1} getRain getStorm />
-					<Cloud right getCloudColor={1} getRain getStorm />
-				</>
-			)
+			d: selectCloud.cloud1.rainAndStorm,
+			n: selectCloud.cloud1.rainAndStorm
 		},
 		231: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getRain getStorm />
-					<Cloud getCloudColor={2} getRain getStorm />
-					<Cloud right getCloudColor={2} getRain getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getRain getStorm />
-					<Cloud getCloudColor={2} getRain getStorm />
-					<Cloud right getCloudColor={2} getRain getStorm />
-				</>
-			)
+			d: selectCloud.cloud2.rainAndStorm,
+			n: selectCloud.cloud2.rainAndStorm
 		},
 		232: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain getStorm />
-					<Cloud getCloudColor={3} getRain getStorm />
-					<Cloud right getCloudColor={3} getRain getStorm />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain getStorm />
-					<Cloud getCloudColor={3} getRain getStorm />
-					<Cloud right getCloudColor={3} getRain getStorm />
-				</>
-			)
+			d: selectCloud.cloud3.rainAndStorm,
+			n: selectCloud.cloud3.rainAndStorm
 		},
 
 		// Group 3xx: Drizzle
 		300: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			)
+			d: selectCloud.cloud1.rain,
+			n: selectCloud.cloud1.rain
 		},
 		301: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getRain />
-					<Cloud getCloudColor={2} getRain />
-					<Cloud right getCloudColor={2} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getRain />
-					<Cloud getCloudColor={2} getRain />
-					<Cloud right getCloudColor={2} getRain />
-				</>
-			)
+			d: selectCloud.cloud2.rain,
+			n: selectCloud.cloud2.rain
 		},
 		302: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: selectCloud.cloud3.rain,
+			n: selectCloud.cloud3.rain
 		},
 		310: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			)
+			d: selectCloud.cloud1.rain,
+			n: selectCloud.cloud1.rain
 		},
 		311: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getRain />
-					<Cloud getCloudColor={2} getRain />
-					<Cloud right getCloudColor={2} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getRain />
-					<Cloud getCloudColor={2} getRain />
-					<Cloud right getCloudColor={2} getRain />
-				</>
-			)
+			d: selectCloud.cloud2.rain,
+			n: selectCloud.cloud2.rain
 		},
 		312: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: selectCloud.cloud1.rain,
+			n: selectCloud.cloud1.rain
 		},
 		313: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: selectCloud.cloud1.rain,
+			n: selectCloud.cloud1.rain
 		},
 		314: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: selectCloud.cloud1.rain,
+			n: selectCloud.cloud1.rain
 		},
 		321: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: selectCloud.cloud1.rain,
+			n: selectCloud.cloud1.rain
 		},
 
 		// Group 5xx: Rain
 		500: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} timeOfDay="day" getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} timeOfDay="night" getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			)
+			d: <Cloud getCloudColor={1} timeOfDay="day" getRain />,
+			n: <Cloud getCloudColor={1} timeOfDay="night" getRain />
 		},
 		501: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} timeOfDay="day" getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} timeOfDay="night" getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			)
+			d: <Cloud getCloudColor={1} timeOfDay="day" getRain />,
+			n: <Cloud getCloudColor={1} timeOfDay="night" getRain />
 		},
 		502: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getRain />
-					<Cloud getCloudColor={2} timeOfDay="day" getRain />
-					<Cloud right getCloudColor={2} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getRain />
-					<Cloud getCloudColor={2} timeOfDay="night" getRain />
-					<Cloud right getCloudColor={2} getRain />
-				</>
-			)
+			d: <Cloud getCloudColor={2} timeOfDay="day" getRain />,
+			n: <Cloud getCloudColor={2} timeOfDay="night" getRain />
 		},
 		503: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} timeOfDay="day" getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} timeOfDay="night" getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: <Cloud getCloudColor={3} timeOfDay="day" getRain />,
+			n: <Cloud getCloudColor={3} timeOfDay="night" getRain />
 		},
 		504: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} timeOfDay="day" getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} timeOfDay="night" getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: <Cloud getCloudColor={3} timeOfDay="day" getRain />,
+			n: <Cloud getCloudColor={3} timeOfDay="night" getRain />
 		},
+
 		511: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getRain getSnow />
-					<Cloud getCloudColor={2} getRain getSnow />
-					<Cloud right getCloudColor={2} getRain getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getRain getSnow />
-					<Cloud getCloudColor={2} getRain getSnow />
-					<Cloud right getCloudColor={2} getRain getSnow />
-				</>
-			)
+			d: selectCloud.cloud2.rainAndSnow,
+			n: selectCloud.cloud2.rainAndSnow
 		},
 		520: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getRain />
-					<Cloud getCloudColor={1} getRain />
-					<Cloud right getCloudColor={1} getRain />
-				</>
-			)
+			d: selectCloud.cloud1.rain,
+			n: selectCloud.cloud1.rain
 		},
 		521: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getRain />
-					<Cloud getCloudColor={2} getRain />
-					<Cloud right getCloudColor={2} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getRain />
-					<Cloud getCloudColor={2} getRain />
-					<Cloud right getCloudColor={2} getRain />
-				</>
-			)
+			d: selectCloud.cloud2.rain,
+			n: selectCloud.cloud2.rain
 		},
 		522: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: selectCloud.cloud3.rain,
+			n: selectCloud.cloud3.rain
 		},
 		531: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getRain />
-					<Cloud getCloudColor={3} getRain />
-					<Cloud right getCloudColor={3} getRain />
-				</>
-			)
+			d: selectCloud.cloud3.rain,
+			n: selectCloud.cloud3.rain
 		},
 
 		// Group 6xx: Snow
 		600: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			)
+			d: selectCloud.cloud1.snow,
+			n: selectCloud.cloud1.snow
 		},
 		601: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getSnow />
-					<Cloud getCloudColor={2} getSnow />
-					<Cloud right getCloudColor={2} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getSnow />
-					<Cloud getCloudColor={2} getSnow />
-					<Cloud right getCloudColor={2} getSnow />
-				</>
-			)
+			d: selectCloud.cloud2.snow,
+			n: selectCloud.cloud2.snow
 		},
 		602: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getSnow />
-					<Cloud getCloudColor={3} getSnow />
-					<Cloud right getCloudColor={3} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getSnow />
-					<Cloud getCloudColor={3} getSnow />
-					<Cloud right getCloudColor={3} getSnow />
-				</>
-			)
+			d: selectCloud.cloud3.snow,
+			n: selectCloud.cloud3.snow
 		},
 		611: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} timeOfDay="day" getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} timeOfDay="night" getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			)
+			d: <Cloud getCloudColor={1} timeOfDay="day" getSnow />,
+			n: <Cloud getCloudColor={1} timeOfDay="night" getSnow />
 		},
 		612: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			)
+			d: selectCloud.cloud1.snow,
+			n: selectCloud.cloud1.snow
 		},
 		613: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getSnow />
-					<Cloud getCloudColor={2} getSnow />
-					<Cloud right getCloudColor={2} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			)
+			d: selectCloud.cloud2.snow,
+			n: selectCloud.cloud2.snow
 		},
 		615: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getSnow getRain />
-					<Cloud getCloudColor={1} getSnow getRain />
-					<Cloud right getCloudColor={1} getSnow getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getSnow getRain />
-					<Cloud getCloudColor={1} getSnow getRain />
-					<Cloud right getCloudColor={1} getSnow getRain />
-				</>
-			)
+			d: selectCloud.cloud1.rainAndSnow,
+			n: selectCloud.cloud1.rainAndSnow
 		},
 		616: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getSnow getRain />
-					<Cloud getCloudColor={2} getSnow getRain />
-					<Cloud right getCloudColor={2} getSnow getRain />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getSnow getRain />
-					<Cloud getCloudColor={2} getSnow getRain />
-					<Cloud right getCloudColor={2} getSnow getRain />
-				</>
-			)
+			d: selectCloud.cloud2.rainAndSnow,
+			n: selectCloud.cloud2.rainAndSnow
 		},
 		620: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} getSnow />
-					<Cloud getCloudColor={1} getSnow />
-					<Cloud right getCloudColor={1} getSnow />
-				</>
-			)
+			d: selectCloud.cloud1.snow,
+			n: selectCloud.cloud1.snow
 		},
 		621: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} getSnow />
-					<Cloud getCloudColor={2} getSnow />
-					<Cloud right getCloudColor={2} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} getSnow />
-					<Cloud getCloudColor={2} getSnow />
-					<Cloud right getCloudColor={2} getSnow />
-				</>
-			)
+			d: selectCloud.cloud2.snow,
+			n: selectCloud.cloud2.snow
 		},
 		622: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} getSnow />
-					<Cloud getCloudColor={3} getSnow />
-					<Cloud right getCloudColor={3} getSnow />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} getSnow />
-					<Cloud getCloudColor={3} getSnow />
-					<Cloud right getCloudColor={3} getSnow />
-				</>
-			)
+			d: selectCloud.cloud3.snow,
+			n: selectCloud.cloud3.snow
 		},
 
 		// Group 7xx: Atmosphere
 		701: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud1.fog,
+			n: selectCloud.cloud1.fog
 		},
 		711: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud2.fog,
+			n: selectCloud.cloud2.fog
 		},
 		721: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud2.fog,
+			n: selectCloud.cloud2.fog
 		},
 		731: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud2.fog,
+			n: selectCloud.cloud2.fog
 		},
 		741: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud1.fog,
+			n: selectCloud.cloud1.fog
 		},
 		751: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud2.fog,
+			n: selectCloud.cloud2.fog
 		},
 		761: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud2.fog,
+			n: selectCloud.cloud2.fog
 		},
 		762: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud3.fog,
+			n: selectCloud.cloud3.fog
 		},
 		771: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} getFog />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: selectCloud.cloud3.fog,
+			n: selectCloud.cloud3.fog
 		},
 		781: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} />
-					<Cloud getCloudColor={3} getTornado />
-					<Cloud right getCloudColor={3} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} />
-					<Cloud getCloudColor={3} getTornado />
-					<Cloud right getCloudColor={3} />
-				</>
-			)
+			d: <Cloud getCloudColor={3} getTornado />,
+			n: <Cloud getCloudColor={3} getTornado />
 		},
 
 		// Group 800: Clear
@@ -832,58 +278,22 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 			n: <Cloud getCloudColor={1} timeOfDay="night" />
 		},
 		802: {
-			d: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} timeOfDay="day" />
-					<Cloud right getCloudColor={1} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={1} />
-					<Cloud getCloudColor={1} timeOfDay="night" />
-					<Cloud right getCloudColor={1} />
-				</>
-			)
+			d: <Cloud getCloudColor={1} timeOfDay="day" />,
+			n: <Cloud getCloudColor={1} timeOfDay="night" />
 		},
 		803: {
-			d: (
-				<>
-					<Cloud left getCloudColor={2} />
-					<Cloud getCloudColor={2} />
-					<Cloud right getCloudColor={2} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={2} />
-					<Cloud getCloudColor={2} />
-					<Cloud right getCloudColor={2} />
-				</>
-			)
+			d: <Cloud getCloudColor={2} />,
+			n: <Cloud getCloudColor={2} />
 		},
 		804: {
-			d: (
-				<>
-					<Cloud left getCloudColor={3} />
-					<Cloud getCloudColor={3} />
-					<Cloud right getCloudColor={3} />
-				</>
-			),
-			n: (
-				<>
-					<Cloud left getCloudColor={3} />
-					<Cloud getCloudColor={3} />
-					<Cloud right getCloudColor={3} />
-				</>
-			)
+			d: <Cloud getCloudColor={3} />,
+			n: <Cloud getCloudColor={3} />
 		}
 	};
 
 	return (
 		<div className="weather_icon">
-			<div className="weather_svg">{selectWeather[701]['d']}</div>
+			<div className="weather_svg">{selectWeather[weatherID].d}</div>
 		</div>
 	);
 };
