@@ -144,3 +144,17 @@ $svgSize: 20rem;
         transform: translateX(0);
     }
 }
+
+@keyframes fog {
+    0% {
+        transform: translateX(-50px);
+    }
+
+    50% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(-50px);
+    }
+}

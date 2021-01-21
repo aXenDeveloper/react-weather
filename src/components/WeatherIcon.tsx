@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import Cloud from './WeatherIcons/Cloud';
 import Moon from './WeatherIcons/Moon';
 import Sun from './WeatherIcons/Sun';
@@ -529,9 +529,54 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 				</>
 			)
 		},
-		611: {},
-		612: {},
-		613: {},
+		611: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} getSnow />
+					<Cloud getCloudColor={1} timeOfDay="day" getSnow />
+					<Cloud right getCloudColor={1} getSnow />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} getSnow />
+					<Cloud getCloudColor={1} timeOfDay="night" getSnow />
+					<Cloud right getCloudColor={1} getSnow />
+				</>
+			)
+		},
+		612: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} getSnow />
+					<Cloud getCloudColor={1} getSnow />
+					<Cloud right getCloudColor={1} getSnow />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} getSnow />
+					<Cloud getCloudColor={1} getSnow />
+					<Cloud right getCloudColor={1} getSnow />
+				</>
+			)
+		},
+		613: {
+			d: (
+				<>
+					<Cloud left getCloudColor={2} getSnow />
+					<Cloud getCloudColor={2} getSnow />
+					<Cloud right getCloudColor={2} getSnow />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} getSnow />
+					<Cloud getCloudColor={1} getSnow />
+					<Cloud right getCloudColor={1} getSnow />
+				</>
+			)
+		},
 		615: {
 			d: (
 				<>
@@ -614,6 +659,167 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 		},
 
 		// Group 7xx: Atmosphere
+		701: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		711: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		721: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		731: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		741: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		751: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		761: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		762: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		771: {
+			d: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={1} />
+					<Cloud getCloudColor={1} getFog />
+					<Cloud right getCloudColor={1} />
+				</>
+			)
+		},
+		781: {
+			d: (
+				<>
+					<Cloud left getCloudColor={3} />
+					<Cloud getCloudColor={3} getTornado />
+					<Cloud right getCloudColor={3} />
+				</>
+			),
+			n: (
+				<>
+					<Cloud left getCloudColor={3} />
+					<Cloud getCloudColor={3} getTornado />
+					<Cloud right getCloudColor={3} />
+				</>
+			)
+		},
+
 		// Group 800: Clear
 		800: {
 			d: <Sun />,
@@ -625,7 +831,6 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 			d: <Cloud getCloudColor={1} timeOfDay="day" />,
 			n: <Cloud getCloudColor={1} timeOfDay="night" />
 		},
-
 		802: {
 			d: (
 				<>
@@ -642,7 +847,6 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 				</>
 			)
 		},
-
 		803: {
 			d: (
 				<>
@@ -659,7 +863,6 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 				</>
 			)
 		},
-
 		804: {
 			d: (
 				<>
@@ -680,7 +883,7 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 
 	return (
 		<div className="weather_icon">
-			<div className="weather_svg">{selectWeather[804]['d']}</div>
+			<div className="weather_svg">{selectWeather[701]['d']}</div>
 		</div>
 	);
 };
