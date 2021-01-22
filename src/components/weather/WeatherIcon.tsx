@@ -13,7 +13,7 @@ type selectCloudType = {
 };
 
 const WeatherIcon = () => {
-	const data = useDataWeather() as DataWeatherContextType;
+	const { data } = useDataWeather() as DataWeatherContextType;
 	const weatherID = data.weather[0].id;
 	const weatherIcon = data.weather[0].icon.slice(-1);
 

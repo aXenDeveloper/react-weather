@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
 import Loading from '../components/Loading';
@@ -12,16 +12,18 @@ const WeatherView: FC = () => {
 	const { lang } = useLang() as LangContextType;
 	const key = process.env.REACT_APP_KEY_API_WEATHER || '';
 
-	const api = async (city: string, key: string, lang: string) => {
+	const [getUnits, setUnits] = useState('metric');
+
+	const api = async (city: string, key: string, lang: string, getUnits: string) => {
 		const res = await fetch(
-			`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}&lang=${lang}`
+			`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${getUnits}&appid=${key}&lang=${lang}`
 		);
 		const data = await res.json();
 		console.log(data);
 		return data;
 	};
 
-	const { isLoading, data } = useQuery(['weatherMain', city, key, lang], () => api(city, key, lang), {
+	const { isLoading, data } = useQuery(['weatherMain', city, key, lang, getUnits], () => api(city, key, lang, getUnits), {
 		cacheTime: 0,
 		refetchOnMount: false,
 		refetchOnWindowFocus: false,
@@ -31,7 +33,7 @@ const WeatherView: FC = () => {
 	if (isLoading) return <Loading />;
 
 	return (
-		<DataWeatherContext.Provider value={data}>
+		<DataWeatherContext.Provider value={{ data, getUnits, setUnits }}>
 			<WeatherMain />
 		</DataWeatherContext.Provider>
 	);

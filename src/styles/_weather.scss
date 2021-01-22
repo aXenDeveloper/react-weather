@@ -29,11 +29,15 @@
     }
 
     &_temp {
-        font-size: 8rem;
         margin-left: 10rem;
-        display: flex;
         line-height: 1;
         font-weight: bold;
+        display: flex;
+        align-items: center;
+
+        &_main {
+            font-size: 8rem;
+        }
 
         @media screen and (max-width: 767px) {
             margin-left: 0;

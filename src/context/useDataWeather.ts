@@ -1,22 +1,25 @@
 import { createContext, useContext } from 'react';
 
 export type DataWeatherContextType = {
-	name: string;
-	weather: {
-		[key: number]: {
-			id: number;
-			icon: string;
-			description: string;
+	data: {
+		name: string;
+		weather: {
+			[key: number]: {
+				id: number;
+				icon: string;
+				description: string;
+			};
+		};
+		sys: {
+			country: string;
+		};
+		main: {
+			temp: string;
 		};
 	};
-	sys: {
-		country: string;
-	};
-	main: {
-		temp: string;
-	};
+	getUnits: string;
+	setUnits(e: string): void;
 };
-
-export const DataWeatherContext = createContext({});
+export const DataWeatherContext = createContext<DataWeatherContextType | {}>({});
 
 export const useDataWeather = () => useContext(DataWeatherContext);

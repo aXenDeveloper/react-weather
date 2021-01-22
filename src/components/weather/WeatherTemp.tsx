@@ -1,12 +1,13 @@
 import { DataWeatherContextType, useDataWeather } from '../../context/useDataWeather';
+import WeatherUnitsInput from './WeatherUnitsInput';
 
 const WeatherTemp = () => {
-	const dataWeather = useDataWeather() as DataWeatherContextType;
+	const { data } = useDataWeather() as DataWeatherContextType;
 
 	return (
 		<div className="weather_temp">
-			{dataWeather.main.temp}
-			<span>°C</span>
+			<span className="weather_temp_main">{data.main.temp}°</span>
+			<WeatherUnitsInput />
 		</div>
 	);
 };
