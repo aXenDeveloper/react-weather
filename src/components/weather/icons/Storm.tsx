@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 const StormSVG = styled.svg`
-	width: 155px;
-	height: 160px;
+	width: 100px;
+	height: 110px;
 	position: absolute;
-	bottom: -85px;
-	left: 95px;
+	bottom: 0;
+	left: 60px;
 	z-index: 11;
 	animation: thunderAnimation 2.5s linear infinite;
 

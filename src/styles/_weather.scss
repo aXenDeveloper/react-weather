@@ -2,26 +2,47 @@
     background-color: var(--theme-section-weather);
     color: var(--theme-section-weather-text);
     padding: 3rem 0;
-    height: 400px;
+    min-height: 50rem;
     overflow: hidden;
 
     .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 80rem;
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+
+    &_title {
+        font-size: 4rem;
+        margin: 0;
+        flex: 100%;
+        text-align: center;
     }
 
     &_icon {
         animation: weather-up 1s ease-out;
     }
 
-    &_info {
-        margin-left: 6rem;
-        flex: 1;
+    &_temp {
+        font-size: 8rem;
+        margin-left: 10rem;
+        display: flex;
+        line-height: 1;
+        font-weight: bold;
+
+        @media screen and (max-width: 767px) {
+            margin-left: 0;
+        }
     }
 
     &_svg {
-        transform: scale(0.6);
+        transform: scale(0.9);
+        height: 300px;
 
         &_cloud {
             position: relative;

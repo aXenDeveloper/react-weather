@@ -1,7 +1,7 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const Form: FC = () => {
+const Form = () => {
 	const history = useHistory();
 
 	const [inputCity, setInputCity] = useState('');

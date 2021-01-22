@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SunStyle = styled.svg`
-	width: 340px;
+	width: 290px;
 	animation: sunRotate 10s linear infinite;
 
 	g {

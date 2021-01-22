@@ -2,8 +2,8 @@ import { FC } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
 import Loading from '../components/Loading';
-import WeatherIcon from '../components/WeatherIcon';
-import WeatherInfo from '../components/WeatherInfo';
+import WeatherMain from '../components/weather/WeatherMain';
+import { DataWeatherContext } from '../context/useDataWeather';
 import { LangContextType, useLang } from '../context/useLang';
 
 const WeatherView: FC = () => {
@@ -21,7 +21,7 @@ const WeatherView: FC = () => {
 		return data;
 	};
 
-	const { isLoading, data } = useQuery(['weatherMain', city, key, lang], context => api(city, key, lang), {
+	const { isLoading, data } = useQuery(['weatherMain', city, key, lang], () => api(city, key, lang), {
 		cacheTime: 0,
 		refetchOnMount: false,
 		refetchOnWindowFocus: false,
@@ -31,18 +31,9 @@ const WeatherView: FC = () => {
 	if (isLoading) return <Loading />;
 
 	return (
-		<div>
-			<section className="weather">
-				<div className="container">
-					<WeatherIcon weatherID={data.weather[0].id} weatherIcon={data.weather[0].icon} />
-
-					<WeatherInfo city={data.name} />
-				</div>
-			</section>
-			<h1>
-				WeatherView {data.name} {data.main.temp}
-			</h1>
-		</div>
+		<DataWeatherContext.Provider value={data}>
+			<WeatherMain />
+		</DataWeatherContext.Provider>
 	);
 };
 

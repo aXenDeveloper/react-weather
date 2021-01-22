@@ -1,12 +1,7 @@
-import React, { FC } from 'react';
-import Cloud from './WeatherIcons/Cloud';
-import Moon from './WeatherIcons/Moon';
-import Sun from './WeatherIcons/Sun';
-
-type WeatherIconType = {
-	weatherID: number;
-	weatherIcon: string;
-};
+import { DataWeatherContextType, useDataWeather } from '../../context/useDataWeather';
+import Cloud from './icons/Cloud';
+import Moon from './icons/Moon';
+import Sun from './icons/Sun';
 
 type selectCloudType = {
 	rain: JSX.Element;
@@ -17,8 +12,10 @@ type selectCloudType = {
 	fog: JSX.Element;
 };
 
-const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
-	const sliceTimeOfDay = weatherIcon.slice(-1);
+const WeatherIcon = () => {
+	const data = useDataWeather() as DataWeatherContextType;
+	const weatherID = data.weather[0].id;
+	const weatherIcon = data.weather[0].icon.slice(-1);
 
 	const selectCloud = {
 		cloud1: {
@@ -128,12 +125,12 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 			n: selectCloud.cloud1.rain
 		},
 		314: {
-			d: selectCloud.cloud1.rain,
-			n: selectCloud.cloud1.rain
+			d: selectCloud.cloud2.rain,
+			n: selectCloud.cloud2.rain
 		},
 		321: {
-			d: selectCloud.cloud1.rain,
-			n: selectCloud.cloud1.rain
+			d: selectCloud.cloud3.rain,
+			n: selectCloud.cloud3.rain
 		},
 
 		// Group 5xx: Rain
@@ -294,7 +291,7 @@ const WeatherIcon: FC<WeatherIconType> = ({ weatherID, weatherIcon }) => {
 
 	return (
 		<div className="weather_icon">
-			<div className="weather_svg">{selectWeather[weatherID][sliceTimeOfDay]}</div>
+			<div className="weather_svg">{selectWeather[weatherID][weatherIcon]}</div>
 		</div>
 	);
 };

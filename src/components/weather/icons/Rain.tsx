@@ -4,7 +4,7 @@ const RainStyle = styled.div`
 	position: absolute;
 	display: flex;
 	justify-content: space-around;
-	bottom: 0;
+	bottom: 90px;
 	left: 0;
 	right: 0;
 

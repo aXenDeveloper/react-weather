@@ -53,16 +53,16 @@ const TimeOfDayStyle = styled.div`
 	${({ timeOfDay }: CloudType) =>
 		timeOfDay === 'day' &&
 		css`
-			top: -110px;
-			right: -30px;
-			transform: scale(0.8);
+			top: -50px;
+			right: -50px;
+			transform: scale(0.7);
 		`}
 	${({ timeOfDay }: CloudType) =>
 		timeOfDay === 'night' &&
 		css`
-			top: -150px;
-			right: -40px;
-			transform: scale(0.6);
+			top: -80px;
+			right: -70px;
+			transform: scale(0.5);
 		`}
 	z-index: 9;
 `;
