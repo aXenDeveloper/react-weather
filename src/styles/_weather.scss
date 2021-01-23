@@ -10,7 +10,6 @@
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        max-width: 80rem;
 
         @media screen and (max-width: 767px) {
             flex-direction: column;
@@ -51,6 +50,11 @@
         &_feelsLike {
             font-size: 2rem;
             font-weight: bold;
+        }
+
+        &_minMax {
+            font-size: 1.8rem;
+            font-style: italic;
         }
 
         @media screen and (max-width: 767px) {

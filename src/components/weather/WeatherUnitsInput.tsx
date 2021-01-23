@@ -40,7 +40,7 @@ const WeatherUnitsInput = () => {
 					onChange={() => setUnits('metric')}
 					checked={getUnits === 'metric'}
 				/>
-				<span>C</span>
+				<span>°C</span>
 			</label>
 
 			<label>
@@ -50,7 +50,7 @@ const WeatherUnitsInput = () => {
 					checked={getUnits === 'imperial'}
 					onChange={() => setUnits('imperial')}
 				/>
-				<span>F</span>
+				<span>°F</span>
 			</label>
 		</WeatherUnitsInputStyle>
 	);
