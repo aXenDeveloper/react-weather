@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Form from './Form';
+import SearchForm from './SearchForm';
 import ChangeLang from './ChangeLang';
 
 const HeaderStyle = styled.header`
@@ -9,7 +9,7 @@ const HeaderStyle = styled.header`
 const Header = () => (
 	<HeaderStyle>
 		<div className="container flex flex-ai:center flex-jc:center">
-			<Form />
+			<SearchForm />
 
 			<div>
 				<ChangeLang />

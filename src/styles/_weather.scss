@@ -30,22 +30,27 @@
 
     &_temp {
         margin-left: 10rem;
-        line-height: 1;
-        font-weight: bold;
+        text-align: center;
 
         &_main {
             display: flex;
             align-items: center;
+            line-height: 1;
             font-size: 8rem;
+            font-weight: bold;
         }
 
         &_desc {
-            text-align: center;
             font-size: 1.8rem;
 
             &::first-letter {
                 text-transform: uppercase;
             }
+        }
+
+        &_feelsLike {
+            font-size: 2rem;
+            font-weight: bold;
         }
 
         @media screen and (max-width: 767px) {

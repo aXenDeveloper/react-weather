@@ -1,3 +1,4 @@
 {
-    "Welcome to React": "Witaj w React i react-i18next"
+    "Welcome to React": "Witaj w React i react-i18next",
+    "weather_feels_like": "Odczuwalna"
 }

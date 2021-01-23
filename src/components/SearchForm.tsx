@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const Form = () => {
+const SearchForm = () => {
 	const history = useHistory();
 
 	const [inputCity, setInputCity] = useState('');
@@ -15,8 +15,9 @@ const Form = () => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<input type="text" placeholder="City" onChange={handleInputCity} value={inputCity} />
+			<button type="submit">Search</button>
 		</form>
 	);
 };
 
-export default Form;
+export default SearchForm;

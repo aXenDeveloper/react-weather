@@ -15,6 +15,7 @@ export type DataWeatherContextType = {
 		};
 		main: {
 			temp: number;
+			feels_like: number;
 		};
 	};
 	getUnits: string;
