@@ -11,6 +11,8 @@ const WeatherUnitsInputStyle = styled.div`
 		margin-left: 1rem;
 		cursor: pointer;
 		padding: 1rem;
+		text-align: center;
+		border-radius: 1rem;
 
 		input {
 			display: none;

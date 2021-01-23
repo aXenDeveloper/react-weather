@@ -14,7 +14,7 @@ export type DataWeatherContextType = {
 			country: string;
 		};
 		main: {
-			temp: string;
+			temp: number;
 		};
 	};
 	getUnits: string;

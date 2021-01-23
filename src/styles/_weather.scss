@@ -32,11 +32,20 @@
         margin-left: 10rem;
         line-height: 1;
         font-weight: bold;
-        display: flex;
-        align-items: center;
 
         &_main {
+            display: flex;
+            align-items: center;
             font-size: 8rem;
+        }
+
+        &_desc {
+            text-align: center;
+            font-size: 1.8rem;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
         }
 
         @media screen and (max-width: 767px) {
