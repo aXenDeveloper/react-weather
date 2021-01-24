@@ -9,7 +9,7 @@ const WeatherTemp = () => {
 
 	const convertTemp = (temp: number, degrees: boolean = false) => {
 		const selectUnits = `°${getUnits === 'metric' ? 'C' : 'F'}`;
-		return `${Math.round(temp * 10) / 10} ${degrees ? selectUnits : ''}`;
+		return `${Math.round(temp * 10) / 10}${degrees ? selectUnits : ''}`;
 	};
 
 	const temperature = convertTemp(data.main.temp);

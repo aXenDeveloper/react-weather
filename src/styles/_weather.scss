@@ -37,6 +37,7 @@
             line-height: 1;
             font-size: 8rem;
             font-weight: bold;
+            justify-content: center;
         }
 
         &_desc {
@@ -80,6 +81,14 @@
                 left: 0;
                 top: 0;
             }
+        }
+    }
+
+    &_info {
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+            grid-gap: 1rem;
         }
     }
 }

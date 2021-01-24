@@ -2,6 +2,7 @@ import { FC, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
 import Loading from '../components/Loading';
+import WeatherInfo from '../components/weather/WeatherInfo';
 import WeatherMain from '../components/weather/WeatherMain';
 import { DataWeatherContext } from '../context/useDataWeather';
 import { LangContextType, useLang } from '../context/useLang';
@@ -35,6 +36,7 @@ const WeatherView: FC = () => {
 	return (
 		<DataWeatherContext.Provider value={{ data, getUnits, setUnits }}>
 			<WeatherMain />
+			<WeatherInfo />
 		</DataWeatherContext.Provider>
 	);
 };

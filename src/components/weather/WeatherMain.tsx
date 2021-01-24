@@ -6,7 +6,7 @@ const WeatherMain = () => {
 	const { data } = useDataWeather() as DataWeatherContextType;
 
 	return (
-		<div className="weather">
+		<section className="weather">
 			<div className="container">
 				<h1 className="weather_title">
 					{data.name}, {data.sys.country}
@@ -16,7 +16,7 @@ const WeatherMain = () => {
 
 				<WeatherTemp />
 			</div>
-		</div>
+		</section>
 	);
 };
 

@@ -23,3 +23,11 @@
         }
     }
 }
+
+.padding {
+    padding: 2rem;
+
+    &\:half {
+        padding: 1rem;
+    }
+}

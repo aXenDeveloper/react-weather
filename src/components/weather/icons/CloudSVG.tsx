@@ -6,7 +6,7 @@ type CloudSVGType = {
 };
 
 const CloudSVGStyle = styled.svg`
-	width: 100%;
+	width: 300px;
 	position: relative;
 	z-index: 10;
 

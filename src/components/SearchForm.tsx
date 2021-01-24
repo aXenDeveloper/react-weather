@@ -7,7 +7,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 const SearchFormStyle = styled.form`
 	background-color: rgba(0, 0, 0, 0.2);
 	position: relative;
-	color: #fff;
+	color: #ececec;
 	border-radius: 5rem;
 	outline: 0;
 
