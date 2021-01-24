@@ -1,39 +1,4 @@
-import styled from 'styled-components';
-
-const TornadoStyle = styled.svg`
-	width: 100%;
-	height: 240px;
-	position: absolute;
-	bottom: -120px;
-	left: 0;
-	z-index: 11;
-
-	path {
-		fill: #ddd;
-		/*animation-name: translateTornado1;
-		animation-iteration-count: infinite;
-		animation-direction: alternate;
-		animation-timing-function: ease-in-out;
-		animation-duration: 12s; */
-		animation: translateTornado1 10s ease-in-out infinite;
-
-		&:nth-child(2) {
-			animation-name: translateTornado2;
-		}
-		&:nth-child(3) {
-			animation-name: translateTornado3;
-		}
-		&:nth-child(4) {
-			animation-name: translateTornado4;
-		}
-		&:nth-child(5) {
-			animation-name: translateTornado5;
-		}
-		&:nth-child(6) {
-			animation-name: translateTornado6;
-		}
-	}
-`;
+import { TornadoStyle } from '../../../styles/components/weatherIcons/TornadoStyle';
 
 const Tornado = () => (
 	<TornadoStyle xmlns="http://www.w3.org/2000/svg" viewBox="15 15 70 70">

@@ -1,32 +1,6 @@
-import styled from 'styled-components';
-import { DataWeatherContextType, useDataWeather } from '../../context/useDataWeather';
-
-const WeatherUnitsInputStyle = styled.div`
-	display: flex;
-	flex-direction: column;
-	font-size: 3rem;
-	justify-content: space-between;
-
-	label {
-		margin-left: 1rem;
-		cursor: pointer;
-		padding: 1rem;
-		text-align: center;
-		border-radius: 1rem;
-
-		input {
-			display: none;
-
-			&:not(:checked) + span {
-				opacity: 0.5;
-			}
-		}
-
-		&:hover {
-			background-color: rgba(0, 0, 0, 0.15);
-		}
-	}
-`;
+import { useDataWeather } from '../../context/useDataWeather';
+import { DataWeatherContextType } from '../../types/contextTypes';
+import { WeatherUnitsInputStyle } from '../../styles/components/Weather';
 
 const WeatherUnitsInput = () => {
 	const { getUnits, setUnits } = useDataWeather() as DataWeatherContextType;

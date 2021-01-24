@@ -1,10 +1,7 @@
 import { FC } from 'react';
-import { useDataWeather, DataWeatherContextType } from '../../context/useDataWeather';
-
-type ConvertTempType = {
-	temp: number;
-	degrees?: boolean;
-};
+import { useDataWeather } from '../../context/useDataWeather';
+import { DataWeatherContextType } from '../../types/contextTypes';
+import { ConvertTempType } from '../../types/weatherTypes';
 
 export const ConvertTemp: FC<ConvertTempType> = ({ temp, degrees }) => {
 	const { getUnits } = useDataWeather() as DataWeatherContextType;

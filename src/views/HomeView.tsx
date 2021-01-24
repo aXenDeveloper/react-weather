@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const HomeView: FC = () => {
+const HomeView = () => {
 	const { t } = useTranslation();
 
 	return (

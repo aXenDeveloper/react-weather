@@ -1,7 +1,8 @@
 import WeatherInfoBox from './WeatherInfoBox';
-import { DataWeatherContextType, useDataWeather } from '../../context/useDataWeather';
+import { useDataWeather } from '../../context/useDataWeather';
+import { DataWeatherContextType } from '../../types/contextTypes';
 import { faThermometer, faLevelDownAlt, faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons';
-import { ConvertSpeed, ConvertTemp } from './convertUnits';
+import { ConvertSpeed, ConvertTemp } from './ConvertUnits';
 import { useTranslation } from 'react-i18next';
 
 const WeatherInfo = () => {

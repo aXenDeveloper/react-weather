@@ -1,10 +1,6 @@
-import styled from 'styled-components';
 import SearchForm from './SearchForm';
 import ChangeLang from './ChangeLang';
-
-const HeaderStyle = styled.header`
-	padding: 2rem 0;
-`;
+import { HeaderStyle } from '../styles/components/HeaderStyle';
 
 const Header = () => (
 	<HeaderStyle>

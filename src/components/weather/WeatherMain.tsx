@@ -1,4 +1,5 @@
-import { DataWeatherContextType, useDataWeather } from '../../context/useDataWeather';
+import { useDataWeather } from '../../context/useDataWeather';
+import { DataWeatherContextType } from '../../types/contextTypes';
 import WeatherIcon from './WeatherIcon';
 import WeatherTemp from './WeatherTemp';
 

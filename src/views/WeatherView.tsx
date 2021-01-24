@@ -1,13 +1,14 @@
-import { FC, useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
 import Loading from '../components/Loading';
 import WeatherInfo from '../components/weather/WeatherInfo';
 import WeatherMain from '../components/weather/WeatherMain';
 import { DataWeatherContext } from '../context/useDataWeather';
-import { LangContextType, useLang } from '../context/useLang';
+import { useLang } from '../context/useLang';
+import { LangContextType } from '../types/contextTypes';
 
-const WeatherView: FC = () => {
+const WeatherView = () => {
 	const { pathname } = useLocation();
 	const city = pathname.substr(1);
 	const { lang } = useLang() as LangContextType;

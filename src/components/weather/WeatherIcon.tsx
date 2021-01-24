@@ -1,16 +1,9 @@
-import { DataWeatherContextType, useDataWeather } from '../../context/useDataWeather';
+import { useDataWeather } from '../../context/useDataWeather';
+import { DataWeatherContextType } from '../../types/contextTypes';
+import { SelectCloudType } from '../../types/weatherTypes';
 import Cloud from './icons/Cloud';
 import Moon from './icons/Moon';
 import Sun from './icons/Sun';
-
-type selectCloudType = {
-	rain: JSX.Element;
-	storm: JSX.Element;
-	rainAndStorm: JSX.Element;
-	rainAndSnow: JSX.Element;
-	snow: JSX.Element;
-	fog: JSX.Element;
-};
 
 const WeatherIcon = () => {
 	const { data } = useDataWeather() as DataWeatherContextType;
@@ -25,7 +18,7 @@ const WeatherIcon = () => {
 			storm: <Cloud getCloudColor={1} getStorm />,
 			snow: <Cloud getCloudColor={1} getSnow />,
 			fog: <Cloud getCloudColor={1} getFog />
-		} as selectCloudType,
+		} as SelectCloudType,
 		cloud2: {
 			rain: <Cloud getCloudColor={2} getRain />,
 			rainAndStorm: <Cloud getCloudColor={2} getRain getStorm />,
@@ -33,7 +26,7 @@ const WeatherIcon = () => {
 			storm: <Cloud getCloudColor={2} getStorm />,
 			snow: <Cloud getCloudColor={2} getSnow />,
 			fog: <Cloud getCloudColor={2} getFog />
-		} as selectCloudType,
+		} as SelectCloudType,
 		cloud3: {
 			rain: <Cloud getCloudColor={3} getRain />,
 			rainAndStorm: <Cloud getCloudColor={3} getRain getStorm />,
@@ -41,7 +34,7 @@ const WeatherIcon = () => {
 			storm: <Cloud getCloudColor={3} getStorm />,
 			snow: <Cloud getCloudColor={3} getSnow />,
 			fog: <Cloud getCloudColor={3} getFog />
-		} as selectCloudType
+		} as SelectCloudType
 	};
 
 	interface selectWeatherInterface {

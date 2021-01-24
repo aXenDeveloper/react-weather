@@ -1,13 +1,4 @@
-import styled from 'styled-components';
-
-const SunStyle = styled.svg`
-	width: 290px;
-	animation: sunRotate 10s linear infinite;
-
-	g {
-		fill: #fdd020;
-	}
-`;
+import { SunStyle } from '../../../styles/components/weatherIcons/SunStyle';
 
 const Sun = () => {
 	return (
