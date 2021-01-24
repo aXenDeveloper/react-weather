@@ -20,6 +20,10 @@ export type DataWeatherContextType = {
 			temp_max: number;
 			pressure: number;
 		};
+		wind: {
+			deg: number;
+			speed: number;
+		};
 	};
 	getUnits: string;
 	setUnits(e: string): void;

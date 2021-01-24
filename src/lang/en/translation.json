@@ -1,5 +1,6 @@
 {
     "Welcome to React": "Welcome to React and react-i18next",
     "weather_feels_like": "Feels like",
-    "weather_pressure": "Pressure"
+    "weather_pressure": "Pressure",
+    "weather_wind": "Wind"
 }

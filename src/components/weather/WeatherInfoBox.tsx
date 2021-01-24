@@ -10,29 +10,49 @@ const WeatherInfoBoxStyled = styled.div`
 	display: flex;
 	align-items: center;
 
-	svg {
-		font-size: 3rem;
-		color: var(--theme-background);
-		margin-right: 1rem;
-	}
-
 	h3 {
 		margin: 0;
+		font-size: 2rem;
 	}
 
 	p {
 		margin: 0;
+		font-size: 1.6rem;
 	}
 `;
+
+const WeatherInfoBoxSVG = styled.div(
+	({ direction }: { direction?: number }) => `
+		width: 5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 3rem;
+		color: var(--theme-background);
+		margin-right: 1rem;
+
+		${
+			direction &&
+			`
+				svg {
+					transform: rotate(${direction}deg);
+				}
+			`
+		}
+	`
+);
 
 type WeatherInfoBoxType = {
 	title(t: string): string;
 	icon: IconDefinition;
+	rotate?: number;
 };
 
-const WeatherInfoBox: FC<WeatherInfoBoxType> = ({ children, title, icon }) => (
+const WeatherInfoBox: FC<WeatherInfoBoxType> = ({ children, title, icon, rotate }) => (
 	<WeatherInfoBoxStyled>
-		<FontAwesomeIcon icon={icon} />
+		<WeatherInfoBoxSVG direction={rotate}>
+			<FontAwesomeIcon icon={icon} />
+		</WeatherInfoBoxSVG>
 
 		<div>
 			<h3>{title}</h3>

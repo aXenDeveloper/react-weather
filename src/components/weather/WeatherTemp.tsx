@@ -1,5 +1,5 @@
 import { DataWeatherContextType, useDataWeather } from '../../context/useDataWeather';
-import ConvertTemp from './ConvertTemp';
+import { ConvertTemp } from './convertUnits';
 import WeatherUnitsInput from './WeatherUnitsInput';
 
 const WeatherTemp = () => {
