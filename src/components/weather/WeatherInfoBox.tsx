@@ -2,7 +2,6 @@ import { FC } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { useTranslation } from 'react-i18next';
 
 const WeatherInfoBoxStyled = styled.div`
 	background-color: #fff;
@@ -27,22 +26,19 @@ const WeatherInfoBoxStyled = styled.div`
 `;
 
 type WeatherInfoBoxType = {
+	title(t: string): string;
 	icon: IconDefinition;
 };
 
-const WeatherInfoBox: FC<WeatherInfoBoxType> = ({ children, icon }) => {
-	const { t } = useTranslation();
+const WeatherInfoBox: FC<WeatherInfoBoxType> = ({ children, title, icon }) => (
+	<WeatherInfoBoxStyled>
+		<FontAwesomeIcon icon={icon} />
 
-	return (
-		<WeatherInfoBoxStyled>
-			<FontAwesomeIcon icon={icon} />
-
-			<div>
-				<h3>{t('weather_feels_like')}</h3>
-				<p>{children}</p>
-			</div>
-		</WeatherInfoBoxStyled>
-	);
-};
+		<div>
+			<h3>{title}</h3>
+			<p>{children}</p>
+		</div>
+	</WeatherInfoBoxStyled>
+);
 
 export default WeatherInfoBox;
