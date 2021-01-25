@@ -65,3 +65,7 @@ export const WeatherUnitsInputStyle = styled.div`
 		}
 	}
 `;
+
+export const FlagsStyle = styled.img`
+	width: 40px;
+`;
