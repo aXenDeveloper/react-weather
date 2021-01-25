@@ -1,7 +1,7 @@
 import WeatherInfoBox from './WeatherInfoBox';
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
-import { faThermometer, faLevelDownAlt, faLongArrowAltUp } from '@fortawesome/free-solid-svg-icons';
+import { faThermometer, faLevelDownAlt, faLongArrowAltUp, faCloud } from '@fortawesome/free-solid-svg-icons';
 import { ConvertSpeed, ConvertTemp } from './ConvertUnits';
 import { useTranslation } from 'react-i18next';
 
@@ -22,6 +22,10 @@ const WeatherInfo = () => {
 
 				<WeatherInfoBox title={t('weather_wind')} icon={faLongArrowAltUp} rotate={data.wind.deg}>
 					<ConvertSpeed speed={data.wind.speed} />
+				</WeatherInfoBox>
+
+				<WeatherInfoBox title={t('weather_cloudiness')} icon={faCloud}>
+					{data.clouds.all}%
 				</WeatherInfoBox>
 			</div>
 		</section>

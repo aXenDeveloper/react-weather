@@ -1,6 +1,7 @@
 export type DataWeatherContextType = {
 	data: {
 		name: string;
+
 		weather: {
 			[key: number]: {
 				id: number;
@@ -8,9 +9,11 @@ export type DataWeatherContextType = {
 				description: string;
 			};
 		};
+
 		sys: {
 			country: string;
 		};
+
 		main: {
 			temp: number;
 			feels_like: number;
@@ -18,9 +21,14 @@ export type DataWeatherContextType = {
 			temp_max: number;
 			pressure: number;
 		};
+
 		wind: {
 			deg: number;
 			speed: number;
+		};
+
+		clouds: {
+			all: number;
 		};
 	};
 	getUnits: string;

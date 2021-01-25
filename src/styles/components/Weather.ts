@@ -9,7 +9,6 @@ export const WeatherInfoBoxStyled = styled.div`
 
 	h3 {
 		margin: 0;
-		font-size: 2rem;
 	}
 
 	p {
