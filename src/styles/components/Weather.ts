@@ -1,42 +1,10 @@
 import styled from 'styled-components';
 
-export const WeatherInfoBoxStyled = styled.div`
-	background-color: #fff;
-	border-radius: var(--border-radius);
-	padding: 1.5rem;
-	display: flex;
-	align-items: center;
-
-	h3 {
-		margin: 0;
-	}
-
-	p {
-		margin: 0;
-		font-size: 1.6rem;
-	}
+export const WeatherInfoContainerStyled = styled.div`
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	grid-gap: 1rem;
 `;
-
-export const WeatherInfoBoxSVG = styled.div(
-	({ direction }: { direction?: number }) => `
-		width: 5rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 3rem;
-		color: var(--theme-background);
-		margin-right: 1rem;
-
-		${
-			direction &&
-			`
-				svg {
-					transform: rotate(${direction}deg);
-				}
-			`
-		}
-	`
-);
 
 export const WeatherUnitsInputStyle = styled.div`
 	display: flex;

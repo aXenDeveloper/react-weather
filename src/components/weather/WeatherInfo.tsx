@@ -1,9 +1,11 @@
 import WeatherInfoBox from './WeatherInfoBox';
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
-import { faThermometer, faLevelDownAlt, faLongArrowAltUp, faCloud } from '@fortawesome/free-solid-svg-icons';
+import { faLevelDownAlt, faLongArrowAltUp, faCloud, faThermometerHalf } from '@fortawesome/free-solid-svg-icons';
 import { ConvertSpeed, ConvertTemp } from './ConvertUnits';
 import { useTranslation } from 'react-i18next';
+import { WeatherInfoContainerStyled } from '../../styles/components/Weather';
+import WeatherLastUpdate from './WeatherLastUpdate';
 
 const WeatherInfo = () => {
 	const { data } = useDataWeather() as DataWeatherContextType;
@@ -12,21 +14,25 @@ const WeatherInfo = () => {
 	return (
 		<section className="weather_info">
 			<div className="container">
-				<WeatherInfoBox title={t('weather_feels_like')} icon={faThermometer}>
-					<ConvertTemp temp={data.main.feels_like} degrees={true} />
-				</WeatherInfoBox>
+				<WeatherInfoContainerStyled>
+					<WeatherInfoBox title={t('feels_like')} icon={faThermometerHalf}>
+						<ConvertTemp temp={data.main.feels_like} degrees={true} />
+					</WeatherInfoBox>
 
-				<WeatherInfoBox title={t('weather_pressure')} icon={faLevelDownAlt}>
-					{data.main.pressure} hPa
-				</WeatherInfoBox>
+					<WeatherInfoBox title={t('pressure')} icon={faLevelDownAlt}>
+						{data.main.pressure} hPa
+					</WeatherInfoBox>
 
-				<WeatherInfoBox title={t('weather_wind')} icon={faLongArrowAltUp} rotate={data.wind.deg}>
-					<ConvertSpeed speed={data.wind.speed} />
-				</WeatherInfoBox>
+					<WeatherInfoBox title={t('wind')} icon={faLongArrowAltUp} rotate={data.wind.deg}>
+						<ConvertSpeed speed={data.wind.speed} />
+					</WeatherInfoBox>
 
-				<WeatherInfoBox title={t('weather_cloudiness')} icon={faCloud}>
-					{data.clouds.all}%
-				</WeatherInfoBox>
+					<WeatherInfoBox title={t('cloudiness')} icon={faCloud}>
+						{data.clouds.all}%
+					</WeatherInfoBox>
+				</WeatherInfoContainerStyled>
+
+				<WeatherLastUpdate />
 			</div>
 		</section>
 	);

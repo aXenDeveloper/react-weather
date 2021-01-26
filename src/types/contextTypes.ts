@@ -30,6 +30,8 @@ export type DataWeatherContextType = {
 		clouds: {
 			all: number;
 		};
+
+		dt: number;
 	};
 	getUnits: string;
 	setUnits(e: string): void;

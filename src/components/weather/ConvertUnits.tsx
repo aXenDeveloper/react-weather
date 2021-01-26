@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
-import { ConvertTempType } from '../../types/weatherTypes';
+import { ConvertTempType, ConvertSpeedType } from '../../types/weatherTypes';
 
 export const ConvertTemp: FC<ConvertTempType> = ({ temp, degrees }) => {
 	const { getUnits } = useDataWeather() as DataWeatherContextType;
@@ -15,10 +15,6 @@ export const ConvertTemp: FC<ConvertTempType> = ({ temp, degrees }) => {
 			{degrees && getDegreesTemp}
 		</span>
 	);
-};
-
-type ConvertSpeedType = {
-	speed: number;
 };
 
 export const ConvertSpeed: FC<ConvertSpeedType> = ({ speed }) => {

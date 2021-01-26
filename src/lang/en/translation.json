@@ -1,8 +1,9 @@
 {
     "Welcome to React": "Welcome to React and react-i18next",
-    "weather_feels_like": "Feels like",
-    "weather_pressure": "Pressure",
-    "weather_wind": "Wind",
-    "weather_flag": "Flag",
-    "weather_cloudiness": "Cloudiness"
+    "feels_like": "Feels like",
+    "pressure": "Pressure",
+    "wind": "Wind",
+    "flag": "Flag",
+    "cloudiness": "Cloudiness",
+    "last_upadte": "Last update"
 }

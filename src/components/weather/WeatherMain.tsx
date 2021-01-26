@@ -15,7 +15,6 @@ const WeatherMain = () => {
 				</h1>
 
 				<WeatherIcon />
-
 				<WeatherTemp />
 			</div>
 		</section>

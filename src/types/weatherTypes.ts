@@ -5,6 +5,10 @@ export type ConvertTempType = {
 	degrees?: boolean;
 };
 
+export type ConvertSpeedType = {
+	speed: number;
+};
+
 export type SelectCloudType = {
 	rain: JSX.Element;
 	storm: JSX.Element;

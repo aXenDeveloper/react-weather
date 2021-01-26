@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { WeatherInfoBoxSVG, WeatherInfoBoxStyled } from '../../styles/components/Weather';
+import { WeatherInfoBoxSVG, WeatherInfoBoxStyled } from '../../styles/components/WeatherInfoStyles';
 import { WeatherInfoBoxType } from '../../types/weatherTypes';
 
 const WeatherInfoBox: FC<WeatherInfoBoxType> = ({ children, title, icon, rotate }) => (
