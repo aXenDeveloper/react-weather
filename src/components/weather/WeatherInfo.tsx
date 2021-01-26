@@ -1,11 +1,12 @@
 import WeatherInfoBox from './WeatherInfoBox';
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
-import { faLevelDownAlt, faLongArrowAltUp, faCloud, faThermometerHalf } from '@fortawesome/free-solid-svg-icons';
+import { faLevelDownAlt, faLongArrowAltUp, faCloud, faThermometerHalf, faTint } from '@fortawesome/free-solid-svg-icons';
 import { ConvertSpeed, ConvertTemp } from './ConvertUnits';
 import { useTranslation } from 'react-i18next';
 import { WeatherInfoContainerStyled } from '../../styles/components/Weather';
 import WeatherLastUpdate from './WeatherLastUpdate';
+import { Container } from '../../styles/layout';
 
 const WeatherInfo = () => {
 	const { data } = useDataWeather() as DataWeatherContextType;
@@ -13,7 +14,7 @@ const WeatherInfo = () => {
 
 	return (
 		<section className="weather_info">
-			<div className="container">
+			<Container>
 				<WeatherInfoContainerStyled>
 					<WeatherInfoBox title={t('feels_like')} icon={faThermometerHalf}>
 						<ConvertTemp temp={data.main.feels_like} degrees={true} />
@@ -30,10 +31,14 @@ const WeatherInfo = () => {
 					<WeatherInfoBox title={t('cloudiness')} icon={faCloud}>
 						{data.clouds.all}%
 					</WeatherInfoBox>
+
+					<WeatherInfoBox title={t('humidity')} icon={faTint}>
+						{data.main.humidity}%
+					</WeatherInfoBox>
 				</WeatherInfoContainerStyled>
 
 				<WeatherLastUpdate />
-			</div>
+			</Container>
 		</section>
 	);
 };

@@ -20,6 +20,7 @@ export type DataWeatherContextType = {
 			temp_min: number;
 			temp_max: number;
 			pressure: number;
+			humidity: number;
 		};
 
 		wind: {

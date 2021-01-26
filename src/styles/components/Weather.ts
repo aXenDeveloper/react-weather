@@ -1,8 +1,16 @@
 import styled from 'styled-components';
+import { Container } from '../layout';
+
+export const ContainerWeather = styled(Container)`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+`;
 
 export const WeatherInfoContainerStyled = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(16.8rem, 1fr));
 	grid-gap: 1rem;
 `;
 
