@@ -10,8 +10,7 @@ export const ContainerWeather = styled(Container)`
 
 export const WeatherInfoContainerStyled = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(16.8rem, 1fr));
-	grid-gap: 1rem;
+	grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 `;
 
 export const WeatherUnitsInputStyle = styled.div`

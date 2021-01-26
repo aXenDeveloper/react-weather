@@ -15,11 +15,11 @@ const WeatherInfo = () => {
 	return (
 		<section className="weather_info">
 			<Container>
-				<WeatherInfoContainerStyled>
-					<WeatherInfoBox title={t('feels_like')} icon={faThermometerHalf}>
-						<ConvertTemp temp={data.main.feels_like} degrees={true} />
-					</WeatherInfoBox>
+				<WeatherInfoBox title={t('feels_like')} icon={faThermometerHalf}>
+					<ConvertTemp temp={data.main.feels_like} degrees={true} />
+				</WeatherInfoBox>
 
+				<WeatherInfoContainerStyled>
 					<WeatherInfoBox title={t('pressure')} icon={faLevelDownAlt}>
 						{data.main.pressure} hPa
 					</WeatherInfoBox>

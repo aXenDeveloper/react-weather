@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const WeatherInfoBoxStyled = styled.div`
 	background-color: #fff;
 	border-radius: var(--border-radius);
-	padding: 1.5rem;
+	padding: 1.4rem;
 	display: flex;
 	align-items: center;
+	margin: 1rem;
 
 	h3 {
 		margin: 0;
