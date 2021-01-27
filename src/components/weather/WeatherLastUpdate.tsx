@@ -9,11 +9,11 @@ const WeatherLastUpdate = () => {
 
 	const currentData = new Date(data.dt * 1000);
 
-	const getDate = currentData.getDate();
+	const getDate = ('0' + currentData.getDate()).slice(-2);
 	const getMonth = ('0' + (currentData.getMonth() + 1)).slice(-2);
 	const getYear = currentData.getFullYear();
-	const getHours = currentData.getHours();
-	const getMinutes = currentData.getMinutes();
+	const getHours = ('0' + currentData.getHours()).slice(-2);
+	const getMinutes = ('0' + currentData.getMinutes()).slice(-2);
 
 	return (
 		<WeatherLastUpdateStyle>
