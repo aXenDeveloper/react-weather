@@ -5,7 +5,7 @@ const useGeoLocation = () => {
 		code: 404,
 		coord: {
 			lat: 0,
-			lng: 0
+			lon: 0
 		}
 	});
 
@@ -14,7 +14,7 @@ const useGeoLocation = () => {
 			code: 200,
 			coord: {
 				lat: location.coords.latitude,
-				lng: location.coords.longitude
+				lon: location.coords.longitude
 			}
 		});
 	};

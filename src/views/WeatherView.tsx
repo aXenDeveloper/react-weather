@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
 import Loading from '../components/Loading';
@@ -9,7 +9,14 @@ import { useLang } from '../context/useLang';
 import { LangContextType } from '../types/contextTypes';
 import Error from '../components/Error';
 
-const WeatherView = () => {
+type WeatherViewType = {
+	geoLocation?: {
+		lat: number;
+		lon: number;
+	};
+};
+
+const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 	const { pathname } = useLocation();
 	const city = pathname.substr(1);
 	const { lang } = useLang() as LangContextType;
@@ -18,20 +25,28 @@ const WeatherView = () => {
 	const [getUnits, setUnits] = useState('metric');
 
 	const api = async (city: string, key: string, lang: string, getUnits: string) => {
-		const res = await fetch(
-			`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${getUnits}&appid=${key}&lang=${lang}`
-		);
-		const data = await res.json();
-		console.log(data);
+		if (geoLocation) {
+			const res = await fetch(
+				`https://api.openweathermap.org/data/2.5/weather?lat=${geoLocation.lat}&lon=${geoLocation.lon}&units=${getUnits}&appid=${key}&lang=${lang}`
+			);
 
-		/* const resOne = await fetch(
-			`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=hourly,daily&appid=${key}`
-		);
+			return await res.json();
+		} else {
+			const res = await fetch(
+				`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${getUnits}&appid=${key}&lang=${lang}`
+			);
+			const data = await res.json();
+			console.log(data);
 
-		const dataOne = await resOne.json();
-		console.log(dataOne); */
+			/* const resOne = await fetch(
+				`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=hourly,daily&appid=${key}`
+			);
+	
+			const dataOne = await resOne.json();
+			console.log(dataOne); */
 
-		return data;
+			return data;
+		}
 	};
 
 	const { isLoading, data, isError } = useQuery(
