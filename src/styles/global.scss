@@ -7,6 +7,8 @@
 :root {
     --theme-background: #326dde;
     --theme-color: #000;
+    --theme-link: #326dde;
+    --theme-link-hover: #de3232;
     --theme-section-weather: #326dde;
     --theme-section-weather-text: #fff;
     --container-small-width: 800px;
@@ -26,6 +28,15 @@ body {
     background-color: var(--theme-background);
     color: var(--theme-color);
     height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--theme-link);
+
+    &:hover {
+        color: var(--theme-link-hover);
+    }
 }
 
 @import './layout';
