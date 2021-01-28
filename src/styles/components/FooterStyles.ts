@@ -10,7 +10,7 @@ export const FooterSVGStyle = styled.svg`
 	transform: rotate(180deg);
 	margin-bottom: -0.5rem;
 
-	@media screen and (max-width: 767px) {
+	@media screen and (max-width: 768px) {
 		height: 40px;
 	}
 
@@ -27,12 +27,12 @@ export const ContainerFooter = styled(Container)`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	padding: 2rem 1.5rem;
 
-	@media screen and (max-width: 767px) {
+	@media screen and (max-width: 768px) {
 		justify-content: center;
 		flex-direction: column;
 	}
-	padding: 2rem 1.5rem;
 
 	a {
 		font-weight: bold;

@@ -6,6 +6,10 @@ export const ContainerWeather = styled(Container)`
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
+
+	@media screen and (max-width: 768px) {
+		flex-direction: column;
+	}
 `;
 
 export const WeatherInfoContainerStyled = styled.div`

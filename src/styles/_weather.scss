@@ -5,13 +5,18 @@
     min-height: 50rem;
     overflow: hidden;
 
+    ::selection {
+        background-color: #fff;
+        color: #000;
+    }
+
     .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             flex-direction: column;
         }
     }
@@ -54,7 +59,7 @@
             font-style: italic;
         }
 
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 768px) {
             margin-left: 0;
         }
     }

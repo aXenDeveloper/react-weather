@@ -9,8 +9,5 @@ export const ContainerHeader = styled(Container)`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
-	@media screen and (max-width: 767px) {
-		flex-direction: column;
-	}
+	flex-wrap: wrap;
 `;

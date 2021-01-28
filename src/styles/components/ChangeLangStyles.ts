@@ -4,15 +4,13 @@ export const ChangeLangStyle = styled.ul`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0 1rem;
+	margin: 1rem;
 	padding: 0;
 	list-style: none;
 
-	@media screen and (max-width: 767px) {
-		margin: 2rem 0 0 0;
-	}
-
 	li {
+		line-height: 0;
+
 		button {
 			background-color: transparent;
 			border: 0;
