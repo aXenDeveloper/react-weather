@@ -13,7 +13,7 @@ export const SearchFormStyle = styled.form`
 		padding: 1rem 4rem 1rem 1.5rem;
 		font-family: inherit;
 		font-size: 1.6rem;
-		width: 20rem;
+		width: 25rem;
 		color: inherit;
 		outline: 0;
 

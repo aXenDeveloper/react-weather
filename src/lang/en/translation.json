@@ -6,5 +6,8 @@
     "flag": "Flag",
     "cloudiness": "Cloudiness",
     "last_upadte": "Last update",
-    "humidity": "Humidity"
+    "humidity": "Humidity",
+    "change_lang": "Change language to",
+    "lang_polish": "Polish (PL)",
+    "lang_usa": "English (USA)"
 }

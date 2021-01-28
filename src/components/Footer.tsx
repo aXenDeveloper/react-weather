@@ -1,4 +1,4 @@
-import { FooterStyle, FooterSVGStyle, FooterBackground, ContainerFooter } from '../styles/components/FooterStyle';
+import { FooterStyle, FooterSVGStyle, FooterBackground, ContainerFooter } from '../styles/components/FooterStyles';
 
 const Footer = () => (
 	<FooterStyle>

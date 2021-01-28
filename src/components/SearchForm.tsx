@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { SearchFormStyle } from '../styles/components/SearchFormStyle';
+import { SearchFormStyle } from '../styles/components/SearchFormStyles';
 
 const SearchForm = () => {
 	const history = useHistory();

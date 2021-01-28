@@ -6,5 +6,8 @@
     "flag": "Flaga",
     "cloudiness": "Zachmurzenie",
     "last_upadte": "Ostatnia aktualizacja",
-    "humidity": "Wilgotność"
+    "humidity": "Wilgotność",
+    "change_lang": "Zmień język na",
+    "lang_polish": "Polski (PL)",
+    "lang_usa": "Angielski (USA)"
 }

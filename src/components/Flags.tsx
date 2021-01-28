@@ -10,6 +10,7 @@ const Flags = () => {
 	return (
 		<FlagsStyle
 			src={`https://flagcdn.com/w40/${data.sys.country.toLowerCase()}.png`}
+			width="80"
 			alt={`${t('flag')} ${data.sys.country}`}
 		/>
 	);

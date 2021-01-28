@@ -1,16 +1,13 @@
 import SearchForm from './SearchForm';
 import ChangeLang from './ChangeLang';
-import { HeaderStyle } from '../styles/components/HeaderStyle';
+import { HeaderStyle, ContainerHeader } from '../styles/components/HeaderStyles';
 
 const Header = () => (
 	<HeaderStyle>
-		<div className="container flex flex-ai:center flex-jc:center">
+		<ContainerHeader>
 			<SearchForm />
-
-			<div>
-				<ChangeLang />
-			</div>
-		</div>
+			<ChangeLang />
+		</ContainerHeader>
 	</HeaderStyle>
 );
 
