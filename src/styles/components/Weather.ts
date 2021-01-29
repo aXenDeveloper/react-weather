@@ -51,3 +51,25 @@ export const WeatherUnitsInputStyle = styled.div`
 export const FlagsStyle = styled.img`
 	width: 40px;
 `;
+
+export const WeatherDegreesButton = styled.button`
+	margin-left: 1rem;
+	background-color: transparent;
+	font-family: inherit;
+	border: 0;
+	padding: 1rem;
+	font-size: inherit;
+	font-weight: bold;
+	line-height: 1;
+	color: #fff;
+	cursor: pointer;
+	border-radius: var(--border-radius);
+
+	&[aria-checked='false'] {
+		color: #b4ceff;
+	}
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.15);
+	}
+`;
