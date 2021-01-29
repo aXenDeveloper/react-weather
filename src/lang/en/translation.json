@@ -9,5 +9,7 @@
     "humidity": "Humidity",
     "change_lang": "Change language to",
     "lang_polish": "Polish (PL)",
-    "lang_usa": "English (USA)"
+    "lang_usa": "English (USA)",
+    "input_search_placeholder": "Enter the city",
+    "input_search_button": "Search"
 }

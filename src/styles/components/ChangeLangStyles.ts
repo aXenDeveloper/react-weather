@@ -22,7 +22,8 @@ export const ChangeLangStyle = styled.ul`
 
 			img {
 				width: 40px;
-				height: 25px;
+				max-height: 25px;
+				border-radius: 5rem;
 			}
 		}
 

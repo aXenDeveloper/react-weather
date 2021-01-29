@@ -10,12 +10,14 @@ export const SearchFormStyle = styled.form`
 	input {
 		background-color: transparent;
 		border: 0;
-		padding: 1rem 4rem 1rem 1.5rem;
+		padding: 1rem 1.5rem;
 		font-family: inherit;
 		font-size: 1.6rem;
 		width: 25rem;
 		color: inherit;
 		outline: 0;
+		margin-right: 4rem;
+		border-radius: 5rem 0 0 5rem;
 
 		&::placeholder {
 			color: inherit;

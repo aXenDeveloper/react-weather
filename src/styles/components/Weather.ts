@@ -34,12 +34,16 @@ export const WeatherUnitsInputStyle = styled.div`
 			display: none;
 
 			&:not(:checked) + span {
-				opacity: 0.5;
+				color: #000;
 			}
 		}
 
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.15);
+
+			&:not(:checked) span {
+				color: #fff;
+			}
 		}
 	}
 `;

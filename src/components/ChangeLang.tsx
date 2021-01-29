@@ -19,15 +19,18 @@ const ChangeLang = () => {
 				<button onClick={() => changeLanguage('pl')}>
 					<img
 						src="https://flagcdn.com/w40/pl.png"
+						srcSet="https://flagcdn.com/w80/pl.png 2x"
 						alt={t('lang_polish')}
 						title={`${t('change_lang')} ${t('lang_polish')}`}
 					/>
 				</button>
 			</li>
+
 			<li>
 				<button onClick={() => changeLanguage('en')}>
 					<img
 						src="https://flagcdn.com/w40/us.png"
+						srcSet="https://flagcdn.com/w80/us.png 2x"
 						alt={t('lang_usa')}
 						title={`${t('change_lang')} ${t('lang_usa')}`}
 					/>

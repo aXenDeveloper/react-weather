@@ -3,9 +3,11 @@ import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { SearchFormStyle } from '../styles/components/SearchFormStyles';
+import { useTranslation } from 'react-i18next';
 
 const SearchForm = () => {
 	const history = useHistory();
+	const { t } = useTranslation();
 
 	const [inputCity, setInputCity] = useState('');
 	const handleSubmit = (e: FormEvent) => {
@@ -18,8 +20,17 @@ const SearchForm = () => {
 
 	return (
 		<SearchFormStyle onSubmit={handleSubmit}>
-			<input type="text" placeholder="City" onChange={handleInputCity} value={inputCity} />
-			<button type="submit">
+			<input
+				type="text"
+				id="search"
+				placeholder={t('input_search_placeholder')}
+				onChange={handleInputCity}
+				value={inputCity}
+				aria-label={t('input_search_placeholder')}
+				title={t('input_search_placeholder')}
+			/>
+
+			<button type="submit" aria-label={t('input_search_button')}>
 				<FontAwesomeIcon icon={faSearch} />
 			</button>
 		</SearchFormStyle>

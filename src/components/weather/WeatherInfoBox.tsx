@@ -10,7 +10,7 @@ const WeatherInfoBox: FC<WeatherInfoBoxType> = ({ children, title, icon, rotate 
 		</WeatherInfoBoxSVG>
 
 		<div>
-			<h3>{title}</h3>
+			<h2>{title}</h2>
 			<p>{children}</p>
 		</div>
 	</WeatherInfoBoxStyled>

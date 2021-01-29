@@ -4,10 +4,10 @@ _API: [OpenWeatherMap](https://openweathermap.org/)_
 
 ## Table of contents 📖
 
--   [Install 🧰](#install)
--   [Configuration 🛠️](#config)
--   [Deployment 🔨](#deployment)
--   [Graphics 📷](#graphics)
+-   [Install 🧰](#install-)
+-   [Configuration 🛠️](#configuration-%EF%B8%8F)
+-   [Deployment 🔨](#deployment-)
+-   [Graphics 📷](#graphics-)
 
 ## Install 🧰
 

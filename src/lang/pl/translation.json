@@ -9,5 +9,7 @@
     "humidity": "Wilgotność",
     "change_lang": "Zmień język na",
     "lang_polish": "Polski (PL)",
-    "lang_usa": "Angielski (USA)"
+    "lang_usa": "Angielski (USA)",
+    "input_search_placeholder": "Wpisz miejscowość",
+    "input_search_button": "Szukaj"
 }

@@ -7,14 +7,15 @@ export const WeatherInfoBoxStyled = styled.div`
 	display: flex;
 	align-items: center;
 	margin: 1rem;
+	font-size: 1.6rem;
 
-	h3 {
+	h2 {
+		font-size: inherit;
 		margin: 0;
 	}
 
 	p {
 		margin: 0;
-		font-size: 1.6rem;
 	}
 `;
 
@@ -29,12 +30,13 @@ export const WeatherInfoBoxSVG = styled.div(
 		margin-right: 1rem;
 
 		${
-			direction &&
-			`
+			direction
+				? `
 				svg {
 					transform: rotate(${direction}deg);
 				}
 			`
+				: ''
 		}
 	`
 );
