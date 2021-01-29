@@ -8,19 +8,15 @@ import { DataWeatherContext } from '../context/useDataWeather';
 import { useLang } from '../context/useLang';
 import { LangContextType } from '../types/contextTypes';
 import Error from '../components/Error';
-
-type WeatherViewType = {
-	geoLocation?: {
-		lat: number;
-		lon: number;
-	};
-};
+import { useTranslation } from 'react-i18next';
+import { WeatherViewType } from '../types/viewTypes';
 
 const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 	const { pathname } = useLocation();
 	const city = pathname.substr(1);
 	const { lang } = useLang() as LangContextType;
 	const key = process.env.REACT_APP_KEY_API_WEATHER || '';
+	const { t } = useTranslation();
 
 	const [getUnits, setUnits] = useState('metric');
 
@@ -38,13 +34,6 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 			const data = await res.json();
 			console.log(data);
 
-			/* const resOne = await fetch(
-				`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=hourly,daily&appid=${key}`
-			);
-	
-			const dataOne = await resOne.json();
-			console.log(dataOne); */
-
 			return data;
 		}
 	};
@@ -61,8 +50,8 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 	);
 
 	if (isLoading) return <Loading />;
-
-	if (isError || parseInt(data.cod) === 404) return <Error />;
+	if (isError) return <Error code={500}>{t('weather_500')}</Error>;
+	if (parseInt(data.cod) === 404) return <Error code={404}>{t('weather_404')}</Error>;
 
 	return (
 		<DataWeatherContext.Provider value={{ data, getUnits, setUnits }}>

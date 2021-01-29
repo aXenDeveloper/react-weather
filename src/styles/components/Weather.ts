@@ -34,7 +34,7 @@ export const WeatherUnitsInputStyle = styled.div`
 			display: none;
 
 			&:not(:checked) + span {
-				color: #000;
+				color: #b4ceff;
 			}
 		}
 

@@ -11,5 +11,9 @@
     "lang_polish": "Polish (PL)",
     "lang_usa": "English (USA)",
     "input_search_placeholder": "Enter the city",
-    "input_search_button": "Search"
+    "input_search_button": "Search",
+    "error_title": "Oops, something is wrong (╯°□°）╯︵ ┻━┻",
+    "error_code": "Error code",
+    "weather_404": "The requested city does not exist",
+    "weather_500": "There was an error connecting to the API"
 }

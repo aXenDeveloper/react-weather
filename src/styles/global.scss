@@ -7,6 +7,7 @@
 :root {
     --theme-background: #326dde;
     --theme-color: #000;
+    --theme-color-light: #585858;
     --theme-link: #326dde;
     --theme-link-hover: #de3232;
     --theme-section-weather: #326dde;
@@ -16,6 +17,8 @@
     --border-radius: 1rem;
     --loading-border: rgba(0, 0, 0, 0.2);
     --loading-border-top: #fff;
+    --theme-block: #fff;
+    --padding: 2rem;
 }
 
 html {

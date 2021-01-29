@@ -16,7 +16,7 @@ export const SearchFormStyle = styled.form`
 		width: 25rem;
 		color: inherit;
 		outline: 0;
-		margin-right: 4rem;
+		margin-right: 4.5rem;
 		border-radius: 5rem 0 0 5rem;
 
 		&::placeholder {
@@ -30,11 +30,12 @@ export const SearchFormStyle = styled.form`
 		border: 0;
 		position: absolute;
 		top: 50%;
-		right: 1rem;
+		right: 0;
 		transform: translateY(-50%);
 		font-size: 1.6rem;
 		cursor: pointer;
 		color: inherit;
 		height: 100%;
+		width: 48px;
 	}
 `;

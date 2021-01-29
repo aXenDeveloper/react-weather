@@ -11,5 +11,9 @@
     "lang_polish": "Polski (PL)",
     "lang_usa": "Angielski (USA)",
     "input_search_placeholder": "Wpisz miejscowość",
-    "input_search_button": "Szukaj"
+    "input_search_button": "Szukaj",
+    "error_title": "Ups, coś jest nie tak (╯°□°）╯︵ ┻━┻",
+    "error_code": "Kod błędu",
+    "weather_404": "Żądana miejscowość nie istnieje",
+    "weather_500": "Wystąpił błąd podczas łączenia się z interfejsem API."
 }
