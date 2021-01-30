@@ -20,4 +20,13 @@ export const LoadingStyle = styled.div`
 		border-top-color: var(--loading-border-top);
 		animation: spinner 0.65s infinite linear;
 	}
+
+	@keyframes spinner {
+		0% {
+			transform: rotate(0);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	}
 `;

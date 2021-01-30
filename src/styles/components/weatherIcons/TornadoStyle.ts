@@ -28,4 +28,79 @@ export const TornadoStyle = styled.svg`
 			animation-name: translateTornado6;
 		}
 	}
+
+	@keyframes translateTornado1 {
+		0% {
+			transform: translateY(0);
+		}
+		25% {
+			transform: translateX(20rem * 0.0571);
+		}
+		75% {
+			transform: translateX(-20rem * 0.0571);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes translateTornado2 {
+		0% {
+			transform: translateY(0);
+		}
+		25% {
+			transform: translateX(20rem * 0.0871);
+		}
+		75% {
+			transform: translateX(-20rem * 0.0871);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes translateTornado3 {
+		0% {
+			transform: translateY(0);
+		}
+		25% {
+			transform: translateX(20rem * 0.1143);
+		}
+		75% {
+			transform: translateX(-20rem * 0.1143);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes translateTornado4 {
+		0% {
+			transform: translateY(0);
+		}
+		25% {
+			transform: translateX(20rem * 0.1357);
+		}
+		75% {
+			transform: translateX(-20rem * 0.1357);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes translateTornado5 {
+		0% {
+			transform: translateY(0);
+		}
+		25% {
+			transform: translateX(20rem * 0.1429);
+		}
+		75% {
+			transform: translateX(-20rem * 0.1429);
+		}
+		100% {
+			transform: translateX(0);
+		}
+	}
 `;

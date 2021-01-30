@@ -67,10 +67,8 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 	return (
 		<DataWeatherContext.Provider value={{ data, getUnits, setUnits }}>
 			<Suspense fallback={<Loading />}>
-				<div>
-					<WeatherMain />
-					<WeatherInfo />
-				</div>
+				<WeatherMain />
+				<WeatherInfo />
 			</Suspense>
 		</DataWeatherContext.Provider>
 	);

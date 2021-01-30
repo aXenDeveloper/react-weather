@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import Root from './Root';
-import './styles/global.scss';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import './i18n';
+import GlobalStyle from './styles/global';
 
 const queryClient = new QueryClient({});
 
 ReactDOM.render(
 	<React.StrictMode>
 		<QueryClientProvider client={queryClient}>
+			<GlobalStyle />
 			<Root />
 		</QueryClientProvider>
 	</React.StrictMode>,

@@ -11,6 +11,18 @@ export const CloudStyle = styled.div`
 			animation: cloud_left 20s ease infinite;
 			top: 0;
 			left: 0;
+
+			@keyframes cloud_left {
+				0% {
+					transform: translateX(-100px) scale(0.68);
+				}
+				50% {
+					transform: translateX(-200px) scale(0.68);
+				}
+				100% {
+					transform: translateX(-100px) scale(0.68);
+				}
+			}
 		`}
 
 	${({ right }: CloudPosition) =>
@@ -22,6 +34,18 @@ export const CloudStyle = styled.div`
 			animation: cloud_right 20s ease infinite;
 			top: 0;
 			left: 0;
+
+			@keyframes cloud_right {
+				0% {
+					transform: translateX(100px) scale(0.68) rotateY(180deg);
+				}
+				50% {
+					transform: translateX(200px) scale(0.68) rotateY(180deg);
+				}
+				100% {
+					transform: translateX(100px) scale(0.68) rotateY(180deg);
+				}
+			}
 		`}
 `;
 

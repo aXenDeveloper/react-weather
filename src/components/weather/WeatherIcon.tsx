@@ -1,6 +1,7 @@
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
 import { SelectCloudType } from '../../types/weatherTypes';
+import { WeatherIconStyle, WeatherSVGStyle } from '../../styles/weather';
 import Cloud from './icons/Cloud';
 import Moon from './icons/Moon';
 import Sun from './icons/Sun';
@@ -283,9 +284,9 @@ const WeatherIcon = () => {
 	};
 
 	return (
-		<div className="weather_icon">
-			<div className="weather_svg">{selectWeather[weatherID][weatherIcon]}</div>
-		</div>
+		<WeatherIconStyle>
+			<WeatherSVGStyle>{selectWeather[weatherID][weatherIcon]}</WeatherSVGStyle>
+		</WeatherIconStyle>
 	);
 };
 

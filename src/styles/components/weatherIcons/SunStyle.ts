@@ -7,4 +7,10 @@ export const SunStyle = styled.svg`
 	g {
 		fill: #fdd020;
 	}
+
+	@keyframes sunRotate {
+		to {
+			transform: rotate(360deg);
+		}
+	}
 `;

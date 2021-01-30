@@ -12,4 +12,22 @@ export const StormStyle = styled.svg`
 	path {
 		fill: #ffa754;
 	}
+
+	@keyframes thunderAnimation {
+		0% {
+			opacity: 0;
+		}
+		5% {
+			opacity: 1;
+		}
+		10% {
+			opacity: 0;
+		}
+		15% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
 `;

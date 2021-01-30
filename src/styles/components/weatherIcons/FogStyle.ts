@@ -27,4 +27,18 @@ export const FogStyle = styled.svg`
 	path {
 		fill: #92aeba;
 	}
+
+	@keyframes fog {
+		0% {
+			transform: translateX(-50px);
+		}
+
+		50% {
+			transform: translateX(50px);
+		}
+
+		100% {
+			transform: translateX(-50px);
+		}
+	}
 `;

@@ -1,4 +1,5 @@
 import { useDataWeather } from '../../context/useDataWeather';
+import { WeatherTempStyle, WeatherTempMainStyle, WeatherTempMinMaxStyle, WeatherDescStyle } from '../../styles/weather';
 import { DataWeatherContextType } from '../../types/contextTypes';
 import { ConvertTemp } from './ConvertUnits';
 import WeatherUnitsInput from './WeatherUnitsInput';
@@ -7,19 +8,19 @@ const WeatherTemp = () => {
 	const { data } = useDataWeather() as DataWeatherContextType;
 
 	return (
-		<div className="weather_temp">
-			<div className="weather_temp_main">
+		<WeatherTempStyle>
+			<WeatherTempMainStyle>
 				<ConvertTemp temp={data.main.temp} />
 				<WeatherUnitsInput />
-			</div>
+			</WeatherTempMainStyle>
 
-			<div className="weather_temp_minMax">
+			<WeatherTempMinMaxStyle>
 				<ConvertTemp temp={data.main.temp_min} degrees={true} /> /{' '}
 				<ConvertTemp temp={data.main.temp_max} degrees={true} />
-			</div>
+			</WeatherTempMinMaxStyle>
 
-			<div className="weather_temp_desc">{data.weather[0].description}</div>
-		</div>
+			<WeatherDescStyle>{data.weather[0].description}</WeatherDescStyle>
+		</WeatherTempStyle>
 	);
 };
 

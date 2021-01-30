@@ -1,3 +1,6 @@
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
 *,
 *::after,
 *::before {
@@ -44,6 +47,17 @@ a {
     }
 }
 
-@import './layout';
-@import './weather';
-@import './animation';
+@keyframes drop {
+    from {
+        transform: translateY(-35px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(180px);
+        opacity: 0;
+    }
+}
+
+`;
+
+export default GlobalStyle;

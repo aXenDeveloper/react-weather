@@ -7,13 +7,14 @@ import { useTranslation } from 'react-i18next';
 import { WeatherInfoContainerStyled } from '../../styles/components/Weather';
 import WeatherLastUpdate from './WeatherLastUpdate';
 import { Container } from '../../styles/layout';
+import { WeatherInfoStyle } from '../../styles/weather';
 
 const WeatherInfo = () => {
 	const { data } = useDataWeather() as DataWeatherContextType;
 	const { t } = useTranslation();
 
 	return (
-		<section className="weather_info">
+		<WeatherInfoStyle>
 			<Container>
 				<WeatherInfoBox title={t('feels_like')} icon={faThermometerHalf}>
 					<ConvertTemp temp={data.main.feels_like} degrees={true} />
@@ -39,7 +40,7 @@ const WeatherInfo = () => {
 
 				<WeatherLastUpdate />
 			</Container>
-		</section>
+		</WeatherInfoStyle>
 	);
 };
 
