@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
     --loading-border-top: #fff;
     --theme-block: #fff;
     --padding: 2rem;
+    --button-hover: rgba(0, 0, 0, 0.15);
 }
 
 html {

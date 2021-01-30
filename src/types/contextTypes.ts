@@ -42,3 +42,12 @@ export type LangContextType = {
 	lang: string;
 	setLang(e: string): void;
 };
+
+export type GeoLocationContextType = {
+	geoLocation: {
+		status: boolean;
+		lat: number;
+		lon: number;
+	};
+	setGeoLocation(e: { status: boolean; lat: number; lon: number }): void;
+};

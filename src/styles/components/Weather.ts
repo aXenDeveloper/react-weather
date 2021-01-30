@@ -39,7 +39,7 @@ export const WeatherUnitsInputStyle = styled.div`
 		}
 
 		&:hover {
-			background-color: rgba(0, 0, 0, 0.15);
+			background-color: var(--button-hover);
 
 			&:not(:checked) span {
 				color: #fff;
@@ -70,6 +70,6 @@ export const WeatherDegreesButton = styled.button`
 	}
 
 	&:hover {
-		background-color: rgba(0, 0, 0, 0.15);
+		background-color: var(--button-hover);
 	}
 `;

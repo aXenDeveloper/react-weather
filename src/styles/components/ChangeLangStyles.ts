@@ -25,6 +25,10 @@ export const ChangeLangStyle = styled.ul`
 				max-height: 25px;
 				border-radius: 5rem;
 			}
+
+			&:hover {
+				opacity: 0.6;
+			}
 		}
 
 		&:not(:last-child) {

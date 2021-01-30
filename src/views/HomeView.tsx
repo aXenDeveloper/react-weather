@@ -1,26 +1,13 @@
-import { Suspense, lazy } from 'react';
-import { useTranslation } from 'react-i18next';
-import Loading from '../components/Loading';
-import useGeoLocation from '../hooks/useGeoLocation';
-
-const WeatherView = lazy(() => import('./WeatherView'));
+import { useGeoLocation } from '../context/useGeoLocation';
+import { GeoLocationContextType } from '../types/contextTypes';
+import WeatherView from './WeatherView';
 
 const HomeView = () => {
-	const { t } = useTranslation();
-	const geoLocation = useGeoLocation();
+	const { geoLocation } = useGeoLocation() as GeoLocationContextType;
 
-	if (geoLocation.code === 200)
-		return (
-			<Suspense fallback={<Loading />}>
-				<WeatherView geoLocation={geoLocation.coord} />
-			</Suspense>
-		);
+	if (geoLocation.status) return <WeatherView />;
 
-	return (
-		<>
-			<div>Home {t('Welcome to React')}</div>
-		</>
-	);
+	return <div>test {geoLocation.status ? 'ok' : 'no'}</div>;
 };
 
 export default HomeView;

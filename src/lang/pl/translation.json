@@ -1,5 +1,4 @@
 {
-    "Welcome to React": "Witaj w React i react-i18next",
     "feels_like": "Odczuwalna",
     "pressure": "Ciśnienie",
     "wind": "Wiatr",
@@ -15,5 +14,6 @@
     "error_title": "Ups, coś jest nie tak (╯°□°）╯︵ ┻━┻",
     "error_code": "Kod błędu",
     "weather_404": "Żądana miejscowość nie istnieje",
-    "weather_500": "Wystąpił błąd podczas łączenia się z interfejsem API."
+    "weather_500": "Wystąpił błąd podczas łączenia się z interfejsem API.",
+    "geolocation_button": "Użyj mojej lokalizacji (GPS)"
 }
