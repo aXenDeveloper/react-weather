@@ -1,15 +1,16 @@
-import { FC, useState } from 'react';
+import { FC, lazy, Suspense, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
 import Loading from '../components/Loading';
-import WeatherInfo from '../components/weather/WeatherInfo';
-import WeatherMain from '../components/weather/WeatherMain';
 import { DataWeatherContext } from '../context/useDataWeather';
 import { useLang } from '../context/useLang';
 import { LangContextType } from '../types/contextTypes';
-import Error from '../components/Error';
 import { useTranslation } from 'react-i18next';
 import { WeatherViewType } from '../types/viewTypes';
+
+const Error = lazy(() => import('../components/Error'));
+const WeatherInfo = lazy(() => import('../components/weather/WeatherInfo'));
+const WeatherMain = lazy(() => import('../components/weather/WeatherMain'));
 
 const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 	const { pathname } = useLocation();
@@ -50,13 +51,27 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 	);
 
 	if (isLoading) return <Loading />;
-	if (isError) return <Error code={500}>{t('weather_500')}</Error>;
-	if (parseInt(data.cod) === 404) return <Error code={404}>{t('weather_404')}</Error>;
+	if (isError)
+		return (
+			<Suspense fallback={<Loading />}>
+				<Error code={500}>{t('weather_500')}</Error>
+			</Suspense>
+		);
+	if (parseInt(data.cod) === 404)
+		return (
+			<Suspense fallback={<Loading />}>
+				<Error code={404}>{t('weather_404')}</Error>
+			</Suspense>
+		);
 
 	return (
 		<DataWeatherContext.Provider value={{ data, getUnits, setUnits }}>
-			<WeatherMain />
-			<WeatherInfo />
+			<Suspense fallback={<Loading />}>
+				<div>
+					<WeatherMain />
+					<WeatherInfo />
+				</div>
+			</Suspense>
 		</DataWeatherContext.Provider>
 	);
 };
