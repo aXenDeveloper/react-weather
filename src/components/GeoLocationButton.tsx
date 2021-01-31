@@ -4,10 +4,12 @@ import { GeoLocationContextType } from '../types/contextTypes';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
 
 const GeoLocationButton = () => {
 	const { setGeoLocation } = useGeoLocation() as GeoLocationContextType;
 	const { t } = useTranslation();
+	const history = useHistory();
 
 	const onSuccess = (location: { coords: { latitude: number; longitude: number } }) => {
 		setGeoLocation({
@@ -15,6 +17,8 @@ const GeoLocationButton = () => {
 			lat: location.coords.latitude,
 			lon: location.coords.longitude
 		});
+
+		history.push('/');
 	};
 
 	const onError = () => {
