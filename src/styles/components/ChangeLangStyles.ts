@@ -19,11 +19,14 @@ export const ChangeLangStyle = styled.ul`
 			line-height: 0;
 			cursor: pointer;
 			border-radius: 5rem;
+			width: 40px;
+			height: 25px;
 
 			img {
-				width: 40px;
-				max-height: 25px;
-				border-radius: 5rem;
+				width: 100%;
+				height: 100%;
+				border-radius: inherit;
+				object-fit: cover;
 			}
 
 			&:hover {

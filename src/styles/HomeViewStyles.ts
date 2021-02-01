@@ -15,7 +15,7 @@ export const HomeViewStyle = styled.div`
 
 	h1 {
 		font-size: 4rem;
-		margin: 0 0 1rem 0;
+		margin: 1rem 0;
 	}
 
 	p {
@@ -25,5 +25,5 @@ export const HomeViewStyle = styled.div`
 `;
 
 export const HomeViewButtonsStyle = styled.div`
-	margin-top: 1rem;
+	margin: 1rem 0;
 `;

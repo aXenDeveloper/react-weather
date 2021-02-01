@@ -21,7 +21,11 @@ const HomeView = () => {
 				<p>{t('desc_app')}</p>
 
 				<HomeViewButtonsStyle>
-					<ButtonLink href="https://github.com/aXenDeveloper/react-weather" target="_blank">
+					<ButtonLink
+						href="https://github.com/aXenDeveloper/react-weather"
+						target="_blank"
+						rel="noopener nofollow"
+					>
 						<FontAwesomeIcon icon={faGithub} /> {t('button_github')}
 					</ButtonLink>
 				</HomeViewButtonsStyle>
