@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
 :root {
     --theme-background: #326dde;
     --theme-color: #000;
-    --theme-color-light: #585858;
+    --theme-color-dark: #b4ceff;
     --theme-link: #326dde;
     --theme-link-hover: #de3232;
     --theme-section-weather: #326dde;

@@ -1,4 +1,4 @@
-import { FC, lazy, Suspense, useState } from 'react';
+import { FC, Suspense, useState } from 'react';
 import { useQuery } from 'react-query';
 import { useLocation } from 'react-router-dom';
 import { DataWeatherContext } from '../context/useDataWeather';
@@ -7,11 +7,9 @@ import { LangContextType } from '../types/contextTypes';
 import { useTranslation } from 'react-i18next';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
-
+import WeatherInfo from '../components/weather/WeatherInfo';
+import WeatherMain from '../components/weather/WeatherMain';
 import { WeatherViewType } from '../types/viewTypes';
-
-const WeatherInfo = lazy(() => import('../components/weather/WeatherInfo'));
-const WeatherMain = lazy(() => import('../components/weather/WeatherMain'));
 
 const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 	const { pathname } = useLocation();

@@ -7,7 +7,7 @@ export const WeatherStyle = styled.section`
 	min-height: 50rem;
 	overflow: hidden;
 
-	::selection {
+	& ::selection {
 		background-color: #fff;
 		color: #000;
 	}

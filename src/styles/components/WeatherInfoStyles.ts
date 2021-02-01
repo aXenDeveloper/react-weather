@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WeatherInfoBoxStyled = styled.div`
-	background-color: #fff;
+	background-color: var(--theme-block);
 	border-radius: var(--border-radius);
 	padding: 1.4rem;
 	display: flex;

@@ -1,19 +1,18 @@
 import styled from 'styled-components';
 
 export const ErrorStyle = styled.div`
-	background-color: var(--theme-block);
 	padding: var(--padding);
 	border-radius: var(--border-radius);
-	margin: 5rem 0;
+	margin: 10rem 0;
 	text-align: center;
+	color: #fff;
 `;
 
 export const ErrorIcon = styled.div`
 	margin-bottom: 2rem;
 
 	svg {
-		font-size: 6rem;
-		color: var(--theme-background);
+		font-size: 10rem;
 	}
 `;
 
@@ -26,7 +25,7 @@ export const ErrorContent = styled.span`
 
 export const ErrorTitle = styled.p`
 	font-size: 1.6rem;
-	color: var(--theme-color-light);
+	color: var(--theme-color-dark);
 	margin: 0;
 `;
 
