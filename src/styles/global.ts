@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
 :root {
     --theme-background: #326dde;
+    --theme-background-top: #1a4390;
     --theme-color: #000;
     --theme-color-dark: #b4ceff;
     --theme-link: #326dde;
@@ -35,6 +36,9 @@ body {
     margin: 0;
     line-height: 1.5;
     background-color: var(--theme-background);
+    background-image: linear-gradient(0, transparent, var(--theme-background-top));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--theme-color);
     height: 100%;
 }

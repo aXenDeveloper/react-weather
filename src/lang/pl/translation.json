@@ -15,5 +15,8 @@
     "error_code": "Kod błędu",
     "weather_404": "Żądana miejscowość nie istnieje",
     "weather_500": "Wystąpił błąd podczas łączenia się z interfejsem API.",
-    "geolocation_button": "Użyj mojej lokalizacji (GPS)"
+    "geolocation_button": "Użyj mojej lokalizacji (GPS)",
+    "title_app": "Witaj w Weather app!",
+    "desc_app": "Aby sprawdzić aktualną pogodę wpisz w wyszukiwarce dowolną nazwę miejscowości lub kliknij w przycisk koło wyszukiwarki, aby sprawdzić aktualną pogodę w twojej lokalizacji.",
+    "button_github": "Repozytorium w GitHub"
 }

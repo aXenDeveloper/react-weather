@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
 export const ErrorStyle = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 	padding: var(--padding);
 	border-radius: var(--border-radius);
-	margin: 10rem 0;
 	text-align: center;
 	color: #fff;
+	min-height: calc(100vh - 85px - 186px);
+
+	@media screen and (max-width: 768px) {
+		min-height: calc(100vh - 85px - 117px);
+	}
 `;
 
 export const ErrorIcon = styled.div`

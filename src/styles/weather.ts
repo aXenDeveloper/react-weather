@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const WeatherStyle = styled.section`
-	background-color: var(--theme-section-weather);
 	color: var(--theme-section-weather-text);
 	padding: 3rem 0;
 	min-height: 50rem;
