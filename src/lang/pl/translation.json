@@ -18,5 +18,7 @@
     "geolocation_button": "Użyj mojej lokalizacji (GPS)",
     "title_app": "Witaj w Weather app!",
     "desc_app": "Aby sprawdzić aktualną pogodę wpisz w wyszukiwarce dowolną nazwę miejscowości lub kliknij w przycisk koło wyszukiwarki, aby sprawdzić aktualną pogodę w twojej lokalizacji.",
-    "button_github": "Repozytorium w GitHub"
+    "button_github": "Repozytorium w GitHub",
+    "footer_createdBy": "Stworzone przez",
+    "footer_API": "Dane API z"
 }

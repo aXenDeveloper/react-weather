@@ -12,6 +12,7 @@ _API: [OpenWeatherMap](https://openweathermap.org/)_
 
 -   [Install 🧰](#install-)
 -   [Configuration 🛠️](#configuration-%EF%B8%8F)
+-   [Tests 👍](#tests-)
 -   [Deployment 🔨](#deployment-)
 -   [Packages 📂](#packages-)
 -   [Graphics 📷](#graphics-)
@@ -21,16 +22,12 @@ _API: [OpenWeatherMap](https://openweathermap.org/)_
 Use comend
 
 ```bash
+git clone https://github.com/aXenDeveloper/react-weather
+
 npm i
+
+npm start
 ```
-
-or
-
-```bash
-npm install
-```
-
-in the project directory.
 
 ## Configuration 🛠️
 
@@ -50,6 +47,16 @@ Command:
 npm run build
 ```
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+## Tests 👍
+
+Command:
+
+```bash
+npm test
+```
+
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Packages 📂
@@ -62,10 +69,12 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 | [Typescript](https://www.typescriptlang.org/)       | Types in JavaScript                         |
 | [Styled components](https://styled-components.com/) | Style in JS                                 |
 | [i18n](https://react.i18next.com/)                  | Pages translations                          |
-| [Font Awesome](https://fontawesome.com/)            | Icon SVG                                    |
+| [Font Awesome](https://fontawesome.com/)            | Icons SVG                                   |
 
 ## Graphics 📷
 
 ![1](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/1-min.png?raw=true)
+
 ![2](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/2-min.png?raw=true)
+
 ![3](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/3-min.png?raw=true)
