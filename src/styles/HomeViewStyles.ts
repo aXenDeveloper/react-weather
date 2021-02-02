@@ -6,8 +6,8 @@ export const HomeViewStyle = styled.div`
 	justify-content: center;
 	flex-direction: column;
 	color: #fff;
-	min-height: calc(100vh - 85px - 186px);
 	text-align: center;
+	min-height: calc(100vh - 85px - 186px);
 
 	@media screen and (max-width: 768px) {
 		min-height: calc(100vh - 85px - 117px);
@@ -16,6 +16,7 @@ export const HomeViewStyle = styled.div`
 	h1 {
 		font-size: 4rem;
 		margin: 1rem 0;
+		line-height: 1.2;
 	}
 
 	p {

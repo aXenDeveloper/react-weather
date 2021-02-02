@@ -52,6 +52,14 @@ a {
     }
 }
 
+main {
+    min-height: calc(100vh - 85px - 186px);
+
+    @media screen and (max-width: 768px) {
+        min-height: calc(100vh - 85px - 117px);
+    }
+}
+
 @keyframes drop {
     from {
         transform: translateY(-35px);
