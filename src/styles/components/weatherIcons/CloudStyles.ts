@@ -69,7 +69,7 @@ export const TimeOfDayStyle = styled.div`
 `;
 
 export const CloudSVGStyle = styled.svg`
-	width: 300px;
+	width: 280px;
 	position: relative;
 	z-index: 10;
 
