@@ -4,12 +4,13 @@ export const ChangeLangStyle = styled.ul`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 1rem;
+	margin: 0;
 	padding: 0;
 	list-style: none;
 
 	li {
 		line-height: 0;
+		margin-left: 1rem;
 
 		button {
 			background-color: transparent;
@@ -32,10 +33,6 @@ export const ChangeLangStyle = styled.ul`
 			&:hover {
 				opacity: 0.6;
 			}
-		}
-
-		&:not(:last-child) {
-			margin-right: 1rem;
 		}
 	}
 `;

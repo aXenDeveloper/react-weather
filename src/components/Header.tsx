@@ -1,16 +1,13 @@
 import SearchForm from './SearchForm';
-import ChangeLang from './ChangeLang';
 import { HeaderStyle, ContainerHeader } from '../styles/components/HeaderStyles';
-import GeoLocationButton from './GeoLocationButton';
-import DropDownMenu from './DropDownMenu';
+import ActionBar from './ActionBar';
 
 const Header = () => (
 	<HeaderStyle>
 		<ContainerHeader>
 			<SearchForm />
-			<GeoLocationButton />
-			<ChangeLang />
-			<DropDownMenu />
+
+			<ActionBar />
 		</ContainerHeader>
 	</HeaderStyle>
 );
