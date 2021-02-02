@@ -5,6 +5,7 @@ import WeatherView from './views/WeatherView';
 import { LangContext } from './context/useLang';
 import { useState } from 'react';
 import i18n from './i18n';
+import ErrorView from './views/ErrorView';
 
 const Root = () => {
 	const [lang, setLang] = useState(i18n.language);
@@ -16,6 +17,7 @@ const Root = () => {
 					<Switch>
 						<Route exact path="/" component={HomeView} />
 						<Route exact path="/:name" component={WeatherView} />
+						<Route component={ErrorView} />
 					</Switch>
 				</Layout>
 			</LangContext.Provider>

@@ -7,10 +7,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { HomeViewStyle, HomeViewButtonsStyle } from '../styles/HomeViewStyles';
+import { useEffect } from 'react';
 
 const HomeView = () => {
 	const { geoLocation } = useGeoLocation() as GeoLocationContextType;
 	const { t } = useTranslation();
+
+	useEffect(() => {
+		document.title = process.env.REACT_APP_TITLE_WEBSITE || '';
+	}, []);
 
 	if (geoLocation.status) return <WeatherView geoLocation={geoLocation} />;
 

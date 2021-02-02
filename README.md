@@ -1,3 +1,5 @@
+![GitHub Header](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/githubHeader.png?raw=true)
+
 # (React) Weather app
 
 Weather app is an application that allows you to check the current weather in your chosen city.
@@ -34,9 +36,10 @@ in the project directory.
 
 1. Create a secreet key API form [OpenWeatherMap](https://openweathermap.org/),
 2. In the project directory go to file **src/.env_template** and rename the file to **.env**,
-3. Enter the secret API key in the **.env** file:
+3. Enter the secret API key and title website in the **.env** file:
     ```bash
-    REACT_APP_KEY_API_WEATHER=XX
+    REACT_APP_KEY_API_WEATHER=XXX
+    REACT_APP_TITLE_WEBSITE=XXX
     ```
 
 ## Deployment 🔨
@@ -63,4 +66,6 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Graphics 📷
 
-_There are no screenshots yet._
+![1](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/1-min.png?raw=true)
+![2](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/2-min.png?raw=true)
+![3](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/3-min.png?raw=true)

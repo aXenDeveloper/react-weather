@@ -35,6 +35,8 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
 			const data = await res.json();
 			console.log(data);
 
+			document.title = `${data.name || `${t('error_code')}: 404`} - ${process.env.REACT_APP_TITLE_WEBSITE}`;
+
 			return data;
 		}
 	};
