@@ -1,17 +1,22 @@
+import i18n from '../i18n';
+import { useTranslation } from 'react-i18next';
 import { useLang } from '../context/useLang';
 import { LangContextType } from '../types/contextTypes';
-import i18n from '../i18n';
 import { ChangeLangStyle } from '../styles/components/ChangeLangStyles';
-import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 const ChangeLang = () => {
-	const { setLang } = useLang() as LangContextType;
+	const { lang, setLang } = useLang() as LangContextType;
 	const { t } = useTranslation();
 
 	const changeLanguage = (lng: string) => {
 		i18n.changeLanguage(lng);
 		setLang(lng);
 	};
+
+	useEffect(() => {
+		document.documentElement.lang = lang;
+	}, [lang]);
 
 	return (
 		<ChangeLangStyle>

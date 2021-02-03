@@ -1,10 +1,10 @@
-import { GeoLocationButtonStyle } from '../styles/components/GeoLocationButtonStyles';
-import { useGeoLocation } from '../context/useGeoLocation';
-import { GeoLocationContextType } from '../types/contextTypes';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { useGeoLocation } from '../context/useGeoLocation';
+import { GeoLocationContextType } from '../types/contextTypes';
+import { GeoLocationButtonStyle } from '../styles/components/GeoLocationButtonStyles';
 
 const GeoLocationButton = () => {
 	const { setGeoLocation } = useGeoLocation() as GeoLocationContextType;

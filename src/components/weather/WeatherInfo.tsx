@@ -1,13 +1,12 @@
-import WeatherInfoBox from './WeatherInfoBox';
+import { faLevelDownAlt, faLongArrowAltUp, faCloud, faThermometerHalf, faTint } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
-import { faLevelDownAlt, faLongArrowAltUp, faCloud, faThermometerHalf, faTint } from '@fortawesome/free-solid-svg-icons';
 import { ConvertSpeed, ConvertTemp } from './ConvertUnits';
-import { useTranslation } from 'react-i18next';
-import { WeatherInfoContainerStyled } from '../../styles/components/Weather';
+import { Container } from '../../styles/global';
+import { WeatherInfoStyle, WeatherInfoContainerStyled } from '../../styles/components/WeatherInfoStyles';
+import WeatherInfoBox from './WeatherInfoBox';
 import WeatherLastUpdate from './WeatherLastUpdate';
-import { Container } from '../../styles/layout';
-import { WeatherInfoStyle } from '../../styles/weather';
 
 const WeatherInfo = () => {
 	const { data } = useDataWeather() as DataWeatherContextType;

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useDataWeather } from '../context/useDataWeather';
-import { FlagsStyle } from '../styles/components/Weather';
 import { DataWeatherContextType } from '../types/contextTypes';
+import { FlagsStyle } from '../styles/components/FlagsStyles';
 
 const Flags = () => {
 	const { data } = useDataWeather() as DataWeatherContextType;

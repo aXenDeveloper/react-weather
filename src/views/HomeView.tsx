@@ -1,13 +1,13 @@
-import { useGeoLocation } from '../context/useGeoLocation';
-import { GeoLocationContextType } from '../types/contextTypes';
-import WeatherView from './WeatherView';
-import { Container } from '../styles/layout';
-import ButtonLink from '../components/ButtonLink';
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { useTranslation } from 'react-i18next';
-import { HomeViewStyle, HomeViewButtonsStyle } from '../styles/HomeViewStyles';
-import { useEffect } from 'react';
+import { useGeoLocation } from '../context/useGeoLocation';
+import { GeoLocationContextType } from '../types/contextTypes';
+import { Container } from '../styles/global';
+import { HomeViewStyle, HomeViewButtonsStyle } from '../styles/views/HomeViewStyles';
+import WeatherView from './WeatherView';
+import ButtonLink from '../components/ButtonLink';
 
 const HomeView = () => {
 	const { geoLocation } = useGeoLocation() as GeoLocationContextType;

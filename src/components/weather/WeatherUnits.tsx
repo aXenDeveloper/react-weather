@@ -1,12 +1,12 @@
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
-import { WeatherUnitsInputStyle, WeatherDegreesButton } from '../../styles/components/Weather';
+import { WeatherUnitsStyle, WeatherDegreesButton } from '../../styles/components/WeatherUnits';
 
-const WeatherUnitsInput = () => {
+const WeatherUnits = () => {
 	const { getUnits, setUnits } = useDataWeather() as DataWeatherContextType;
 
 	return (
-		<WeatherUnitsInputStyle>
+		<WeatherUnitsStyle>
 			<WeatherDegreesButton onClick={() => setUnits('metric')} aria-checked={getUnits === 'metric'}>
 				°C
 			</WeatherDegreesButton>
@@ -14,8 +14,8 @@ const WeatherUnitsInput = () => {
 			<WeatherDegreesButton onClick={() => setUnits('imperial')} aria-checked={getUnits === 'imperial'}>
 				°F
 			</WeatherDegreesButton>
-		</WeatherUnitsInputStyle>
+		</WeatherUnitsStyle>
 	);
 };
 
-export default WeatherUnitsInput;
+export default WeatherUnits;

@@ -1,23 +1,6 @@
 import styled from 'styled-components';
-import { Container } from '../layout';
 
-export const ContainerWeather = styled(Container)`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-
-	@media screen and (max-width: 768px) {
-		flex-direction: column;
-	}
-`;
-
-export const WeatherInfoContainerStyled = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-`;
-
-export const WeatherUnitsInputStyle = styled.div`
+export const WeatherUnitsStyle = styled.div`
 	display: flex;
 	flex-direction: column;
 	font-size: 3rem;
@@ -46,10 +29,6 @@ export const WeatherUnitsInputStyle = styled.div`
 			}
 		}
 	}
-`;
-
-export const FlagsStyle = styled.img`
-	width: 40px;
 `;
 
 export const WeatherDegreesButton = styled.button`

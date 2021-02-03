@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 10px;
 }
 
 body {
@@ -71,6 +71,20 @@ main {
     }
 }
 
+`;
+
+export const Container = styled.div`
+	${({ small }: { small?: boolean }) =>
+		small
+			? css`
+					max-width: var(--container-small-width);
+			  `
+			: css`
+					max-width: var(--container-width);
+			  `}
+
+	padding: 0 1.5rem;
+	margin: 0 auto;
 `;
 
 export default GlobalStyle;

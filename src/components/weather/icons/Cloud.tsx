@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { CloudStyle, TimeOfDayStyle } from '../../../styles/components/weatherIcons/CloudStyles';
 import { CloudType } from '../../../types/weatherIconsTypes';
+import { CloudStyle, TimeOfDayStyle } from '../../../styles/components/weatherIcons/CloudStyles';
 import CloudSVG from './CloudSVG';
 import Rain from './Rain';
 import Storm from './Storm';

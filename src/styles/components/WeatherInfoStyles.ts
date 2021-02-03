@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const WeatherInfoStyle = styled.section`
+	position: relative;
+`;
+
 export const WeatherInfoBoxStyled = styled.div`
 	background-color: var(--theme-block);
 	border-radius: var(--border-radius);
@@ -41,13 +45,7 @@ export const WeatherInfoBoxSVG = styled.div(
 	`
 );
 
-export const WeatherLastUpdateStyle = styled.div`
-	text-align: right;
-	color: #fff;
-	margin: 1rem 0;
-	font-style: italic;
-
-	span {
-		font-weight: bold;
-	}
+export const WeatherInfoContainerStyled = styled.div`
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 `;

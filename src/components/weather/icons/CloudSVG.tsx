@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { CloudSVGStyle } from '../../../styles/components/weatherIcons/CloudStyles';
 import { CloudSVGType } from '../../../types/weatherIconsTypes';
+import { CloudSVGStyle } from '../../../styles/components/weatherIcons/CloudStyles';
 
 const CloudSVG: FC<CloudSVGType> = ({ getCloudColor }) => (
 	<CloudSVGStyle getCloudColor={getCloudColor} viewBox="0 -87 463.83425 463" xmlns="http://www.w3.org/2000/svg">

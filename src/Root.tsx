@@ -1,11 +1,11 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import HomeView from './views/HomeView';
-import Layout from './components/Layout';
-import WeatherView from './views/WeatherView';
-import { LangContext } from './context/useLang';
 import { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import i18n from './i18n';
+import { LangContext } from './context/useLang';
+import Layout from './components/Layout';
 import ErrorView from './views/ErrorView';
+import HomeView from './views/HomeView';
+import WeatherView from './views/WeatherView';
 
 const Root = () => {
 	const [lang, setLang] = useState(i18n.language);

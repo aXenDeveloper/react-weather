@@ -1,7 +1,7 @@
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
 import { SelectCloudType } from '../../types/weatherTypes';
-import { WeatherIconStyle, WeatherSVGStyle } from '../../styles/weather';
+import { WeatherIconStyle, WeatherSVGStyle } from '../../styles/components/WeatherIconStyle';
 import Cloud from './icons/Cloud';
 import Moon from './icons/Moon';
 import Sun from './icons/Sun';
