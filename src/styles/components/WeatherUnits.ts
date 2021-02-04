@@ -1,54 +1,54 @@
 import styled from 'styled-components';
 
 export const WeatherUnitsStyle = styled.div`
-	display: flex;
-	flex-direction: column;
-	font-size: 3rem;
-	justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  justify-content: space-between;
 
-	label {
-		margin-left: 1rem;
-		cursor: pointer;
-		padding: 1rem;
-		text-align: center;
-		border-radius: 1rem;
+  label {
+    margin-left: 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
 
-		input {
-			display: none;
+    input {
+      display: none;
 
-			&:not(:checked) + span {
-				color: #b4ceff;
-			}
-		}
+      &:not(:checked) + span {
+        color: #b4ceff;
+      }
+    }
 
-		&:hover {
-			background-color: var(--button-hover);
+    &:hover {
+      background-color: var(--button-hover);
 
-			&:not(:checked) span {
-				color: #fff;
-			}
-		}
-	}
+      &:not(:checked) span {
+        color: #fff;
+      }
+    }
+  }
 `;
 
 export const WeatherDegreesButton = styled.button`
-	margin-left: 1rem;
-	background-color: transparent;
-	font-family: inherit;
-	border: 0;
-	padding: 1rem;
-	font-size: inherit;
-	font-weight: bold;
-	line-height: 1;
-	color: #fff;
-	cursor: pointer;
-	border-radius: var(--border-radius);
+  margin-left: 1rem;
+  background-color: transparent;
+  font-family: inherit;
+  border: 0;
+  padding: 1rem;
+  font-size: inherit;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  cursor: pointer;
+  border-radius: var(--border-radius);
 
-	&[aria-checked='false'] {
-		color: #b4ceff;
-	}
+  &[aria-checked='false'] {
+    color: #b4ceff;
+  }
 
-	&:hover {
-		background-color: var(--button-hover);
-	}
+  &:hover {
+    background-color: var(--button-hover);
+  }
 `;

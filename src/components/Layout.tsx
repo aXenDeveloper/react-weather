@@ -4,22 +4,22 @@ import Footer from './Footer';
 import Header from './Header';
 
 const Layout: FC = ({ children }) => {
-	const [geoLocation, setGeoLocation] = useState({
-		status: false,
-		lat: 0,
-		lon: 0
-	});
+  const [geoLocation, setGeoLocation] = useState({
+    status: false,
+    lat: 0,
+    lon: 0
+  });
 
-	return (
-		<>
-			<GeoLocationContext.Provider value={{ geoLocation, setGeoLocation }}>
-				<Header />
-				<main>{children}</main>
-			</GeoLocationContext.Provider>
+  return (
+    <>
+      <GeoLocationContext.Provider value={{ geoLocation, setGeoLocation }}>
+        <Header />
+        <main>{children}</main>
+      </GeoLocationContext.Provider>
 
-			<Footer />
-		</>
-	);
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;

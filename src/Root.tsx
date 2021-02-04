@@ -8,21 +8,21 @@ import HomeView from './views/HomeView';
 import WeatherView from './views/WeatherView';
 
 const Root = () => {
-	const [lang, setLang] = useState(i18n.language);
+  const [lang, setLang] = useState(i18n.language);
 
-	return (
-		<Router>
-			<LangContext.Provider value={{ lang, setLang }}>
-				<Layout>
-					<Switch>
-						<Route exact path="/" component={HomeView} />
-						<Route exact path="/:name" component={WeatherView} />
-						<Route component={ErrorView} />
-					</Switch>
-				</Layout>
-			</LangContext.Provider>
-		</Router>
-	);
+  return (
+    <Router>
+      <LangContext.Provider value={{ lang, setLang }}>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={HomeView} />
+            <Route exact path="/:name" component={WeatherView} />
+            <Route component={ErrorView} />
+          </Switch>
+        </Layout>
+      </LangContext.Provider>
+    </Router>
+  );
 };
 
 export default Root;

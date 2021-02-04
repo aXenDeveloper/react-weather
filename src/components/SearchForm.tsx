@@ -6,35 +6,35 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { SearchFormStyle } from '../styles/components/SearchFormStyles';
 
 const SearchForm = () => {
-	const history = useHistory();
-	const { t } = useTranslation();
+  const history = useHistory();
+  const { t } = useTranslation();
 
-	const [inputCity, setInputCity] = useState('');
-	const handleSubmit = (e: FormEvent) => {
-		e.preventDefault();
-		history.push(`/${inputCity.toLowerCase()}`);
-		setInputCity('');
-	};
+  const [inputCity, setInputCity] = useState('');
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    history.push(`/${inputCity.toLowerCase()}`);
+    setInputCity('');
+  };
 
-	const handleInputCity = (e: ChangeEvent<HTMLInputElement>) => setInputCity(e.target.value);
+  const handleInputCity = (e: ChangeEvent<HTMLInputElement>) => setInputCity(e.target.value);
 
-	return (
-		<SearchFormStyle onSubmit={handleSubmit}>
-			<input
-				type="text"
-				id="search"
-				placeholder={t('input_search_placeholder')}
-				onChange={handleInputCity}
-				value={inputCity}
-				aria-label={t('input_search_placeholder')}
-				title={t('input_search_placeholder')}
-			/>
+  return (
+    <SearchFormStyle onSubmit={handleSubmit}>
+      <input
+        type="text"
+        id="search"
+        placeholder={t('input_search_placeholder')}
+        onChange={handleInputCity}
+        value={inputCity}
+        aria-label={t('input_search_placeholder')}
+        title={t('input_search_placeholder')}
+      />
 
-			<button type="submit" aria-label={t('input_search_button')}>
-				<FontAwesomeIcon icon={faSearch} />
-			</button>
-		</SearchFormStyle>
-	);
+      <button type="submit" aria-label={t('input_search_button')}>
+        <FontAwesomeIcon icon={faSearch} />
+      </button>
+    </SearchFormStyle>
+  );
 };
 
 export default SearchForm;

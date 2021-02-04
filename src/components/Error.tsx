@@ -6,24 +6,24 @@ import { Container } from '../styles/global';
 import { ErrorStyle, ErrorIcon, ErrorContent, ErrorTitle, ErrorCode } from '../styles/components/ErrorStyles';
 
 const Error: FC<{ children: ReactNode; code: number }> = ({ children, code }) => {
-	const { t } = useTranslation();
+  const { t } = useTranslation();
 
-	return (
-		<Container>
-			<ErrorStyle>
-				<ErrorIcon>
-					<FontAwesomeIcon icon={faExclamationTriangle} />
-				</ErrorIcon>
+  return (
+    <Container>
+      <ErrorStyle>
+        <ErrorIcon>
+          <FontAwesomeIcon icon={faExclamationTriangle} />
+        </ErrorIcon>
 
-				<ErrorTitle>{t('error_title')}</ErrorTitle>
-				<ErrorContent>{children}</ErrorContent>
+        <ErrorTitle>{t('error_title')}</ErrorTitle>
+        <ErrorContent>{children}</ErrorContent>
 
-				<ErrorCode>
-					{t('error_code')}: <span>{code}</span>
-				</ErrorCode>
-			</ErrorStyle>
-		</Container>
-	);
+        <ErrorCode>
+          {t('error_code')}: <span>{code}</span>
+        </ErrorCode>
+      </ErrorStyle>
+    </Container>
+  );
 };
 
 export default Error;

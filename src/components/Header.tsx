@@ -3,13 +3,13 @@ import ActionBar from './ActionBar';
 import SearchForm from './SearchForm';
 
 const Header = () => (
-	<HeaderStyle>
-		<ContainerHeader>
-			<SearchForm />
+  <HeaderStyle>
+    <ContainerHeader>
+      <SearchForm />
 
-			<ActionBar />
-		</ContainerHeader>
-	</HeaderStyle>
+      <ActionBar />
+    </ContainerHeader>
+  </HeaderStyle>
 );
 
 export default Header;

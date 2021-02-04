@@ -10,17 +10,17 @@ _API: [OpenWeatherMap](https://openweathermap.org/)_
 
 ## Table of contents 📖
 
--   [Install 🧰](#install-)
--   [Configuration 🛠️](#configuration-%EF%B8%8F)
-    -   [API](#api)
-    -   [Title website](#title-website)
--   [Languages 🌎](#languages-)
-    -   [Configuration](#configuration)
-    -   [Add new lang](#add-new-lang)
--   [Tests 👍](#tests-)
--   [Deployment 🔨](#deployment-)
--   [Packages 📂](#packages-)
--   [Graphics 📷](#graphics-)
+- [Install 🧰](#install-)
+- [Configuration 🛠️](#configuration-%EF%B8%8F)
+  - [API](#api)
+  - [Title website](#title-website)
+- [Languages 🌎](#languages-)
+  - [Configuration](#configuration)
+  - [Add new lang](#add-new-lang)
+- [Tests 👍](#tests-)
+- [Deployment 🔨](#deployment-)
+- [Packages 📂](#packages-)
+- [Graphics 📷](#graphics-)
 
 ## Install 🧰
 
@@ -51,28 +51,28 @@ REACT_APP_KEY_API_WEATHER=
 Change title website in:
 
 1. **/public/index.html**:
-    ```bash
-    <title>Weather app - aXenDev.net</title>
-    ```
+   ```bash
+   <title>Weather app - aXenDev.net</title>
+   ```
 2. **src/.env**:
 
-    ```bash
-    REACT_APP_TITLE_WEBSITE=XXX
-    ```
+   ```bash
+   REACT_APP_TITLE_WEBSITE=XXX
+   ```
 
 3. **public/manifest.json**:
-    ```bash
-    "short_name": "Weather app",
-    "name": "Weather app - aXenDev.net",
-    ```
+   ```bash
+   "short_name": "Weather app",
+   "name": "Weather app - aXenDev.net",
+   ```
 
 ## Languages 🌎
 
 Before we start - [Check the supported language for OpenWeatherMap API](https://openweathermap.org/current#multi)
 
--   {lang} - Short name of the language _for example: `pl`_,
--   {lang*flag} - Short name of the country [Check the supported country](https://flagpedia.net/index) \_for example: `pl`*,
--   {lang*full} Full name of the language \_for example: `polish`*
+- {lang} - Short name of the language _for example: `pl`_,
+- {lang*flag} - Short name of the country [Check the supported country](https://flagpedia.net/index) \_for example: `pl`*,
+- {lang*full} Full name of the language \_for example: `polish`*
 
 ---
 
@@ -100,19 +100,19 @@ More options in [i18next config documentation](https://www.i18next.com/overview/
 1. Go to **src/lang** and create folder for a language for example `pl`,
 2. Create file **translation.json** in **src/lang/{lang}**,
 3. Go to **src/i18n.ts** and add to import new language:
-    ```bash
-    import translation{lang} from './lang/{lang}/translation.json';
-    ```
+   ```bash
+   import translation{lang} from './lang/{lang}/translation.json';
+   ```
 4. Add new lang in resources variable:
-    ```bash
-    {lang}: {
-    	translation: translation{lang}
-    }
-    ```
+   ```bash
+   {lang}: {
+   	translation: translation{lang}
+   }
+   ```
 5. Create a new button. Go to **src/components/ChangeLang.tsx** and add new element li via function inside **ChangeLangStyle**:
-    ```bash
-    {createLang('{lang}', '{lang_flag}', '{lang_full}')}
-    ```
+   ```bash
+   {createLang('{lang}', '{lang_flag}', '{lang_full}')}
+   ```
 
 ## Deployment 🔨
 

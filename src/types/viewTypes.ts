@@ -1,6 +1,6 @@
 export type WeatherViewType = {
-	geoLocation?: {
-		lat: number;
-		lon: number;
-	};
+  geoLocation?: {
+    lat: number;
+    lon: number;
+  };
 };

@@ -11,43 +11,43 @@ import Tornado from './Tornado';
 import Fog from './Fog';
 
 const Cloud: FC<CloudType> = ({ getRain, getCloudColor, getStorm, timeOfDay, getSnow, getTornado, getFog }) => (
-	<>
-		<CloudStyle left>
-			<CloudSVG getCloudColor={getCloudColor} />
+  <>
+    <CloudStyle left>
+      <CloudSVG getCloudColor={getCloudColor} />
 
-			{getRain && <Rain />}
-			{getSnow && <Snow />}
-		</CloudStyle>
+      {getRain && <Rain />}
+      {getSnow && <Snow />}
+    </CloudStyle>
 
-		<CloudStyle>
-			<CloudSVG getCloudColor={getCloudColor} />
+    <CloudStyle>
+      <CloudSVG getCloudColor={getCloudColor} />
 
-			{timeOfDay === 'night' && (
-				<TimeOfDayStyle timeOfDay={timeOfDay}>
-					<Moon />
-				</TimeOfDayStyle>
-			)}
-			{timeOfDay === 'day' && (
-				<TimeOfDayStyle timeOfDay={timeOfDay}>
-					<Sun />
-				</TimeOfDayStyle>
-			)}
+      {timeOfDay === 'night' && (
+        <TimeOfDayStyle timeOfDay={timeOfDay}>
+          <Moon />
+        </TimeOfDayStyle>
+      )}
+      {timeOfDay === 'day' && (
+        <TimeOfDayStyle timeOfDay={timeOfDay}>
+          <Sun />
+        </TimeOfDayStyle>
+      )}
 
-			{getRain && <Rain />}
-			{getSnow && <Snow />}
+      {getRain && <Rain />}
+      {getSnow && <Snow />}
 
-			{getStorm && <Storm />}
-			{getTornado && <Tornado />}
-			{getFog && <Fog />}
-		</CloudStyle>
+      {getStorm && <Storm />}
+      {getTornado && <Tornado />}
+      {getFog && <Fog />}
+    </CloudStyle>
 
-		<CloudStyle right>
-			<CloudSVG getCloudColor={getCloudColor} />
+    <CloudStyle right>
+      <CloudSVG getCloudColor={getCloudColor} />
 
-			{getRain && <Rain />}
-			{getSnow && <Snow />}
-		</CloudStyle>
-	</>
+      {getRain && <Rain />}
+      {getSnow && <Snow />}
+    </CloudStyle>
+  </>
 );
 
 export default Cloud;

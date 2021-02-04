@@ -74,17 +74,17 @@ main {
 `;
 
 export const Container = styled.div`
-	${({ small }: { small?: boolean }) =>
-		small
-			? css`
-					max-width: var(--container-small-width);
-			  `
-			: css`
-					max-width: var(--container-width);
-			  `}
+  ${({ small }: { small?: boolean }) =>
+    small
+      ? css`
+          max-width: var(--container-small-width);
+        `
+      : css`
+          max-width: var(--container-width);
+        `}
 
-	padding: 0 1.5rem;
-	margin: 0 auto;
+  padding: 0 1.5rem;
+  margin: 0 auto;
 `;
 
 export default GlobalStyle;

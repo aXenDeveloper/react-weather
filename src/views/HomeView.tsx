@@ -10,33 +10,29 @@ import WeatherView from './WeatherView';
 import ButtonLink from '../components/ButtonLink';
 
 const HomeView = () => {
-	const { geoLocation } = useGeoLocation() as GeoLocationContextType;
-	const { t } = useTranslation();
+  const { geoLocation } = useGeoLocation() as GeoLocationContextType;
+  const { t } = useTranslation();
 
-	useEffect(() => {
-		document.title = process.env.REACT_APP_TITLE_WEBSITE || '';
-	}, []);
+  useEffect(() => {
+    document.title = process.env.REACT_APP_TITLE_WEBSITE || '';
+  }, []);
 
-	if (geoLocation.status) return <WeatherView geoLocation={geoLocation} />;
+  if (geoLocation.status) return <WeatherView geoLocation={geoLocation} />;
 
-	return (
-		<Container>
-			<HomeViewStyle>
-				<h1>{t('title_app')}</h1>
-				<p>{t('desc_app')}</p>
+  return (
+    <Container>
+      <HomeViewStyle>
+        <h1>{t('title_app')}</h1>
+        <p>{t('desc_app')}</p>
 
-				<HomeViewButtonsStyle>
-					<ButtonLink
-						href="https://github.com/aXenDeveloper/react-weather"
-						target="_blank"
-						rel="noopener nofollow"
-					>
-						<FontAwesomeIcon icon={faGithub} /> {t('button_github')}
-					</ButtonLink>
-				</HomeViewButtonsStyle>
-			</HomeViewStyle>
-		</Container>
-	);
+        <HomeViewButtonsStyle>
+          <ButtonLink href="https://github.com/aXenDeveloper/react-weather" target="_blank" rel="noopener nofollow">
+            <FontAwesomeIcon icon={faGithub} /> {t('button_github')}
+          </ButtonLink>
+        </HomeViewButtonsStyle>
+      </HomeViewStyle>
+    </Container>
+  );
 };
 
 export default HomeView;

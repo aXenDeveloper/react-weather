@@ -3,10 +3,10 @@ import GeoLocationButton from './GeoLocationButton';
 import ChangeLang from './ChangeLang';
 
 const ActionBar = () => (
-	<ActionBarStyle>
-		<GeoLocationButton />
-		<ChangeLang />
-	</ActionBarStyle>
+  <ActionBarStyle>
+    <GeoLocationButton />
+    <ChangeLang />
+  </ActionBarStyle>
 );
 
 export default ActionBar;

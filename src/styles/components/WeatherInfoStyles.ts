@@ -1,30 +1,30 @@
 import styled from 'styled-components';
 
 export const WeatherInfoStyle = styled.section`
-	position: relative;
+  position: relative;
 `;
 
 export const WeatherInfoBoxStyled = styled.div`
-	background-color: var(--theme-block);
-	border-radius: var(--border-radius);
-	padding: 1.4rem;
-	display: flex;
-	align-items: center;
-	margin: 1rem;
-	font-size: 1.6rem;
+  background-color: var(--theme-block);
+  border-radius: var(--border-radius);
+  padding: 1.4rem;
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  font-size: 1.6rem;
 
-	h2 {
-		font-size: inherit;
-		margin: 0;
-	}
+  h2 {
+    font-size: inherit;
+    margin: 0;
+  }
 
-	p {
-		margin: 0;
-	}
+  p {
+    margin: 0;
+  }
 `;
 
 export const WeatherInfoBoxSVG = styled.div(
-	({ direction }: { direction?: number }) => `
+  ({ direction }: { direction?: number }) => `
 		width: 4rem;
 		display: flex;
 		align-items: center;
@@ -34,18 +34,18 @@ export const WeatherInfoBoxSVG = styled.div(
 		margin-right: 1rem;
 
 		${
-			direction
-				? `
+      direction
+        ? `
 				svg {
 					transform: rotate(${direction}deg);
 				}
 			`
-				: ''
-		}
+        : ''
+    }
 	`
 );
 
 export const WeatherInfoContainerStyled = styled.div`
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 `;

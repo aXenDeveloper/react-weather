@@ -9,38 +9,38 @@ import WeatherInfoBox from './WeatherInfoBox';
 import WeatherLastUpdate from './WeatherLastUpdate';
 
 const WeatherInfo = () => {
-	const { data } = useDataWeather() as DataWeatherContextType;
-	const { t } = useTranslation();
+  const { data } = useDataWeather() as DataWeatherContextType;
+  const { t } = useTranslation();
 
-	return (
-		<WeatherInfoStyle>
-			<Container>
-				<WeatherInfoBox title={t('feels_like')} icon={faThermometerHalf}>
-					<ConvertTemp temp={data.main.feels_like} degrees={true} />
-				</WeatherInfoBox>
+  return (
+    <WeatherInfoStyle>
+      <Container>
+        <WeatherInfoBox title={t('feels_like')} icon={faThermometerHalf}>
+          <ConvertTemp temp={data.main.feels_like} degrees={true} />
+        </WeatherInfoBox>
 
-				<WeatherInfoContainerStyled>
-					<WeatherInfoBox title={t('pressure')} icon={faLevelDownAlt}>
-						{data.main.pressure} hPa
-					</WeatherInfoBox>
+        <WeatherInfoContainerStyled>
+          <WeatherInfoBox title={t('pressure')} icon={faLevelDownAlt}>
+            {data.main.pressure} hPa
+          </WeatherInfoBox>
 
-					<WeatherInfoBox title={t('wind')} icon={faLongArrowAltUp} rotate={data.wind.deg}>
-						<ConvertSpeed speed={data.wind.speed} />
-					</WeatherInfoBox>
+          <WeatherInfoBox title={t('wind')} icon={faLongArrowAltUp} rotate={data.wind.deg}>
+            <ConvertSpeed speed={data.wind.speed} />
+          </WeatherInfoBox>
 
-					<WeatherInfoBox title={t('cloudiness')} icon={faCloud}>
-						{data.clouds.all}%
-					</WeatherInfoBox>
+          <WeatherInfoBox title={t('cloudiness')} icon={faCloud}>
+            {data.clouds.all}%
+          </WeatherInfoBox>
 
-					<WeatherInfoBox title={t('humidity')} icon={faTint}>
-						{data.main.humidity}%
-					</WeatherInfoBox>
-				</WeatherInfoContainerStyled>
+          <WeatherInfoBox title={t('humidity')} icon={faTint}>
+            {data.main.humidity}%
+          </WeatherInfoBox>
+        </WeatherInfoContainerStyled>
 
-				<WeatherLastUpdate />
-			</Container>
-		</WeatherInfoStyle>
-	);
+        <WeatherLastUpdate />
+      </Container>
+    </WeatherInfoStyle>
+  );
 };
 
 export default WeatherInfo;
