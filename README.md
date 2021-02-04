@@ -15,6 +15,7 @@ _API: [OpenWeatherMap](https://openweathermap.org/)_
     -   [API](#api)
     -   [Title website](#title-website)
 -   [Languages 🌎](#languages-)
+    -   [Configuration](#configuration)
     -   [Add new lang](#add-new-lang)
 -   [Tests 👍](#tests-)
 -   [Deployment 🔨](#deployment-)
