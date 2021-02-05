@@ -1,5 +1,5 @@
 export type DataWeatherContextType = {
-  data: {
+  weatherDataCurrent: {
     name: string;
 
     weather: {
@@ -34,13 +34,13 @@ export type DataWeatherContextType = {
 
     dt: number;
   };
-  getUnits: string;
-  setUnits(e: string): void;
 };
 
-export type LangContextType = {
+export type GlobalContextType = {
   lang: string;
   setLang(e: string): void;
+  getUnits: string;
+  setUnits(e: string): void;
 };
 
 export type GeoLocationContextType = {

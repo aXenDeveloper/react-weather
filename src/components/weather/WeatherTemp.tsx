@@ -10,20 +10,21 @@ import { ConvertTemp } from './ConvertUnits';
 import WeatherUnits from './WeatherUnits';
 
 const WeatherTemp = () => {
-  const { data } = useDataWeather() as DataWeatherContextType;
+  const { weatherDataCurrent } = useDataWeather() as DataWeatherContextType;
 
   return (
     <WeatherTempStyle>
       <WeatherTempMainStyle>
-        <ConvertTemp temp={data.main.temp} />
+        <ConvertTemp temp={weatherDataCurrent.main.temp} />
         <WeatherUnits />
       </WeatherTempMainStyle>
 
       <WeatherTempMinMaxStyle>
-        <ConvertTemp temp={data.main.temp_min} degrees={true} /> / <ConvertTemp temp={data.main.temp_max} degrees={true} />
+        <ConvertTemp temp={weatherDataCurrent.main.temp_min} degrees={true} /> /{' '}
+        <ConvertTemp temp={weatherDataCurrent.main.temp_max} degrees={true} />
       </WeatherTempMinMaxStyle>
 
-      <WeatherDescStyle>{data.weather[0].description}</WeatherDescStyle>
+      <WeatherDescStyle>{weatherDataCurrent.weather[0].description}</WeatherDescStyle>
     </WeatherTempStyle>
   );
 };

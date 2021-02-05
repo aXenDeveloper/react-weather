@@ -9,31 +9,31 @@ import WeatherInfoBox from './WeatherInfoBox';
 import WeatherLastUpdate from './WeatherLastUpdate';
 
 const WeatherInfo = () => {
-  const { data } = useDataWeather() as DataWeatherContextType;
+  const { weatherDataCurrent } = useDataWeather() as DataWeatherContextType;
   const { t } = useTranslation();
 
   return (
     <WeatherInfoStyle>
       <Container>
         <WeatherInfoBox title={t('feels_like')} icon={faThermometerHalf}>
-          <ConvertTemp temp={data.main.feels_like} degrees={true} />
+          <ConvertTemp temp={weatherDataCurrent.main.feels_like} degrees={true} />
         </WeatherInfoBox>
 
         <WeatherInfoContainerStyled>
           <WeatherInfoBox title={t('pressure')} icon={faLevelDownAlt}>
-            {data.main.pressure} hPa
+            {weatherDataCurrent.main.pressure} hPa
           </WeatherInfoBox>
 
-          <WeatherInfoBox title={t('wind')} icon={faLongArrowAltUp} rotate={data.wind.deg}>
-            <ConvertSpeed speed={data.wind.speed} />
+          <WeatherInfoBox title={t('wind')} icon={faLongArrowAltUp} rotate={weatherDataCurrent.wind.deg}>
+            <ConvertSpeed speed={weatherDataCurrent.wind.speed} />
           </WeatherInfoBox>
 
           <WeatherInfoBox title={t('cloudiness')} icon={faCloud}>
-            {data.clouds.all}%
+            {weatherDataCurrent.clouds.all}%
           </WeatherInfoBox>
 
           <WeatherInfoBox title={t('humidity')} icon={faTint}>
-            {data.main.humidity}%
+            {weatherDataCurrent.main.humidity}%
           </WeatherInfoBox>
         </WeatherInfoContainerStyled>
 

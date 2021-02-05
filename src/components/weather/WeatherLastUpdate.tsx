@@ -1,13 +1,15 @@
 import { useTranslation } from 'react-i18next';
 import { useDataWeather } from '../../context/useDataWeather';
-import { DataWeatherContextType } from '../../types/contextTypes';
+import { DataWeatherContextType, GlobalContextType } from '../../types/contextTypes';
 import { WeatherLastUpdateStyle } from '../../styles/components/WeatherStyle';
+import { useGlobal } from '../../context/useGlobal';
 
 const WeatherLastUpdate = () => {
-  const { data, getUnits } = useDataWeather() as DataWeatherContextType;
+  const { weatherDataCurrent } = useDataWeather() as DataWeatherContextType;
+  const { getUnits } = useGlobal() as GlobalContextType;
   const { t } = useTranslation();
 
-  const currentData = new Date(data.dt * 1000);
+  const currentData = new Date(weatherDataCurrent.dt * 1000);
 
   const getDate = ('0' + currentData.getDate()).slice(-2);
   const getMonth = ('0' + (currentData.getMonth() + 1)).slice(-2);

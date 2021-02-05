@@ -1,9 +1,9 @@
-import { useDataWeather } from '../../context/useDataWeather';
-import { DataWeatherContextType } from '../../types/contextTypes';
+import { GlobalContextType } from '../../types/contextTypes';
 import { WeatherUnitsStyle, WeatherDegreesButton } from '../../styles/components/WeatherUnits';
+import { useGlobal } from '../../context/useGlobal';
 
 const WeatherUnits = () => {
-  const { getUnits, setUnits } = useDataWeather() as DataWeatherContextType;
+  const { getUnits, setUnits } = useGlobal() as GlobalContextType;
 
   return (
     <WeatherUnitsStyle>

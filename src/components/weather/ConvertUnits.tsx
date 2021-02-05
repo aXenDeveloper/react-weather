@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { useDataWeather } from '../../context/useDataWeather';
-import { DataWeatherContextType } from '../../types/contextTypes';
+import { useGlobal } from '../../context/useGlobal';
+import { GlobalContextType } from '../../types/contextTypes';
 import { ConvertTempType, ConvertSpeedType } from '../../types/weatherTypes';
 
 export const ConvertTemp: FC<ConvertTempType> = ({ temp, degrees }) => {
-  const { getUnits } = useDataWeather() as DataWeatherContextType;
+  const { getUnits } = useGlobal() as GlobalContextType;
 
   const roundTemp = Math.round(temp * 10) / 10;
   const getDegreesTemp = ` °${getUnits === 'metric' ? 'C' : 'F'}`;
@@ -18,7 +18,7 @@ export const ConvertTemp: FC<ConvertTempType> = ({ temp, degrees }) => {
 };
 
 export const ConvertSpeed: FC<ConvertSpeedType> = ({ speed }) => {
-  const { getUnits } = useDataWeather() as DataWeatherContextType;
+  const { getUnits } = useGlobal() as GlobalContextType;
 
   const getSpeedUnits = getUnits === 'metric' ? 'km/h' : 'm/h';
 

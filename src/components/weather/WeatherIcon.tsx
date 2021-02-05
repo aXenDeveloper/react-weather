@@ -7,9 +7,9 @@ import Moon from './icons/Moon';
 import Sun from './icons/Sun';
 
 const WeatherIcon = () => {
-  const { data } = useDataWeather() as DataWeatherContextType;
-  const weatherID = data.weather[0].id;
-  const weatherIcon = data.weather[0].icon.slice(-1);
+  const { weatherDataCurrent } = useDataWeather() as DataWeatherContextType;
+  const weatherID = weatherDataCurrent.weather[0].id;
+  const weatherIcon = weatherDataCurrent.weather[0].icon.slice(-1);
 
   const selectCloud = {
     cloud1: {

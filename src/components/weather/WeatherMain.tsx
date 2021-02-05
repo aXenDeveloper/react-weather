@@ -6,13 +6,13 @@ import WeatherIcon from './WeatherIcon';
 import WeatherTemp from './WeatherTemp';
 
 const WeatherMain = () => {
-  const { data } = useDataWeather() as DataWeatherContextType;
+  const { weatherDataCurrent } = useDataWeather() as DataWeatherContextType;
 
   return (
     <WeatherStyle>
       <ContainerWeather small>
         <WeatherTitleStyle>
-          {data.name}, {data.sys.country} <Flags />
+          {weatherDataCurrent.name}, {weatherDataCurrent.sys.country} <Flags />
         </WeatherTitleStyle>
 
         <WeatherIcon />

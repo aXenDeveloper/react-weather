@@ -1,12 +1,12 @@
 import i18n from '../i18n';
 import { useTranslation } from 'react-i18next';
-import { useLang } from '../context/useLang';
-import { LangContextType } from '../types/contextTypes';
+import { useGlobal } from '../context/useGlobal';
+import { GlobalContextType } from '../types/contextTypes';
 import { ChangeLangStyle } from '../styles/components/ChangeLangStyles';
 import { useEffect } from 'react';
 
 const ChangeLang = () => {
-  const { lang, setLang } = useLang() as LangContextType;
+  const { lang, setLang } = useGlobal() as GlobalContextType;
   const { t } = useTranslation();
 
   const changeLanguage = (lng: string) => {
