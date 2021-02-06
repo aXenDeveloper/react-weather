@@ -55,8 +55,8 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
   );
 
   if (isLoading) return <Loading />;
-  if (isError) return <Error code={500}>{t('weather_500')}</Error>;
-  if (parseInt(data.cod) === 404) return <Error code={404}>{t('weather_404')}</Error>;
+  if (isError || parseInt(data.cod) === 401) return <Error code={500}>{t('error_500_weather')}</Error>;
+  if (parseInt(data.cod) === 404) return <Error code={404}>{t('error_404_weather')}</Error>;
 
   const weatherDataCurrent = data;
 

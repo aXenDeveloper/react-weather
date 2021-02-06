@@ -13,12 +13,13 @@
     "input_search_button": "Szukaj",
     "error_title": "Ups, coś jest nie tak (╯°□°）╯︵ ┻━┻",
     "error_code": "Kod błędu",
-    "weather_404": "Żądana miejscowość nie istnieje",
-    "weather_500": "Wystąpił błąd podczas łączenia się z interfejsem API.",
+    "error_404_weather": "Żądana miejscowość nie istnieje",
+    "error_500_weather": "Wystąpił błąd podczas łączenia się z interfejsem API.",
     "geolocation_button": "Użyj mojej lokalizacji (GPS)",
     "title_app": "Witaj w Weather app!",
     "desc_app": "Aby sprawdzić aktualną pogodę wpisz w wyszukiwarce dowolną nazwę miejscowości lub kliknij w przycisk koło wyszukiwarki, aby sprawdzić aktualną pogodę w twojej lokalizacji.",
     "button_github": "Repozytorium w GitHub",
     "footer_createdBy": "Stworzone przez",
-    "footer_API": "Dane API z"
+    "footer_API": "Dane API z",
+    "error_500_env": "Nie możemy odnaleźć pliku konfiguracyjnego lub jest on błędnie zapisany"
 }

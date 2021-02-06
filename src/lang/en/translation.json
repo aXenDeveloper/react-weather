@@ -13,12 +13,13 @@
     "input_search_button": "Search",
     "error_title": "Oops, something is wrong (╯°□°）╯︵ ┻━┻",
     "error_code": "Error code",
-    "weather_404": "The requested city does not exist",
-    "weather_500": "There was an error connecting to the API",
+    "error_404_weather": "The requested city does not exist",
+    "error_500_weather": "There was an error connecting to the API",
     "geolocation_button": "Use my location (GPS)",
     "title_app": "Welcome to Weather app!",
     "desc_app": "To check the current weather, enter any city name in the search engine or click the button next to the search engine to check the current weather in your location.",
     "button_github": "Repository on GitHub",
     "footer_createdBy": "Created by",
-    "footer_API": "Data API from"
+    "footer_API": "Data API from",
+    "error_500_env": "We cannot find the configuration file or it is written incorrectly"
 }
