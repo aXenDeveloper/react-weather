@@ -1,10 +1,11 @@
 import { useLocation } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { useGlobal } from '../context/useGlobal';
+import { useTranslation } from 'react-i18next';
 import { GlobalContextType } from '../types/contextTypes';
+import { Container } from '../styles/global';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
-import { useTranslation } from 'react-i18next';
 
 const WeatherForecastView = () => {
   const { pathname } = useLocation();
@@ -24,7 +25,7 @@ const WeatherForecastView = () => {
   };
 
   const { isLoading, data, isError } = useQuery(
-    ['weatherMain', city, key, lang, getUnits],
+    ['weatherForecast', city, key, lang, getUnits],
     () => api(city, key, lang, getUnits),
     {
       cacheTime: 0,
@@ -38,7 +39,7 @@ const WeatherForecastView = () => {
   if (isError || parseInt(data.cod) === 401) return <Error code={500}>{t('error_500_weather')}</Error>;
   if (parseInt(data.cod) === 404) return <Error code={404}>{t('error_404_weather')}</Error>;
 
-  return <div>forecast</div>;
+  return <Container>forecastList</Container>;
 };
 
 export default WeatherForecastView;

@@ -6,7 +6,7 @@ import Layout from './components/Layout';
 import ErrorView from './views/ErrorView';
 import HomeView from './views/HomeView';
 import WeatherView from './views/WeatherView';
-import WeatherForecastView from './views/WeatherForecastView';
+import ForecastView from './views/ForecastView';
 import Error from './components/Error';
 import { useTranslation } from 'react-i18next';
 
@@ -25,7 +25,7 @@ const Root = () => {
           {keyAPI && titleWebsite ? (
             <Switch>
               <Route exact path="/" component={HomeView} />
-              <Route exact path="/:name/forecast" component={WeatherForecastView} />
+              <Route exact path="/:name/forecast" component={ForecastView} />
               <Route exact path="/:name" component={WeatherView} />
               <Route component={ErrorView} />
             </Switch>

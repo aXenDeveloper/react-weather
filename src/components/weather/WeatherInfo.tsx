@@ -2,7 +2,7 @@ import { faLevelDownAlt, faLongArrowAltUp, faCloud, faThermometerHalf, faTint } 
 import { useTranslation } from 'react-i18next';
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
-import { ConvertSpeed, ConvertTemp } from './ConvertUnits';
+import { ConvertSpeed, ConvertTemp } from '../ConvertUnits';
 import { Container } from '../../styles/global';
 import { WeatherInfoStyle, WeatherInfoContainerStyled } from '../../styles/components/WeatherInfoStyles';
 import WeatherInfoBox from './WeatherInfoBox';

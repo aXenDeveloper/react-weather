@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { useGlobal } from '../../context/useGlobal';
-import { GlobalContextType } from '../../types/contextTypes';
-import { ConvertTempType, ConvertSpeedType } from '../../types/weatherTypes';
+import { useGlobal } from '../context/useGlobal';
+import { GlobalContextType } from '../types/contextTypes';
+import { ConvertTempType, ConvertSpeedType } from '../types/componentsTypes';
 
 export const ConvertTemp: FC<ConvertTempType> = ({ temp, degrees }) => {
   const { getUnits } = useGlobal() as GlobalContextType;

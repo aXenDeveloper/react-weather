@@ -1,14 +1,5 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-export type ConvertTempType = {
-  temp: number;
-  degrees?: boolean;
-};
-
-export type ConvertSpeedType = {
-  speed: number;
-};
-
 export type SelectCloudType = {
   rain: JSX.Element;
   storm: JSX.Element;

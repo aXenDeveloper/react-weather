@@ -3,3 +3,16 @@ export type ButtonType = {
   target?: '_blank';
   rel?: string;
 };
+
+export type ConvertTempType = {
+  temp: number;
+  degrees?: boolean;
+};
+
+export type ConvertSpeedType = {
+  speed: number;
+};
+
+export type ConvertDateType = {
+  dt: number;
+};
