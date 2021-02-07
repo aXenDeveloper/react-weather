@@ -5,7 +5,7 @@ import {
   WeatherTempMainStyle,
   WeatherTempMinMaxStyle,
   WeatherDescStyle
-} from '../../styles/components/WeatherTempStyle';
+} from '../../styles/components/weather/WeatherTempStyle';
 import { ConvertTemp } from '../ConvertUnits';
 import WeatherUnits from './WeatherUnits';
 

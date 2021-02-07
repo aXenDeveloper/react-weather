@@ -6,8 +6,9 @@ import { GlobalContextType } from '../types/contextTypes';
 import { Container } from '../styles/global';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
+import ForecastList from '../components/forecast/ForecastList';
 
-const WeatherForecastView = () => {
+const ForecastView = () => {
   const { pathname } = useLocation();
   const city = pathname.substr(1).split('/')[0];
   const key = process.env.REACT_APP_KEY_API_WEATHER || '';
@@ -39,7 +40,11 @@ const WeatherForecastView = () => {
   if (isError || parseInt(data.cod) === 401) return <Error code={500}>{t('error_500_weather')}</Error>;
   if (parseInt(data.cod) === 404) return <Error code={404}>{t('error_404_weather')}</Error>;
 
-  return <Container>forecastList</Container>;
+  return (
+    <Container>
+      <ForecastList list={data.list} />
+    </Container>
+  );
 };
 
-export default WeatherForecastView;
+export default ForecastView;

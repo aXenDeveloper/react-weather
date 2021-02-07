@@ -1,4 +1,4 @@
-import { FogStyle } from '../../../styles/components/weatherIcons/FogStyle';
+import { FogStyle } from '../../../styles/components/weather/icons/FogStyle';
 
 const Fog = () => (
   <FogStyle viewBox="0 -47 463.84305 463" xmlns="http://www.w3.org/2000/svg">

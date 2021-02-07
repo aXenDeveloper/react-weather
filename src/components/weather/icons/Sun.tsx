@@ -1,4 +1,4 @@
-import { SunStyle } from '../../../styles/components/weatherIcons/SunStyle';
+import { SunStyle } from '../../../styles/components/weather/icons/SunStyle';
 
 const Sun = () => {
   return (

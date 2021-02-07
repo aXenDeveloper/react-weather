@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container } from '../global';
+import { Container } from '../../global';
 
 export const ContainerWeather = styled(Container)`
   display: flex;

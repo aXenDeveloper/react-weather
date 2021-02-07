@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { CloudPosition, TimeOfDayStyleType, CloudSVGType } from '../../../types/weatherIconsTypes';
+import { CloudPosition, TimeOfDayStyleType, CloudSVGType } from '../../../../types/weatherIconsTypes';
 
 export const CloudStyle = styled.div`
   ${({ left }: CloudPosition) =>

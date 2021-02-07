@@ -4,7 +4,7 @@ import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
 import { ConvertSpeed, ConvertTemp } from '../ConvertUnits';
 import { Container } from '../../styles/global';
-import { WeatherInfoStyle, WeatherInfoContainerStyled } from '../../styles/components/WeatherInfoStyles';
+import { WeatherInfoStyle, WeatherInfoContainerStyled } from '../../styles/components/weather/WeatherInfoStyles';
 import WeatherInfoBox from './WeatherInfoBox';
 import WeatherLastUpdate from './WeatherLastUpdate';
 

@@ -1,5 +1,5 @@
 import { GlobalContextType } from '../../types/contextTypes';
-import { WeatherUnitsStyle, WeatherDegreesButton } from '../../styles/components/WeatherUnits';
+import { WeatherUnitsStyle, WeatherDegreesButton } from '../../styles/components/weather/WeatherUnits';
 import { useGlobal } from '../../context/useGlobal';
 
 const WeatherUnits = () => {

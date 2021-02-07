@@ -1,4 +1,4 @@
-import { TornadoStyle } from '../../../styles/components/weatherIcons/TornadoStyle';
+import { TornadoStyle } from '../../../styles/components/weather/icons/TornadoStyle';
 
 const Tornado = () => (
   <TornadoStyle xmlns="http://www.w3.org/2000/svg" viewBox="15 15 70 70">

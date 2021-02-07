@@ -1,4 +1,4 @@
-import { MoonStyle } from '../../../styles/components/weatherIcons/MoonStyle';
+import { MoonStyle } from '../../../styles/components/weather/icons/MoonStyle';
 
 const Moon = () => (
   <MoonStyle viewBox="-8 0 464 464.177" xmlns="http://www.w3.org/2000/svg">

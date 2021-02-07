@@ -1,4 +1,4 @@
-import { SnowDropStyle, SnowStyle } from '../../../styles/components/weatherIcons/SnowStyles';
+import { SnowDropStyle, SnowStyle } from '../../../styles/components/weather/icons/SnowStyles';
 
 const Snow = () => {
   const drops = [];

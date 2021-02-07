@@ -1,4 +1,4 @@
-import { RainStyle } from '../../../styles/components/weatherIcons/RainStyle';
+import { RainStyle } from '../../../styles/components/weather/icons/RainStyle';
 
 const Rain = () => {
   const drops = [];

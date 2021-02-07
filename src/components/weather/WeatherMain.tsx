@@ -1,6 +1,6 @@
 import { useDataWeather } from '../../context/useDataWeather';
 import { DataWeatherContextType } from '../../types/contextTypes';
-import { ContainerWeather, WeatherStyle, WeatherTitleStyle } from '../../styles/components/WeatherStyle';
+import { ContainerWeather, WeatherStyle, WeatherTitleStyle } from '../../styles/components/weather/WeatherStyle';
 import Flags from '../Flags';
 import WeatherIcon from './WeatherIcon';
 import WeatherTemp from './WeatherTemp';
