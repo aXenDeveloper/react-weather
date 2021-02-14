@@ -28,6 +28,7 @@ export const ForecastTemp = styled.div`
   font-weight: bold;
   flex: 0 100px;
   margin: 0 1rem;
+  text-align: center;
 `;
 
 export const ForecastButton = styled.button`
@@ -40,11 +41,29 @@ export const ForecastButton = styled.button`
   font-size: 2rem;
 `;
 
-export const ForecastImg = styled.div`
+export const ForecastDesc = styled.div`
   line-height: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  span {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    @media screen and (max-width: 600px) {
+      display: none;
+    }
+  }
 
   img {
     width: 50px;
     height: 50px;
+    object-fit: contain;
+
+    @media screen and (min-width: 769px) {
+      margin-right: 1rem;
+    }
   }
 `;

@@ -7,7 +7,7 @@ import {
   ForecastDate,
   ForecastTemp,
   ForecastButton,
-  ForecastImg
+  ForecastDesc
 } from '../../styles/components/forecast/ForecastStyles';
 import ConvertDate from '../ConvertDate';
 import { ConvertTemp } from '../ConvertUnits';
@@ -23,9 +23,10 @@ const ForecastListItem: FC<ForecastListItemType> = ({ data }) => {
         <ConvertTemp temp={data.main.temp} degrees />
       </ForecastTemp>
 
-      <ForecastImg>
+      <ForecastDesc>
         <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt={data.weather[0].description} />
-      </ForecastImg>
+        <span>{data.weather[0].description}</span>
+      </ForecastDesc>
 
       <ForecastButton aria-label="open">
         <FontAwesomeIcon icon={faArrowUp} />
