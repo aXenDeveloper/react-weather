@@ -9,11 +9,6 @@ export const ErrorStyle = styled.div`
   border-radius: var(--border-radius);
   text-align: center;
   color: #fff;
-  min-height: calc(100vh - 82px - 186px);
-
-  @media screen and (max-width: 768px) {
-    min-height: calc(100vh - 82px - 117px);
-  }
 `;
 
 export const ErrorIcon = styled.div`

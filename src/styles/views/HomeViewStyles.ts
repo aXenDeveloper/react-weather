@@ -7,11 +7,7 @@ export const HomeViewStyle = styled.div`
   flex-direction: column;
   color: #fff;
   text-align: center;
-  min-height: calc(100vh - 82px - 186px);
-
-  @media screen and (max-width: 768px) {
-    min-height: calc(100vh - 82px - 117px);
-  }
+  margin: 2rem 0;
 
   h1 {
     font-size: 4rem;

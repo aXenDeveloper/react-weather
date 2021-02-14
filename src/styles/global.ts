@@ -28,6 +28,7 @@ const GlobalStyle = createGlobalStyle`
 
 html {
     font-size: 10px;
+    height: 100%;
 }
 
 body {
@@ -40,7 +41,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--theme-color);
-    height: 100%;
+    min-height: 100%;
 }
 
 a {
@@ -53,11 +54,10 @@ a {
 }
 
 main {
-    min-height: calc(100vh - 82px - 186px);
-
-    @media screen and (max-width: 768px) {
-        min-height: calc(100vh - 82px - 117px);
-    }
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @keyframes drop {
@@ -85,6 +85,12 @@ export const Container = styled.div`
 
   padding: 0 1.5rem;
   margin: 0 auto;
+`;
+
+export const CenterBody = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default GlobalStyle;
