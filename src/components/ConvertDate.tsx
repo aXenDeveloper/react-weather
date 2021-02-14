@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import { useGlobal } from '../context/useGlobal';
+import { ConvertDateStyle } from '../styles/components/ConvertStyles';
 import { ConvertDateType } from '../types/componentsTypes';
 import { GlobalContextType } from '../types/contextTypes';
 
-const ConvertDate: FC<ConvertDateType> = ({ dt }) => {
+const ConvertDate: FC<ConvertDateType> = ({ dt, flex }) => {
   const { getUnits } = useGlobal() as GlobalContextType;
 
   const date = new Date(dt * 1000);
@@ -18,13 +19,23 @@ const ConvertDate: FC<ConvertDateType> = ({ dt }) => {
   return (
     <>
       {getUnits === 'metric' ? (
-        <span>
-          {get.day}.{get.month}.{get.year} - {get.hours}:{get.minutes}
-        </span>
+        <ConvertDateStyle flex={flex}>
+          <span>
+            {get.day}.{get.month}.{get.year}
+          </span>{' '}
+          <span>
+            {get.hours}:{get.minutes}
+          </span>
+        </ConvertDateStyle>
       ) : (
-        <span>
-          {get.month}/{get.day}/{get.year} - {get.hours}:{get.minutes}
-        </span>
+        <ConvertDateStyle flex={flex}>
+          <span>
+            {get.month}/{get.day}/{get.year}
+          </span>{' '}
+          <span>
+            {get.hours}:{get.minutes}
+          </span>
+        </ConvertDateStyle>
       )}
     </>
   );

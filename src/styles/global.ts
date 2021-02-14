@@ -85,6 +85,7 @@ export const Container = styled.div`
 
   padding: 0 1.5rem;
   margin: 0 auto;
+  width: 100%;
 `;
 
 export const CenterBody = styled.div`

@@ -15,4 +15,5 @@ export type ConvertSpeedType = {
 
 export type ConvertDateType = {
   dt: number;
+  flex?: boolean;
 };
