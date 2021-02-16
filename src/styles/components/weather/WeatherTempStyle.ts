@@ -30,3 +30,16 @@ export const WeatherDescStyle = styled.div`
     text-transform: uppercase;
   }
 `;
+
+export const WeatherButtonToForecast = styled.div`
+  background-color: var(--theme-block);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+
+  a {
+    color: #000;
+  }
+`;

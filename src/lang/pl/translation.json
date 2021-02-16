@@ -24,5 +24,6 @@
     "error_500_env": "Nie możemy odnaleźć pliku konfiguracyjnego lub jest on błędnie zapisany",
     "temp_min": "Minimalna temp",
     "temp_max": "Maksymalna temp",
-    "rainfall": "Opady"
+    "rainfall": "Opady",
+    "forecast": "Prognoza pogody"
 }

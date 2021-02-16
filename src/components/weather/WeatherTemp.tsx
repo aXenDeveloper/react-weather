@@ -4,13 +4,19 @@ import {
   WeatherTempStyle,
   WeatherTempMainStyle,
   WeatherTempMinMaxStyle,
-  WeatherDescStyle
+  WeatherDescStyle,
+  WeatherButtonToForecast
 } from '../../styles/components/weather/WeatherTempStyle';
 import { ConvertTemp } from '../ConvertUnits';
 import WeatherUnits from './WeatherUnits';
+import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const WeatherTemp = () => {
   const { weatherDataCurrent } = useDataWeather() as DataWeatherContextType;
+  const { pathname } = useLocation();
+  const city = pathname.split('/')[1];
+  const { t } = useTranslation();
 
   return (
     <WeatherTempStyle>
@@ -25,6 +31,10 @@ const WeatherTemp = () => {
       </WeatherTempMinMaxStyle>
 
       <WeatherDescStyle>{weatherDataCurrent.weather[0].description}</WeatherDescStyle>
+
+      <Link to={`/${city}/forecast`}>
+        <WeatherButtonToForecast>{t('forecast')}</WeatherButtonToForecast>
+      </Link>
     </WeatherTempStyle>
   );
 };

@@ -24,5 +24,6 @@
     "error_500_env": "We cannot find the configuration file or it is written incorrectly",
     "temp_min": "Minimum temp",
     "temp_max": "Maximum temp",
-    "rainfall": "Rainfall"
+    "rainfall": "Rainfall",
+    "forecast": "Forecast"
 }
