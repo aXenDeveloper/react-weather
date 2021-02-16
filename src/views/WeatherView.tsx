@@ -13,7 +13,7 @@ import WeatherMain from '../components/weather/WeatherMain';
 
 const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
   const { pathname } = useLocation();
-  const city = pathname.substr(1);
+  const city = pathname.split('/')[1];
   const { lang, getUnits } = useGlobal() as GlobalContextType;
   const key = process.env.REACT_APP_KEY_API_WEATHER || '';
   const { t } = useTranslation();

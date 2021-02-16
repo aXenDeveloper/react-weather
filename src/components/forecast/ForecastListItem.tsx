@@ -9,14 +9,7 @@ const ForecastListItem: FC<ForecastListItemType> = ({ data }) => {
 
   return (
     <ForecastItemStyle>
-      <ForecastItemMain
-        dt={data.dt}
-        temp={data.main.temp}
-        icon={data.weather[0].icon}
-        description={data.weather[0].description}
-        isOpen={isOpen}
-        setOpen={setOpen}
-      />
+      <ForecastItemMain data={data} isOpen={isOpen} setOpen={setOpen} />
 
       {isOpen && <ForecastDropDown />}
     </ForecastItemStyle>

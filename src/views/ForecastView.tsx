@@ -10,7 +10,7 @@ import ForecastList from '../components/forecast/ForecastList';
 
 const ForecastView = () => {
   const { pathname } = useLocation();
-  const city = pathname.substr(1).split('/')[0];
+  const city = pathname.split('/')[1];
   const key = process.env.REACT_APP_KEY_API_WEATHER || '';
   const { lang, getUnits } = useGlobal() as GlobalContextType;
   const { t } = useTranslation();

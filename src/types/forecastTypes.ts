@@ -22,10 +22,7 @@ export type ForecastListType = {
 };
 
 export type ForecastItemMainType = {
-  dt: number;
-  temp: number;
-  icon: string;
-  description: string;
+  data: ForecastItemType;
   isOpen: boolean;
   setOpen(e: boolean): void;
 };
