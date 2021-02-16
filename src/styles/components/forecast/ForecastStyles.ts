@@ -1,15 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ForecastItemStyle = styled.li`
   background-color: var(--theme-block);
   border-radius: var(--border-radius);
   padding: 1rem var(--padding);
-  cursor: pointer;
 `;
 
 export const ForecastItemMainStyle = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const ForecastListStyle = styled.ul`
@@ -42,6 +42,17 @@ export const ForecastButton = styled.button`
   width: 50px;
   height: 50px;
   font-size: 2rem;
+  cursor: pointer;
+
+  svg {
+    transition: 0.1s transform ease-in-out;
+
+    ${({ isOpen }: { isOpen: boolean }) =>
+      isOpen &&
+      css`
+        transform: rotate(-180deg);
+      `};
+  }
 `;
 
 export const ForecastDesc = styled.div`

@@ -26,9 +26,7 @@ export const WeatherInfoBoxStyled = styled.div`
 export const WeatherInfoBoxSVG = styled.div(
   ({ direction }: { direction?: number }) => `
 		width: 4rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		text-align: center;
 		font-size: 3rem;
 		color: var(--theme-background);
 		margin-right: 1rem;

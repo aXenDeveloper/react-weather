@@ -28,7 +28,7 @@ const ForecastItemMain: FC<ForecastItemMainType> = ({ data, isOpen, setOpen }) =
         <span>{data.weather[0].description}</span>
       </ForecastDesc>
 
-      <ForecastButton aria-label="open">
+      <ForecastButton isOpen={isOpen} aria-label="open">
         <FontAwesomeIcon icon={faArrowUp} />
       </ForecastButton>
     </ForecastItemMainStyle>

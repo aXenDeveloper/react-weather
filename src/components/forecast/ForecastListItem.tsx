@@ -11,7 +11,7 @@ const ForecastListItem: FC<ForecastListItemType> = ({ data }) => {
     <ForecastItemStyle>
       <ForecastItemMain data={data} isOpen={isOpen} setOpen={setOpen} />
 
-      {isOpen && <ForecastDropDown />}
+      {isOpen && <ForecastDropDown data={data} />}
     </ForecastItemStyle>
   );
 };

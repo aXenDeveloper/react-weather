@@ -21,5 +21,8 @@
     "button_github": "Repository on GitHub",
     "footer_createdBy": "Created by",
     "footer_API": "Data API from",
-    "error_500_env": "We cannot find the configuration file or it is written incorrectly"
+    "error_500_env": "We cannot find the configuration file or it is written incorrectly",
+    "temp_min": "Minimum temp",
+    "temp_max": "Maximum temp",
+    "rainfall": "Rainfall"
 }

@@ -21,5 +21,8 @@
     "button_github": "Repozytorium w GitHub",
     "footer_createdBy": "Stworzone przez",
     "footer_API": "Dane API z",
-    "error_500_env": "Nie możemy odnaleźć pliku konfiguracyjnego lub jest on błędnie zapisany"
+    "error_500_env": "Nie możemy odnaleźć pliku konfiguracyjnego lub jest on błędnie zapisany",
+    "temp_min": "Minimalna temp",
+    "temp_max": "Maksymalna temp",
+    "rainfall": "Opady"
 }
