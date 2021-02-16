@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
-export const ForecastListItemStyle = styled.li`
+export const ForecastItemStyle = styled.li`
   background-color: var(--theme-block);
   border-radius: var(--border-radius);
   padding: 1rem var(--padding);
+  cursor: pointer;
+`;
+
+export const ForecastItemMainStyle = styled.div`
   display: flex;
   align-items: center;
-  cursor: pointer;
 `;
 
 export const ForecastListStyle = styled.ul`

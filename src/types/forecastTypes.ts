@@ -20,3 +20,12 @@ export type ForecastListItemType = {
 export type ForecastListType = {
   list: [];
 };
+
+export type ForecastItemMainType = {
+  dt: number;
+  temp: number;
+  icon: string;
+  description: string;
+  isOpen: boolean;
+  setOpen(e: boolean): void;
+};

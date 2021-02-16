@@ -9,7 +9,7 @@ const ErrorView = () => {
     document.title = `${t('error_code')}: 404 - ${process.env.REACT_APP_TITLE_WEBSITE}`;
   }, [t]);
 
-  return <Error code={404}>{t('weather_404')}</Error>;
+  return <Error code={404}>{t('error_404_weather')}</Error>;
 };
 
 export default ErrorView;
