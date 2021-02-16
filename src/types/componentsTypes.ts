@@ -17,3 +17,7 @@ export type ConvertDateType = {
   dt: number;
   flex?: boolean;
 };
+
+export type FlagsType = {
+  country: string;
+};

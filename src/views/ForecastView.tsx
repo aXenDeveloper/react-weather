@@ -7,6 +7,8 @@ import { Container } from '../styles/global';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import ForecastList from '../components/forecast/ForecastList';
+import { ForecastTitleStyle } from '../styles/views/ForecastViewStyles';
+import Flags from '../components/Flags';
 
 const ForecastView = () => {
   const { pathname } = useLocation();
@@ -42,6 +44,12 @@ const ForecastView = () => {
 
   return (
     <Container>
+      <ForecastTitleStyle>
+        <h1>
+          {data.city.name} <Flags country={data.city.country} />
+        </h1>
+      </ForecastTitleStyle>
+
       <ForecastList list={data.list} />
     </Container>
   );

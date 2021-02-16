@@ -12,7 +12,7 @@ const WeatherMain = () => {
     <WeatherStyle>
       <ContainerWeather small>
         <WeatherTitleStyle>
-          {weatherDataCurrent.name}, {weatherDataCurrent.sys.country} <Flags />
+          {weatherDataCurrent.name}, {weatherDataCurrent.sys.country} <Flags country={weatherDataCurrent.sys.country} />
         </WeatherTitleStyle>
 
         <WeatherIcon />
