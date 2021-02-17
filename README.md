@@ -2,7 +2,7 @@
 
 # (React) Weather app
 
-Weather app is an application that allows you to check the current weather in your chosen city.
+Weather app is an application that allows you to check the current weather and forecast in your chosen city.
 
 The application allows you to use: geolocation, change the display language and unit conversion (degrees, speed).
 
@@ -153,3 +153,5 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ![2](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/2-min.png?raw=true)
 
 ![3](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/3-min.png?raw=true)
+
+![4](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/4-min.png?raw=true)

@@ -20,12 +20,16 @@ const ForecastView = () => {
   const { lang } = useGlobal() as GlobalContextType;
   const { t } = useTranslation();
 
+  const setTitlePage = (name: string) => {
+    document.title = `${name || `${t('error_code')}: 404`} - ${t('forecast')} - ${process.env.REACT_APP_TITLE_WEBSITE}`;
+  };
+
   const api = async (city: string, key: string, lang: string) => {
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${key}&lang=${lang}`
     );
     const data = await res.json();
-    console.log(data);
+    setTitlePage(data.city.name);
 
     return data;
   };
