@@ -14,3 +14,7 @@ export type WeatherInfoBoxType = {
   icon: IconDefinition;
   rotate?: number;
 };
+
+export type WeatherUnitsType = {
+  column?: boolean;
+};

@@ -1,14 +1,17 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { useGlobal } from '../context/useGlobal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import { useGlobal } from '../context/useGlobal';
 import { GlobalContextType } from '../types/contextTypes';
 import { Container } from '../styles/global';
+import { ForecastOptionsStyle, ForecastTitleStyle, ForecastButtonBackStyle } from '../styles/views/ForecastViewStyles';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import ForecastList from '../components/forecast/ForecastList';
-import { ForecastTitleStyle } from '../styles/views/ForecastViewStyles';
 import Flags from '../components/Flags';
+import WeatherUnits from '../components/weather/WeatherUnits';
 
 const ForecastView = () => {
   const { pathname } = useLocation();
@@ -49,6 +52,16 @@ const ForecastView = () => {
           {data.city.name} <Flags country={data.city.country} />
         </h1>
       </ForecastTitleStyle>
+
+      <ForecastOptionsStyle>
+        <Link to={`/${city}`}>
+          <ForecastButtonBackStyle>
+            <FontAwesomeIcon icon={faChevronLeft} /> {t('forecast_button_back')}
+          </ForecastButtonBackStyle>
+        </Link>
+
+        <WeatherUnits />
+      </ForecastOptionsStyle>
 
       <ForecastList list={data.list} />
     </Container>

@@ -1,12 +1,14 @@
 import { GlobalContextType } from '../../types/contextTypes';
 import { WeatherUnitsStyle, WeatherDegreesButton } from '../../styles/components/weather/WeatherUnits';
 import { useGlobal } from '../../context/useGlobal';
+import { FC } from 'react';
+import { WeatherUnitsType } from '../../types/weatherTypes';
 
-const WeatherUnits = () => {
+const WeatherUnits: FC<WeatherUnitsType> = ({ column }) => {
   const { getUnits, setUnits } = useGlobal() as GlobalContextType;
 
   return (
-    <WeatherUnitsStyle>
+    <WeatherUnitsStyle column={column}>
       <WeatherDegreesButton onClick={() => setUnits('metric')} aria-checked={getUnits === 'metric'}>
         °C
       </WeatherDegreesButton>

@@ -25,5 +25,6 @@
     "temp_min": "Minimum temp",
     "temp_max": "Maximum temp",
     "rainfall": "Rainfall",
-    "forecast": "Forecast"
+    "forecast": "Forecast",
+    "forecast_button_back": "Go to current weather"
 }

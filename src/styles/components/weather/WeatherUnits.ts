@@ -1,10 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const WeatherUnitsStyle = styled.div`
   display: flex;
-  flex-direction: column;
   font-size: 3rem;
-  justify-content: space-between;
+
+  ${({ column }: { column?: boolean }) =>
+    column &&
+    css`
+      flex-direction: column;
+      justify-content: space-between;
+    `}
 
   label {
     margin-left: 1rem;

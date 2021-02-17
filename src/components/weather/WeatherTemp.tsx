@@ -22,7 +22,7 @@ const WeatherTemp = () => {
     <WeatherTempStyle>
       <WeatherTempMainStyle>
         <ConvertTemp temp={weatherDataCurrent.main.temp} />
-        <WeatherUnits />
+        <WeatherUnits column />
       </WeatherTempMainStyle>
 
       <WeatherTempMinMaxStyle>

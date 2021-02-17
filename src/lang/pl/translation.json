@@ -25,5 +25,6 @@
     "temp_min": "Minimalna temp",
     "temp_max": "Maksymalna temp",
     "rainfall": "Opady",
-    "forecast": "Prognoza pogody"
+    "forecast": "Prognoza pogody",
+    "forecast_button_back": "Przejdź do aktualnej pogody"
 }
