@@ -8,7 +8,7 @@ import {
 import { ConvertTemp } from '../ConvertUnits';
 import ConvertDate from '../ConvertDate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import { ForecastItemMainType } from '../../types/forecastTypes';
 
@@ -29,7 +29,7 @@ const ForecastItemMain: FC<ForecastItemMainType> = ({ data, isOpen, setOpen }) =
       </ForecastDesc>
 
       <ForecastButton isOpen={isOpen} aria-label="open">
-        <FontAwesomeIcon icon={faArrowUp} />
+        <FontAwesomeIcon icon={faChevronUp} />
       </ForecastButton>
     </ForecastItemMainStyle>
   );
