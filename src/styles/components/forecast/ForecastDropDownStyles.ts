@@ -21,10 +21,6 @@ export const ForecastDropDownItemStyle = styled.li`
 
   p {
     margin: 0;
-
-    span {
-      font-style: italic;
-    }
   }
 `;
 

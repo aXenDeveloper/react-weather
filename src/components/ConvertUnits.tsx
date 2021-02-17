@@ -6,7 +6,9 @@ import { ConvertTempType, ConvertSpeedType } from '../types/componentsTypes';
 export const ConvertTemp: FC<ConvertTempType> = ({ temp, degrees }) => {
   const { getUnits } = useGlobal() as GlobalContextType;
 
-  const roundTemp = Math.round(temp * 10) / 10;
+  const convertTemp = getUnits === 'metric' ? temp : 2 * (temp - 0.1 * temp) + 32;
+
+  const roundTemp = Math.round(convertTemp * 10) / 10;
   const getDegreesTemp = ` °${getUnits === 'metric' ? 'C' : 'F'}`;
 
   return (
@@ -20,11 +22,13 @@ export const ConvertTemp: FC<ConvertTempType> = ({ temp, degrees }) => {
 export const ConvertSpeed: FC<ConvertSpeedType> = ({ speed }) => {
   const { getUnits } = useGlobal() as GlobalContextType;
 
-  const getSpeedUnits = getUnits === 'metric' ? 'km/h' : 'm/h';
+  const convertSpeed = getUnits === 'metric' ? speed * 3.6 : speed * 2.23693629;
+  const roundSpeed = Math.round(convertSpeed * 10) / 10;
+  const getSpeedUnits = getUnits === 'metric' ? 'km/h' : 'mph';
 
   return (
     <span>
-      {speed} {getSpeedUnits}
+      {roundSpeed} {getSpeedUnits}
     </span>
   );
 };

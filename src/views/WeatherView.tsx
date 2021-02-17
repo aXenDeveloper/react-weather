@@ -14,7 +14,7 @@ import WeatherMain from '../components/weather/WeatherMain';
 const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
   const { pathname } = useLocation();
   const city = pathname.split('/')[1];
-  const { lang, getUnits } = useGlobal() as GlobalContextType;
+  const { lang } = useGlobal() as GlobalContextType;
   const key = process.env.REACT_APP_KEY_API_WEATHER || '';
   const { t } = useTranslation();
 
@@ -22,10 +22,10 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
     document.title = `${name || `${t('error_code')}: 404`} - ${process.env.REACT_APP_TITLE_WEBSITE}`;
   };
 
-  const api = async (city: string, key: string, lang: string, getUnits: string) => {
+  const api = async (city: string, key: string, lang: string) => {
     if (geoLocation) {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${geoLocation.lat}&lon=${geoLocation.lon}&units=${getUnits}&appid=${key}&lang=${lang}`
+        `https://api.openweathermap.org/data/2.5/weather?lat=${geoLocation.lat}&lon=${geoLocation.lon}&units=metric&appid=${key}&lang=${lang}`
       );
 
       const data = await res.json();
@@ -34,7 +34,7 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
       return data;
     } else {
       const res = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${getUnits}&appid=${key}&lang=${lang}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}&lang=${lang}`
       );
       const data = await res.json();
       setTitlePage(data.name);
@@ -43,16 +43,12 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
     }
   };
 
-  const { isLoading, data, isError } = useQuery(
-    ['weatherMain', city, key, lang, getUnits],
-    () => api(city, key, lang, getUnits),
-    {
-      cacheTime: 0,
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: false
-    }
-  );
+  const { isLoading, data, isError } = useQuery(['weatherMain', city, key, lang], () => api(city, key, lang), {
+    cacheTime: 0,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false
+  });
 
   if (isLoading) return <Loading />;
   if (isError || parseInt(data.cod) === 401) return <Error code={500}>{t('error_500_weather')}</Error>;

@@ -17,12 +17,12 @@ const ForecastView = () => {
   const { pathname } = useLocation();
   const city = pathname.split('/')[1];
   const key = process.env.REACT_APP_KEY_API_WEATHER || '';
-  const { lang, getUnits } = useGlobal() as GlobalContextType;
+  const { lang } = useGlobal() as GlobalContextType;
   const { t } = useTranslation();
 
-  const api = async (city: string, key: string, lang: string, units: string) => {
+  const api = async (city: string, key: string, lang: string) => {
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${key}&lang=${lang}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${key}&lang=${lang}`
     );
     const data = await res.json();
     console.log(data);
@@ -30,16 +30,12 @@ const ForecastView = () => {
     return data;
   };
 
-  const { isLoading, data, isError } = useQuery(
-    ['weatherForecast', city, key, lang, getUnits],
-    () => api(city, key, lang, getUnits),
-    {
-      cacheTime: 0,
-      refetchOnMount: false,
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: false
-    }
-  );
+  const { isLoading, data, isError } = useQuery(['weatherForecast', city, key, lang], () => api(city, key, lang), {
+    cacheTime: 0,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false
+  });
 
   if (isLoading) return <Loading />;
   if (isError || parseInt(data.cod) === 401) return <Error code={500}>{t('error_500_weather')}</Error>;
