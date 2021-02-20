@@ -9,13 +9,12 @@ import {
 } from '../../styles/components/weather/WeatherTempStyle';
 import { ConvertTemp } from '../ConvertUnits';
 import WeatherUnits from './WeatherUnits';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 const WeatherTemp = () => {
   const { weatherDataCurrent } = useDataWeather() as DataWeatherContextType;
-  const { pathname } = useLocation();
-  const city = pathname.split('/')[1];
+  const city = weatherDataCurrent.name.toLowerCase();
   const { t } = useTranslation();
 
   return (
