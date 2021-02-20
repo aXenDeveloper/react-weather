@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import { FC, lazy } from 'react';
 import { ForecastListStyle } from '../../styles/components/forecast/ForecastStyles';
 import { ForecastItemType, ForecastListType } from '../../types/forecastTypes';
-import ForecastListItem from './ForecastListItem';
+const ForecastListItem = lazy(() => import('./ForecastListItem'));
 
 const ForecastList: FC<ForecastListType> = ({ list }) => {
   return (
