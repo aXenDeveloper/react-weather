@@ -16,7 +16,9 @@ const SearchForm = () => {
     setInputCity('');
   };
 
-  const handleInputCity = (e: ChangeEvent<HTMLInputElement>) => setInputCity(e.target.value);
+  const handleInputCity = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputCity(e.target.value);
+  };
 
   return (
     <SearchFormStyle onSubmit={handleSubmit}>
