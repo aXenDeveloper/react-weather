@@ -8,20 +8,6 @@ The application allows you to use: geolocation, change the display language and 
 
 _API: [OpenWeatherMap](https://openweathermap.org/)_
 
-## Table of contents 📖
-
-- [Install 🧰](#install-)
-- [Configuration 🛠️](#configuration-%EF%B8%8F)
-  - [API](#api)
-  - [Title website](#title-website)
-- [Languages 🌎](#languages-)
-  - [Configuration](#configuration)
-  - [Add new lang](#add-new-lang)
-- [Tests 👍](#tests-)
-- [Deployment 🔨](#deployment-)
-- [Packages 📂](#packages-)
-- [Graphics 📷](#graphics-)
-
 ## Install 🧰
 
 Use commands:
