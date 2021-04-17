@@ -45,12 +45,12 @@ export const WeatherDegreesButton = styled.button`
   font-size: inherit;
   font-weight: bold;
   line-height: 1;
-  color: #fff;
+  color: #b4ceff;
   cursor: pointer;
   border-radius: var(--border-radius);
 
-  &[aria-checked='false'] {
-    color: #b4ceff;
+  &.active {
+    color: #fff;
   }
 
   &:hover {
