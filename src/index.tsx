@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import Root from './Root';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import './i18n';
 import GlobalStyle from './styles/global';
+import Loading from './components/Loading';
 
 const queryClient = new QueryClient({});
 
 ReactDOM.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <GlobalStyle />
-      <Root />
-    </QueryClientProvider>
+    <Suspense fallback={<Loading />}>
+      <QueryClientProvider client={queryClient}>
+        <GlobalStyle />
+        <Root />
+      </QueryClientProvider>
+    </Suspense>
   </React.StrictMode>,
   document.getElementById('root')
 );

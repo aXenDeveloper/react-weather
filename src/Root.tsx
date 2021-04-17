@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { lazy, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import i18n from './i18n';
 import { useTranslation } from 'react-i18next';
 import { GlobalContext } from './context/useGlobal';
 import Layout from './components/Layout';
-import HomeView from './views/HomeView';
-import ErrorView from './views/ErrorView';
-import WeatherView from './views/WeatherView';
-import ForecastView from './views/ForecastView';
-import Error from './components/Error';
+
+const HomeView = lazy(() => import('./views/HomeView'));
+const ErrorView = lazy(() => import('./views/ErrorView'));
+const WeatherView = lazy(() => import('./views/WeatherView'));
+const ForecastView = lazy(() => import('./views/ForecastView'));
+const Error = lazy(() => import('./components/Error'));
 
 const Root = () => {
   const { t } = useTranslation();
