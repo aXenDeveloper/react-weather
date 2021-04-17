@@ -18,3 +18,8 @@ export type WeatherInfoBoxType = {
 export type WeatherUnitsType = {
   column?: boolean;
 };
+
+export type WeatherIconType = {
+  id: number;
+  timeOfDay: string;
+};

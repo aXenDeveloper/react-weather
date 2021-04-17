@@ -1,15 +1,17 @@
-import { useDataWeather } from '../../context/useDataWeather';
-import { DataWeatherContextType } from '../../types/contextTypes';
-import { SelectCloudType } from '../../types/weatherTypes';
-import { WeatherIconStyle, WeatherSVGStyle } from '../../styles/components/weather/WeatherIconStyle';
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import { SelectCloudType, WeatherIconType } from '../../types/weatherTypes';
+import {
+  WeatherIconStyle,
+  WeatherSVGStyle
+} from '../../styles/components/weather/WeatherIconStyle';
 import Cloud from './icons/Cloud';
 import Moon from './icons/Moon';
 import Sun from './icons/Sun';
+import Error from '../Error';
 
-const WeatherIcon = () => {
-  const { weatherDataCurrent } = useDataWeather() as DataWeatherContextType;
-  const weatherID = weatherDataCurrent.weather[0].id;
-  const weatherIcon = weatherDataCurrent.weather[0].icon.slice(-1);
+const WeatherIcon: FC<WeatherIconType> = ({ id, timeOfDay }) => {
+  const { t } = useTranslation();
 
   const selectCloud = {
     cloud1: {
@@ -38,11 +40,11 @@ const WeatherIcon = () => {
     } as SelectCloudType
   };
 
-  interface selectWeatherInterface {
+  type selectWeatherInterface = {
     [key: number]: {
       [key: string]: JSX.Element;
     };
-  }
+  };
 
   const selectWeather: selectWeatherInterface = {
     // Group 2xx: Thunderstorm
@@ -283,11 +285,14 @@ const WeatherIcon = () => {
     }
   };
 
-  return (
-    <WeatherIconStyle>
-      <WeatherSVGStyle>{selectWeather[weatherID][weatherIcon]}</WeatherSVGStyle>
-    </WeatherIconStyle>
-  );
+  if (selectWeather[id][timeOfDay])
+    return (
+      <WeatherIconStyle>
+        <WeatherSVGStyle>{selectWeather[id][timeOfDay]}</WeatherSVGStyle>
+      </WeatherIconStyle>
+    );
+
+  return <Error code={404}>{t('error_404_weatherIcon')}</Error>;
 };
 
 export default WeatherIcon;

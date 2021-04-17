@@ -4,3 +4,8 @@ export type WeatherViewType = {
     lon: number;
   };
 };
+
+export type DemoViewParamsType = {
+  code: string;
+  timeOfDay: string;
+};

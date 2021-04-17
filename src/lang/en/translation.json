@@ -26,5 +26,6 @@
     "temp_max": "Maximum temp",
     "rainfall": "Rainfall",
     "forecast": "Forecast",
-    "forecast_button_back": "Go to current weather"
+    "forecast_button_back": "Go to current weather",
+    "error_404_weatherIcon": "Invalid Weather Icon code"
 }

@@ -132,6 +132,47 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 | [i18n](https://react.i18next.com/)                  | Pages translations                          |
 | [Font Awesome](https://fontawesome.com/)            | Icons SVG                                   |
 
+## Demo Weather Icons ​🌦️
+
+### Group 2xx: Thunderstorm
+
+- [Thunderstorm with heavy rain](https://weather.axendev.net/demoweather/202/d),
+- [Light thunderstorm (Day)](https://weather.axendev.net/demoweather/210/d),
+- [Light thunderstorm (Night)](https://weather.axendev.net/demoweather/210/n),
+- [Thunderstorm with drizzle](https://weather.axendev.net/demoweather/231/d)
+
+### Group 5xx: Rain
+
+- [Light rain (Day)](https://weather.axendev.net/demoweather/500/d),
+- [Light rain (Night)](https://weather.axendev.net/demoweather/500/n),
+- [Freezing rain](https://weather.axendev.net/demoweather/511/d),
+- [Shower rain](https://weather.axendev.net/demoweather/521/d)
+
+### Group 6xx: Snow
+
+- [Snow (Day)](https://weather.axendev.net/demoweather/601/d),
+- [Snow (Night)](https://weather.axendev.net/demoweather/601/n),
+- [Shower sleet](https://weather.axendev.net/demoweather/613/d),
+- [Rain and snow](https://weather.axendev.net/demoweather/616/d)
+
+### Group 7xx: Atmosphere
+
+- [Mist](https://weather.axendev.net/demoweather/701/d),
+- [Volcanic ash](https://weather.axendev.net/demoweather/762/d),
+- [Tornado](https://weather.axendev.net/demoweather/781/d)
+
+### Group 800: Clear
+
+- [Clear (Day)](https://weather.axendev.net/demoweather/800/d),
+- [Clear (Night)](https://weather.axendev.net/demoweather/800/n)
+
+### Group 800: Clear
+
+- [Few clouds: 11-25% (Day)](https://weather.axendev.net/demoweather/801/d),
+- [Few clouds: 11-25% (Night)](https://weather.axendev.net/demoweather/801/n),
+- [Broken clouds: 51-84%](https://weather.axendev.net/demoweather/803/d),
+- [Overcast clouds: 85-100%](https://weather.axendev.net/demoweather/804/d),
+
 ## Graphics 📷
 
 ![1](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/1-min.png?raw=true)

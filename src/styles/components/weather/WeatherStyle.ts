@@ -3,9 +3,13 @@ import { Container } from '../../global';
 
 export const ContainerWeather = styled(Container)`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
+
+  ${({ demo }: { demo?: boolean }) => {
+    const justifyContent = demo ? 'center' : 'space-between';
+    return `justify-content: ${justifyContent};`;
+  }}
 
   @media screen and (max-width: 768px) {
     flex-direction: column;

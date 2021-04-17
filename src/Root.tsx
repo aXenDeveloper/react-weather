@@ -9,6 +9,7 @@ const HomeView = lazy(() => import('./views/HomeView'));
 const ErrorView = lazy(() => import('./views/ErrorView'));
 const WeatherView = lazy(() => import('./views/WeatherView'));
 const ForecastView = lazy(() => import('./views/ForecastView'));
+const DemoView = lazy(() => import('./views/DemoView'));
 const Error = lazy(() => import('./components/Error'));
 
 const Root = () => {
@@ -26,6 +27,7 @@ const Root = () => {
           {keyAPI && titleWebsite ? (
             <Switch>
               <Route exact path="/" component={HomeView} />
+              <Route exact path="/demoweather/:code/:timeOfDay" component={DemoView} />
               <Route exact path="/:name/forecast" component={ForecastView} />
               <Route exact path="/:name" component={WeatherView} />
               <Route component={ErrorView} />

@@ -26,5 +26,6 @@
     "temp_max": "Maksymalna temp",
     "rainfall": "Opady",
     "forecast": "Prognoza pogody",
-    "forecast_button_back": "Przejdź do aktualnej pogody"
+    "forecast_button_back": "Przejdź do aktualnej pogody",
+    "error_404_weatherIcon": "Nieprawidłowy kod ikony pogody"
 }
