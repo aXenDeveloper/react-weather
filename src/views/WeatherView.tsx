@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { DataWeatherContext } from '../context/useDataWeather';
 import { useGlobal } from '../context/useGlobal';
-import { WeatherViewType } from '../types/viewTypes';
+import { WeatherViewParamsTypes, WeatherViewType } from '../types/viewTypes';
 import { GlobalContextType } from '../types/contextTypes';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
@@ -12,14 +12,15 @@ import WeatherInfo from '../components/weather/WeatherInfo';
 import WeatherMain from '../components/weather/WeatherMain';
 
 const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
-  const { pathname } = useLocation();
-  const city = pathname.split('/')[1];
+  const { city } = useParams<WeatherViewParamsTypes>();
   const { lang } = useGlobal() as GlobalContextType;
   const key = process.env.REACT_APP_KEY_API_WEATHER || '';
   const { t } = useTranslation();
 
   const setTitlePage = (name: string) => {
-    document.title = `${name || `${t('error_code')}: 404`} - ${process.env.REACT_APP_TITLE_WEBSITE}`;
+    document.title = `${name || `${t('error_code')}: 404`} - ${
+      process.env.REACT_APP_TITLE_WEBSITE
+    }`;
   };
 
   const api = async (city: string, key: string, lang: string) => {
@@ -43,15 +44,20 @@ const WeatherView: FC<WeatherViewType> = ({ geoLocation }) => {
     }
   };
 
-  const { isLoading, data, isError } = useQuery(['weatherMain', city, key, lang], () => api(city, key, lang), {
-    cacheTime: 0,
-    refetchOnMount: false,
-    refetchOnWindowFocus: false,
-    refetchOnReconnect: false
-  });
+  const { isLoading, data, isError } = useQuery(
+    ['weatherMain', city, key, lang],
+    () => api(city, key, lang),
+    {
+      cacheTime: 0,
+      refetchOnMount: false,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false
+    }
+  );
 
   if (isLoading) return <Loading />;
-  if (isError || parseInt(data.cod) === 401) return <Error code={500}>{t('error_500_weather')}</Error>;
+  if (isError || parseInt(data.cod) === 401)
+    return <Error code={500}>{t('error_500_weather')}</Error>;
   if (parseInt(data.cod) === 404) return <Error code={404}>{t('error_404_weather')}</Error>;
 
   const weatherDataCurrent = data;

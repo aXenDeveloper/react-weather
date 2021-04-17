@@ -5,6 +5,10 @@ export type WeatherViewType = {
   };
 };
 
+export type WeatherViewParamsTypes = {
+  city: string;
+};
+
 export type DemoViewParamsType = {
   code: string;
   timeOfDay: string;

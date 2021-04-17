@@ -28,8 +28,8 @@ const Root = () => {
             <Switch>
               <Route exact path="/" component={HomeView} />
               <Route exact path="/demoweather/:code/:timeOfDay" component={DemoView} />
-              <Route exact path="/:name/forecast" component={ForecastView} />
-              <Route exact path="/:name" component={WeatherView} />
+              <Route exact path="/:city/forecast" component={ForecastView} />
+              <Route exact path="/:city" component={WeatherView} />
               <Route component={ErrorView} />
             </Switch>
           ) : (
