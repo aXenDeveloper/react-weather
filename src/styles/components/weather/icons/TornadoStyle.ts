@@ -34,10 +34,10 @@ export const TornadoStyle = styled.svg`
       transform: translateY(0);
     }
     25% {
-      transform: translateX(20rem * 0.0571);
+      transform: translateX(1.142rem);
     }
     75% {
-      transform: translateX(-20rem * 0.0571);
+      transform: translateX(-1.142rem);
     }
     100% {
       transform: translateX(0);
@@ -49,10 +49,10 @@ export const TornadoStyle = styled.svg`
       transform: translateY(0);
     }
     25% {
-      transform: translateX(20rem * 0.0871);
+      transform: translateX(1.742rem);
     }
     75% {
-      transform: translateX(-20rem * 0.0871);
+      transform: translateX(-1.742rem);
     }
     100% {
       transform: translateX(0);
@@ -64,10 +64,10 @@ export const TornadoStyle = styled.svg`
       transform: translateY(0);
     }
     25% {
-      transform: translateX(20rem * 0.1143);
+      transform: translateX(2.286rem);
     }
     75% {
-      transform: translateX(-20rem * 0.1143);
+      transform: translateX(-2.286rem);
     }
     100% {
       transform: translateX(0);
@@ -79,10 +79,10 @@ export const TornadoStyle = styled.svg`
       transform: translateY(0);
     }
     25% {
-      transform: translateX(20rem * 0.1357);
+      transform: translateX(2.714rem);
     }
     75% {
-      transform: translateX(-20rem * 0.1357);
+      transform: translateX(-2.714rem);
     }
     100% {
       transform: translateX(0);
@@ -94,10 +94,10 @@ export const TornadoStyle = styled.svg`
       transform: translateY(0);
     }
     25% {
-      transform: translateX(20rem * 0.1429);
+      transform: translateX(3.358rem);
     }
     75% {
-      transform: translateX(-20rem * 0.1429);
+      transform: translateX(-3.358rem);
     }
     100% {
       transform: translateX(0);
