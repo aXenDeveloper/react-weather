@@ -8,7 +8,7 @@ The application allows you to use: geolocation, change the display language and 
 
 _API: [OpenWeatherMap](https://openweathermap.org/)_
 
-## Install 🧰
+## 🧰 Install
 
 Use commands:
 
@@ -20,7 +20,7 @@ npm i
 npm start
 ```
 
-## Configuration 🛠️
+## 🛠️ Configuration
 
 In the project directory go to file **src/.env_template** and rename the file to **.env**
 
@@ -52,7 +52,7 @@ Change title website in:
    "name": "Weather app - aXenDev.net",
    ```
 
-## Languages 🌎
+## 🌎 Languages
 
 Before we start - [Check the supported language for OpenWeatherMap API](https://openweathermap.org/current#multi)
 
@@ -100,7 +100,7 @@ More options in [i18next config documentation](https://www.i18next.com/overview/
    {createLang('{lang}', '{lang_flag}', '{lang_full}')}
    ```
 
-## Deployment 🔨
+## 🔨 Deployment
 
 Command:
 
@@ -110,7 +110,7 @@ npm run build
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Tests 👍
+## 👍 Tests
 
 Command:
 
@@ -120,7 +120,7 @@ npm test
 
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Packages 📂
+## 📂 Packages
 
 | Packages                                            | Description                                 |
 | --------------------------------------------------- | ------------------------------------------- |
@@ -132,7 +132,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 | [i18n](https://react.i18next.com/)                  | Pages translations                          |
 | [Font Awesome](https://fontawesome.com/)            | Icons SVG                                   |
 
-## Demo Weather Icons ​🌦️
+## 🌦️ Demo Weather Icons
 
 ### Group 2xx: Thunderstorm
 
@@ -173,7 +173,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 - [Broken clouds: 51-84%](https://weather.axendev.net/demoweather/803/d),
 - [Overcast clouds: 85-100%](https://weather.axendev.net/demoweather/804/d),
 
-## Graphics 📷
+## 📷 Graphics
 
 ![1](https://github.com/aXenDeveloper/react-weather/blob/main/screenshots/1-min.png?raw=true)
 
