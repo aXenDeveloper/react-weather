@@ -8,7 +8,7 @@ import {
 import { ConvertTemp } from '../ConvertUnits';
 import ConvertDate from '../ConvertDate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FC } from 'react';
 import { ForecastItemMainType } from '../../types/forecastTypes';
 
@@ -24,12 +24,15 @@ const ForecastItemMain: FC<ForecastItemMainType> = ({ data, isOpen, setOpen }) =
       </ForecastTemp>
 
       <ForecastDesc>
-        <img src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt={data.weather[0].description} />
+        <img
+          src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`}
+          alt={data.weather[0].description}
+        />
         <span>{data.weather[0].description}</span>
       </ForecastDesc>
 
       <ForecastButton isOpen={isOpen} aria-label="open">
-        <FontAwesomeIcon icon={faChevronUp} />
+        <FontAwesomeIcon icon={faChevronDown} />
       </ForecastButton>
     </ForecastItemMainStyle>
   );

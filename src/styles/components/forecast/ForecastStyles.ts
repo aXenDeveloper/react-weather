@@ -45,12 +45,12 @@ export const ForecastButton = styled.button`
   cursor: pointer;
 
   svg {
-    transition: 0.1s transform ease-in-out;
+    transition: 0.2s transform ease-in-out;
 
     ${({ isOpen }: { isOpen: boolean }) =>
       isOpen &&
       css`
-        transform: rotate(-180deg);
+        transform: rotate(90deg);
       `};
   }
 `;
