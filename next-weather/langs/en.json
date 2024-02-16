@@ -1,0 +1,9 @@
+{
+  "core": {
+    "test": "Test EN",
+    "footer": {
+      "createdBy": "Created by <a></a>",
+      "providedData": "Data provided <a></a>"
+    }
+  }
+}
