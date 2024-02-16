@@ -1,0 +1,9 @@
+{
+  "core": {
+    "test": "Test polski",
+    "footer": {
+      "createdBy": "Stworzone przez <a></a>",
+      "providedData": "Dane dostarcza <a></a>"
+    }
+  }
+}
